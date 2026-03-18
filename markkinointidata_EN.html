@@ -424,19 +424,21 @@
     }
 
     .lang-switcher {
-      padding: 8px 16px;
-      border: 1.5px solid rgba(255,255,255,0.2);
+      padding: 8px 18px;
+      border: 1.5px solid var(--cyan-border);
       border-radius: 4px;
       font-size: 12px !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.06em !important;
-      color: #aaa !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.08em !important;
+      color: var(--cyan) !important;
       text-decoration: none;
-      transition: border-color 0.2s, color 0.2s !important;
+      background: var(--cyan-dim);
+      transition: background 0.2s, border-color 0.2s !important;
     }
     .lang-switcher:hover {
+      background: var(--cyan) !important;
+      color: var(--black) !important;
       border-color: var(--cyan) !important;
-      color: var(--cyan) !important;
     }
 
     /* ── CUSTOM CURSOR ── */
@@ -504,7 +506,7 @@
     <li><a href="#why">Why me</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#contact" class="nav-cta">Get in touch</a></li>
-    <li><a href="markkinointidata_FI.html" class="lang-switcher">🇫🇮 FI</a></li>
+    <li><a href="index.html" class="lang-switcher">🇫🇮 FI</a></li>
   </ul>
 </nav>
 
