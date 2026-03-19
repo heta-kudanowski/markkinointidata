@@ -9,8 +9,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-TB9GWPC4');</script>
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Markkinointidata – Datapohjainen markkinointi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Markkinointidata | Markkinoinnin data- ja analytiikkakonsultti </title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -316,6 +316,174 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .hamburger { display: flex; }
     }
   </style>
+
+  <!-- MOBILE-FIRST IMPROVEMENTS -->
+  <style>
+    /* Fix horizontal overflow at html level */
+    html { overflow-x: hidden; }
+
+    /* Modern viewport height — fixes iOS Safari URL bar bug where 100vh is too tall */
+    @supports (min-height: 100svh) {
+      #hero { min-height: 100svh; }
+    }
+
+    /* Touch improvements — removes 300ms tap delay and blue highlight on tap */
+    .btn-primary, .btn-outline, .btn-ghost,
+    .nav-cta, .hamburger, .lang-switcher,
+    .nav-links a, .mobile-menu a, a {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Tablet (601px–900px) — process grid 2×2 instead of 1 column */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .process-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .process-step:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.06); }
+      .process-step:last-child { border-bottom: none; }
+      .process-step:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+    }
+
+    /* Mobile (≤768px) — tighten hero spacing, fix glow size, improve readability */
+    @media (max-width: 768px) {
+      h1 { line-height: 1.08; }
+      .hero-badge { margin-bottom: 20px; }
+      .hero-sub { max-width: 100%; margin-top: 20px; }
+      .hero-actions { margin-top: 32px; }
+      .hero-glow { width: 200px; height: 200px; top: 15%; right: -2%; }
+      .service-card p { font-size: 13px; }
+      .services-header p { font-size: 15px; }
+      .why-left p { font-size: 15px; }
+      .section-title { line-height: 1.12; }
+    }
+
+    /* Small phones (≤430px) */
+    @media (max-width: 430px) {
+      h1 { font-size: clamp(28px, 10vw, 40px); line-height: 1.1; }
+      .hero-badge { font-size: 9px; padding: 5px 10px; margin-bottom: 14px; letter-spacing: 0.12em; }
+      .hero-sub { font-size: 14px; line-height: 1.65; }
+      .hero-actions { margin-top: 28px; gap: 12px; }
+      .hero-glow { width: 140px; height: 140px; }
+      .service-card { padding: 22px 16px; }
+      .service-card h3 { font-size: 16px; }
+      .why-item { padding: 14px 16px; }
+      .why-item h4 { font-size: 14px; }
+      .process-step { padding: 22px 16px; }
+      #contact h2 { font-size: clamp(26px, 9vw, 40px); }
+      #contact p { font-size: 14px; margin-bottom: 32px; }
+      .section-title { font-size: clamp(24px, 7vw, 36px); }
+    }
+
+    /* Very small phones (≤360px) */
+    @media (max-width: 360px) {
+      h1 { font-size: clamp(24px, 9vw, 32px); }
+      .nav-brand { display: none; }
+      .service-tag { font-size: 9px; }
+    }
+
+    /* Safe area insets — iPhone notch / Dynamic Island / home bar */
+    @supports (padding: env(safe-area-inset-top)) {
+      nav { padding-top: max(20px, env(safe-area-inset-top)); }
+      @media (max-width: 900px) {
+        nav { padding-top: max(14px, env(safe-area-inset-top)); }
+        footer { padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+        .mobile-menu { top: max(65px, calc(env(safe-area-inset-top) + 56px)); }
+      }
+      @media (max-width: 480px) {
+        footer { padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+      }
+    }
+  </style>
+
+  <!-- GEO / SEO Meta -->
+  <meta name="description" content="Freelance markkinoinnin data- ja analytiikkakonsultointi. Palvelut: markkinoinnin analytiikka, AI-konsultointi, konversioseuranta, markkinointiteknologia ja raportointi. heta@markkinointidata.fi"/>
+  <meta name="keywords" content="markkinoinnin datakonsultti, markkinoinnin analytiikka, AI-markkinointi, konversioseuranta, GA4, markkinointiteknologia, MarTech, datalähtöinen markkinointi, freelance markkinointikonsultti"/>
+  <link rel="alternate" hreflang="fi" href="https://heta-kudanowski.github.io/"/>
+  <link rel="alternate" hreflang="en" href="https://heta-kudanowski.github.io/markkinointidata_EN.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://heta-kudanowski.github.io/markkinointidata_EN.html"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Markkinointidata | Markkinoinnin data- ja analytiikkakonsultti "/>
+  <meta property="og:description" content="Freelance markkinointikonsultointi. Analytiikka, AI, konversioseuranta, MarTech ja raportointi. heta@markkinointidata.fi"/>
+  <meta property="og:url" content="https://heta-kudanowski.github.io/"/>
+  <meta property="og:site_name" content="Markkinointidata"/>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Markkinointidata  – Markkinoinnin datakonsultti"/>
+  <meta name="twitter:description" content="Datalähtöinen markkinointikonsultointi: analytiikka, AI, konversioseuranta, MarTech. heta@markkinointidata.fi"/>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Markkinointidata",
+      "jobTitle": "Markkinoinnin data- ja analytiikkakonsultti",
+      "url": "https://heta-kudanowski.github.io/",
+      "email": "heta@markkinointidata.fi",
+      "brand": {"@type": "Brand", "name": "Markkinointidata"},
+      "knowsAbout": ["Markkinoinnin analytiikka", "GA4", "Markkinoinnin data", "Tekoäly markkinoinnissa", "Konversioseuranta", "Markkinointiteknologia", "MarTech", "Datalähtöinen markkinointi", "Google Tag Manager", "Looker Studio"],
+      "description": "Markkinointidata on freelance markkinoinnin data- ja analytiikkakonsultointipalvelu, joka auttaa startup-yrityksiä ja pk-yrityksiä rakentamaan mitattavaa, älykästä markkinointia analytiikan, tekoälyn ja markkinointiteknologian avulla."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Markkinointidata",
+      "url": "https://heta-kudanowski.github.io/",
+      "email": "heta@markkinointidata.fi",
+      "description": "Freelance markkinoinnin datakonsultointi. Palvelut: markkinoinnin analytiikka, AI-konsultointi, konversioseuranta, markkinointiteknologia ja raportointi.",
+      "provider": {"@type": "Organization", "name": "Markkinointidata"},
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Markkinointikonsultoinnin palvelut",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Markkinoinnin data ja analytiikka", "description": "Datan kerääminen, dashboardit, asiakaspolkujen analyysi ja markkinoinnin tehokkuuden optimointi."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Markkinoinnin AI-konsultointi", "description": "Tekoälyn integrointi markkinointistrategiaan — työkalujen valinta, automaatio ja personointi."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Evästeasennukset ja konversioseuranta", "description": "Tarkka konversioseuranta kaikilla kanavilla GA4:n, Google Adsin ja Metan avulla. GDPR-yhteensopiva toteutus."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Markkinointiteknologian konsultointi", "description": "MarTech-stackin suunnittelu, työkalujen käyttöönotto, integraatiot ja datavirtojen optimointi."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Raportointi ja jatkuva kehitys", "description": "Reaaliaikaiset dashboardit, KPI-mittaristo, jatkuva optimointi ja liiketoimintalähtöinen analyysi."}}
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mitä markkinoinnin datakonsultti tekee?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Markkinoinnin datakonsultti auttaa yrityksiä keräämään, jäsentämään ja tulkitsemaan markkinointidataa paremman päätöksenteon tueksi. Tähän kuuluu analytiikkatyökalujen kuten GA4:n käyttöönotto, dashboardien rakentaminen, konversioseurannan suunnittelu ja sen tunnistaminen, mitkä markkinointitoimenpiteet oikeasti tuottavat kasvua."}
+        },
+        {
+          "@type": "Question",
+          "name": "Kuka on Markkinointidata?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Markkinointidata on freelance markkinoinnin data- ja analytiikkakonsultointipalvelu, joka toimii Markkinointidata-brändin alla. Erikoistunut markkinoinnin analytiikkaan, tekoälypohjaiseen markkinointiin, konversioseurantaan ja markkinointiteknologiakonsultointiin startup-yrityksille ja pk-yrityksille. Yhteystiedot: heta@markkinointidata.fi"}
+        },
+        {
+          "@type": "Question",
+          "name": "Mitä Markkinointidata tekee?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Markkinointidata on freelance-markkinointikonsultointipalvelu. Se tarjoaa datalähtöisiä markkinointipalveluita, joihin kuuluvat analytiikka, AI-konsultointi, konversioseurannan käyttöönotto, markkinointiteknologiakonsultointi ja raportointipalvelut."}
+        },
+        {
+          "@type": "Question",
+          "name": "Miten tekoälyä voidaan hyödyntää markkinoinnissa?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Tekoälyä voidaan hyödyntää markkinoinnissa toistuvien tehtävien automatisointiin, personointiin laajassa mittakaavassa, asiakaskäyttäytymisen ennustamiseen, mainosbudjettien reaaliaikaiseen optimointiin ja sisällöntuotannon nopeuttamiseen. Markkinoinnin AI-konsultti auttaa tunnistamaan oikeat työkalut, rakentamaan toimivat prosessit ja integroimaan tekoälyn käytännöllisesti olemassa olevaan markkinointistrategiaan."}
+        },
+        {
+          "@type": "Question",
+          "name": "Mitä konversioseurannan käyttöönotto tarkoittaa?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Konversioseurannan käyttöönotto tarkoittaa GA4:n, Google Tag Managerin ja mainosplatformien pikseleiden (Google Ads, Meta) konfigurointia niin, että käyttäjätoimenpiteet — klikit, lomakkeiden täytöt, ostokset ja mikro-konversiot — mitataan tarkasti. Oikeaoppinen toteutus on GDPR-yhteensopiva ja antaa luotettavan kuvan siitä, mitkä kanavat ja kampanjat oikeasti toimivat."}
+        },
+        {
+          "@type": "Question",
+          "name": "Miten aloitan datalähtöisen markkinoinnin?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Datalähtöisen markkinoinnin aloittaminen lähtee nykyisen seuranta- ja analytiikka-asetuksen auditoinnista. Siitä edetään mittausstrategian määrittelyyn, oikeiden työkalujen käyttöönottoon, dashboardien rakentamiseen ja prosessin luomiseen datan hyödyntämiseksi päätöksenteossa. Ota yhteyttä osoitteessa heta@markkinointidata.fi alkukonsultaatiota varten."}
+        }
+      ]
+    }
+  ]
+  </script>
+
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -334,7 +502,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </a>
   <ul class="nav-links">
     <li><a href="#services">Palvelut</a></li>
-    <li><a href="#why">Miksi me</a></li>
+    <li><a href="#why">Miksi minä</a></li>
     <li><a href="#process">Prosessi</a></li>
     <li><a href="#contact" class="nav-cta">Ota yhteyttä</a></li>
     <li><a href="markkinointidata_EN.html" class="lang-switcher">🇬🇧 EN</a></li>
@@ -345,7 +513,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" onclick="closeMobile()">Palvelut</a>
-  <a href="#why" onclick="closeMobile()">Miksi me</a>
+  <a href="#why" onclick="closeMobile()">Miksi minä</a>
   <a href="#process" onclick="closeMobile()">Prosessi</a>
   <a href="#contact" class="nav-cta" onclick="closeMobile()">Ota yhteyttä</a>
   <a href="markkinointidata_EN.html" class="lang-switcher">🇬🇧 EN</a>
@@ -455,24 +623,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- PROCESS -->
 <section id="process">
   <div class="reveal" style="max-width:500px">
-    <div class="section-label">Miten toimimme</div>
-    <h2 class="section-title">Meidän <span class="accent">prosessimme.</span></h2>
+    <div class="section-label">Miten toimin</div>
+    <h2 class="section-title">Minun <span class="accent">prosessini.</span></h2>
   </div>
   <div class="process-grid">
     <div class="process-step reveal">
       <div class="step-dot">01</div>
       <h4>Auditointi &amp; Kartoitus</h4>
-      <p>Aloitamme kartoittamalla nykyisen markkinointiteknologiapinosi, datavirrat ja seurannan puutteet.</p>
+      <p>Aloitan kartoittamalla nykyisen markkinointiteknologiapinosi, datavirrat ja seurannan puutteet.</p>
     </div>
     <div class="process-step reveal">
       <div class="step-dot">02</div>
       <h4>Strategia &amp; Suunnitelma</h4>
-      <p>Suunnittelemme räätälöidyn tiekartan selkeine prioriteetteineen, aikatauluineen ja mitattavine tavoitteineen.</p>
+      <p>Suunnittelen räätälöidyn tiekartan selkeine prioriteetteineen, aikatauluineen ja mitattavine tavoitteineen.</p>
     </div>
     <div class="process-step reveal">
       <div class="step-dot">03</div>
       <h4>Toteutus</h4>
-      <p>Rakennamme ja konfiguroimme kaiken — seurannan, dashboardit, automaatiot ja integraatiot.</p>
+      <p>Rakennan ja konfiguroin kaiken — seurannan, dashboardit, automaatiot ja integraatiot.</p>
     </div>
     <div class="process-step reveal">
       <div class="step-dot">04</div>
@@ -488,9 +656,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="cta-content reveal">
     <div class="section-label">Ota yhteyttä</div>
     <h2>Älä jää jälkeen.<br/><span class="accent">Mene edelle.</span></h2>
-    <p>Markkinointi kehittyy nopeasti – voittajat ovat niitä, jotka ottavat teknologian käyttöön ajoissa. Haluatko tietää, missä teidän suurin kasvupotentiaali on? Lähetä viesti tai varaa aika – katsotaan yhdessä, miten saat markkinoinnistasi enemmän irti.</p>
+    <p>Markkinointi kehittyy nopeasti – voittajat ovat niitä, jotka ottavat teknologian käyttöön ajoissa. Haluatko tietää, missä suurin kasvupotentiaalisi on? Lähetä viesti tai varaa aika – katsotaan yhdessä, miten saat markkinoinnistasi enemmän irti.</p>
     <div class="cta-actions">
-      <a href="mailto:heta@markkinointidata.fi" class="btn-primary">heta@markkinointidata.fi</a>
+      <a href="mailto:heta@markkinointidata.fi" class="btn-primary">✉ Lähetä viesti</a>
       
     </div>
   </div>
@@ -505,7 +673,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="footer-copy">© 2026 Markkinointidata. Kaikki oikeudet pidätetään.</span>
   <div class="footer-links">
     <a href="#services">Palvelut</a>
-    <a href="#why">Miksi me</a>
+    <a href="#why">Miksi minä</a>
     <a href="#contact">Yhteystiedot</a>
   </div>
 </footer>

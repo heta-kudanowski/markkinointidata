@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -9,8 +9,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-TB9GWPC4');</script>
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Markkinointidata – Data-driven Marketing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Markkinointidata | Marketing Data & Analytics Consultant </title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -610,6 +610,174 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .hamburger { display: flex; }
     }
   </style>
+
+  <!-- MOBILE-FIRST IMPROVEMENTS -->
+  <style>
+    /* Fix horizontal overflow at html level */
+    html { overflow-x: hidden; }
+
+    /* Modern viewport height — fixes iOS Safari URL bar bug where 100vh is too tall */
+    @supports (min-height: 100svh) {
+      #hero { min-height: 100svh; }
+    }
+
+    /* Touch improvements — removes 300ms tap delay and blue highlight on tap */
+    .btn-primary, .btn-outline, .btn-ghost,
+    .nav-cta, .hamburger, .lang-switcher,
+    .nav-links a, .mobile-menu a, a {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Tablet (601px–900px) — process grid 2×2 instead of 1 column */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .process-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .process-step:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.06); }
+      .process-step:last-child { border-bottom: none; }
+      .process-step:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+    }
+
+    /* Mobile (≤768px) — tighten hero spacing, fix glow size, improve readability */
+    @media (max-width: 768px) {
+      h1 { line-height: 1.08; }
+      .hero-badge { margin-bottom: 20px; }
+      .hero-sub { max-width: 100%; margin-top: 20px; }
+      .hero-actions { margin-top: 32px; }
+      .hero-glow { width: 200px; height: 200px; top: 15%; right: -2%; }
+      .service-card p { font-size: 13px; }
+      .services-header p { font-size: 15px; }
+      .why-left p { font-size: 15px; }
+      .section-title { line-height: 1.12; }
+    }
+
+    /* Small phones (≤430px) */
+    @media (max-width: 430px) {
+      h1 { font-size: clamp(28px, 10vw, 40px); line-height: 1.1; }
+      .hero-badge { font-size: 9px; padding: 5px 10px; margin-bottom: 14px; letter-spacing: 0.12em; }
+      .hero-sub { font-size: 14px; line-height: 1.65; }
+      .hero-actions { margin-top: 28px; gap: 12px; }
+      .hero-glow { width: 140px; height: 140px; }
+      .service-card { padding: 22px 16px; }
+      .service-card h3 { font-size: 16px; }
+      .why-item { padding: 14px 16px; }
+      .why-item h4 { font-size: 14px; }
+      .process-step { padding: 22px 16px; }
+      #contact h2 { font-size: clamp(26px, 9vw, 40px); }
+      #contact p { font-size: 14px; margin-bottom: 32px; }
+      .section-title { font-size: clamp(24px, 7vw, 36px); }
+    }
+
+    /* Very small phones (≤360px) */
+    @media (max-width: 360px) {
+      h1 { font-size: clamp(24px, 9vw, 32px); }
+      .nav-brand { display: none; }
+      .service-tag { font-size: 9px; }
+    }
+
+    /* Safe area insets — iPhone notch / Dynamic Island / home bar */
+    @supports (padding: env(safe-area-inset-top)) {
+      nav { padding-top: max(20px, env(safe-area-inset-top)); }
+      @media (max-width: 900px) {
+        nav { padding-top: max(14px, env(safe-area-inset-top)); }
+        footer { padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+        .mobile-menu { top: max(65px, calc(env(safe-area-inset-top) + 56px)); }
+      }
+      @media (max-width: 480px) {
+        footer { padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+      }
+    }
+  </style>
+
+  <!-- GEO / SEO Meta -->
+  <meta name="description" content="Freelance marketing data and analytics consulting. Services: marketing analytics, AI consulting, conversion tracking, MarTech consulting and reporting. Contact: heta@markkinointidata.fi"/>
+  <meta name="keywords" content="marketing data consultant, marketing analytics, AI marketing consulting, conversion tracking, GA4, marketing technology, MarTech, data-driven marketing, freelance marketing consultant"/>
+  <link rel="alternate" hreflang="fi" href="https://heta-kudanowski.github.io/"/>
+  <link rel="alternate" hreflang="en" href="https://heta-kudanowski.github.io/markkinointidata_EN.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://heta-kudanowski.github.io/markkinointidata_EN.html"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Markkinointidata | Marketing Data & Analytics Consultant "/>
+  <meta property="og:description" content="Freelance marketing data and analytics consulting. Analytics, AI, conversion tracking, MarTech and reporting services. Contact: heta@markkinointidata.fi"/>
+  <meta property="og:url" content="https://heta-kudanowski.github.io/markkinointidata_EN.html"/>
+  <meta property="og:site_name" content="Markkinointidata"/>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Markkinointidata  – Marketing Data Consultant"/>
+  <meta name="twitter:description" content="Data-driven marketing consulting: analytics, AI, conversion tracking, MarTech. heta@markkinointidata.fi"/>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Markkinointidata",
+      "jobTitle": "Marketing Data & Analytics Consultant",
+      "url": "https://heta-kudanowski.github.io/markkinointidata_EN.html",
+      "email": "heta@markkinointidata.fi",
+      "brand": {"@type": "Brand", "name": "Markkinointidata"},
+      "knowsAbout": ["Marketing Analytics", "GA4", "Marketing Data", "AI in Marketing", "Conversion Tracking", "Marketing Technology", "MarTech", "Data-driven Marketing", "Marketing Automation", "Looker Studio", "Google Tag Manager"],
+      "description": "Markkinointidata is a freelance marketing data and analytics consulting service helping startups and SMBs build measurable, intelligent marketing using analytics, AI and marketing technology."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Markkinointidata",
+      "url": "https://heta-kudanowski.github.io/markkinointidata_EN.html",
+      "email": "heta@markkinointidata.fi",
+      "description": "Freelance marketing data and analytics consulting. Services include marketing analytics, AI consulting, conversion tracking, MarTech consulting and reporting.",
+      "provider": {"@type": "Organization", "name": "Markkinointidata"},
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Marketing Consulting Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Marketing Data & Analytics", "description": "Data collection, dashboards, customer journey analysis and marketing performance optimisation."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Marketing AI Consulting", "description": "Integrating AI into marketing strategy — tool selection, automation and personalisation at scale."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cookie Setup & Conversion Tracking", "description": "Precise conversion tracking across all channels using GA4, Google Ads, Meta. GDPR-compliant."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Marketing Technology Consulting", "description": "MarTech stack design, tool implementation, integrations and data flow optimisation."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Reporting & Continuous Improvement", "description": "Real-time dashboards, KPI frameworks, ongoing optimisation and business-focused analysis."}}
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does a marketing data consultant do?",
+          "acceptedAnswer": {"@type": "Answer", "text": "A marketing data consultant helps businesses collect, structure and interpret marketing data to make smarter decisions. This includes setting up analytics tools like GA4, building dashboards, designing conversion tracking across channels, and identifying which marketing activities are driving real growth."}
+        },
+        {
+          "@type": "Question",
+          "name": "Who is behind Markkinointidata?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Markkinointidata is a freelance marketing data and analytics consulting service operating under the brand Markkinointidata. Specialising in marketing analytics, AI-driven marketing, conversion tracking and marketing technology consulting for startups and SMBs. Contact: heta@markkinointidata.fi."}
+        },
+        {
+          "@type": "Question",
+          "name": "What is Markkinointidata?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Markkinointidata is a freelance marketing consulting brand founded by Markkinointidata. It offers data-driven marketing services including analytics, AI consulting, conversion tracking setup, marketing technology consulting, and performance reporting."}
+        },
+        {
+          "@type": "Question",
+          "name": "How can AI be used in marketing?",
+          "acceptedAnswer": {"@type": "Answer", "text": "AI can be used in marketing to automate repetitive tasks, enable personalisation at scale, predict customer behaviour, optimise ad spend in real time, and speed up content production. A marketing AI consultant helps identify the right tools, build the right workflows, and integrate AI practically into an existing marketing strategy."}
+        },
+        {
+          "@type": "Question",
+          "name": "What does conversion tracking setup involve?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Conversion tracking setup involves configuring tools like Google Analytics 4 (GA4), Google Tag Manager, and ad platform pixels (Google Ads, Meta) to accurately measure user actions — clicks, form fills, purchases, and micro-conversions. A proper setup is GDPR-compliant and gives a reliable picture of what channels and campaigns are actually working."}
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get started with data-driven marketing?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Getting started with data-driven marketing begins with an audit of your current tracking and analytics setup. From there, you define a measurement strategy, set up the right tools, build dashboards, and create a process for using data in decisions. Contact us at heta@markkinointidata.fi for an initial consultation."}
+        }
+      ]
+    }
+  ]
+  </script>
+
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -652,7 +820,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-content">
     <div class="hero-badge">Marketing Intelligence &amp; Data Consulting</div>
     <h1>Stay ahead in<br/><span class="accent">marketing.</span></h1>
-    <p class="hero-sub">I help businesses build marketing that is measurable, effective and intelligent — by combining analytics, marketing technology and AI.</p>
+    <p class="hero-sub">I help businesses build marketing that is measurable, effective and intelligent, by combining analytics, marketing technology and AI.</p>
     <div class="hero-actions">
       <a href="#services" class="btn-primary">Explore Services</a>
       <a href="#contact" class="btn-ghost">Get in touch <span class="arrow">↓</span></a>
@@ -680,7 +848,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="service-num">02</span>
       <div class="service-icon">🤖</div>
       <h3>Marketing AI Consulting</h3>
-      <p>Integrate artificial intelligence into your marketing strategy. We help you identify the right AI tools, automate decision-making and personalise at scale.</p>
+      <p>Integrate artificial intelligence into your marketing strategy. I help you identify the right AI tools, automate decision-making and personalise at scale.</p>
       <span class="service-tag">AI &amp; ML</span>
     </div>
     <div class="service-card reveal">
@@ -693,16 +861,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="service-card reveal">
       <span class="service-num">04</span>
       <div class="service-icon">⚙️</div>
-      <h3>Markkinointiautomaatio</h3>
-      <p>Design and implement marketing automation workflows and technology stacks. Save time, reduce manual work and create seamless customer journeys.</p>
-      <span class="service-tag">Automation</span>
+      <h3>Marketing Technology Consulting</h3>
+      <p>Right tools. Used right. I help you choose and implement marketing technologies that support growth — not complexity. MarTech stack design · Tool implementation &amp; onboarding · Integrations &amp; data flows · Process optimisation</p>
+      <span class="service-tag">MarTech</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">05</span>
-      <div class="service-icon">🍪</div>
-      <h3>Cookie-asetukset</h3>
-      <p>GDPR-compliant cookie consent setup and management. We ensure your tracking infrastructure respects user privacy while maintaining marketing effectiveness.</p>
-      <span class="service-tag">Compliance</span>
+      <div class="service-icon">📈</div>
+      <h3>Reporting &amp; Continuous Improvement</h3>
+      <p>Data is not just reports — it is decisions. I build clear views into what is working and what to do next. Real-time dashboards · KPI frameworks · Ongoing optimisation · Business-focused analysis</p>
+      <span class="service-tag">Reporting</span>
     </div>
   </div>
 </section>
@@ -710,7 +878,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- WHY US -->
 <section id="why">
   <div class="why-left reveal">
-    <div class="section-label">Why choose me</div>
+    <div class="section-label">What sets me apart</div>
     <h2 class="section-title">Why<br/><span class="accent">choose me?</span></h2>
     <p>Comprehensive expertise, a hands-on approach and a focus on results — all in one package.</p>
   </div>
@@ -756,17 +924,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="process-step reveal">
       <div class="step-dot">01</div>
       <h4>Audit &amp; Discovery</h4>
-      <p>We start by mapping your current marketing tech stack, data flows and tracking gaps.</p>
+      <p>I start by mapping your current marketing tech stack, data flows and tracking gaps.</p>
     </div>
     <div class="process-step reveal">
       <div class="step-dot">02</div>
       <h4>Strategy &amp; Plan</h4>
-      <p>We design a tailored roadmap with clear priorities, timelines and measurable goals.</p>
+      <p>I design a tailored roadmap with clear priorities, timelines and measurable goals.</p>
     </div>
     <div class="process-step reveal">
       <div class="step-dot">03</div>
       <h4>Implementation</h4>
-      <p>We build and configure everything — tracking, dashboards, automations and integrations.</p>
+      <p>I build and configure everything — tracking, dashboards, automations and integrations.</p>
     </div>
     <div class="process-step reveal">
       <div class="step-dot">04</div>
@@ -784,7 +952,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Don't fall behind.<br/><span class="accent">Get ahead.</span></h2>
     <p>Marketing is evolving fast — the winners are those who adopt technology early. Want to know where your biggest growth potential lies? Send a message or book a time — let's figure out together how to get more from your marketing.</p>
     <div class="cta-actions">
-      <a href="mailto:heta@markkinointidata.fi" class="btn-primary">heta@markkinointidata.fi</a>
+      <a href="mailto:heta@markkinointidata.fi" class="btn-primary">✉ Send a message</a>
       
     </div>
   </div>
