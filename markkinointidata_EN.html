@@ -821,35 +821,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="service-card reveal">
       <span class="service-num">01</span>
       <div class="service-icon">📊</div>
-      <h3>Marketing Data &amp; Analytics</h3>
+      <h3>Marketing data &amp; analytics</h3>
       <p>Make better decisions with data. I help you collect, combine and interpret data so it actually drives business. Data collection &amp; measurement design · Dashboards &amp; reporting · Customer journey analysis · Marketing performance optimisation</p>
       <span class="service-tag">Analytics</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">02</span>
       <div class="service-icon">🤖</div>
-      <h3>Marketing AI Consulting</h3>
+      <h3>Marketing AI consulting</h3>
       <p>Integrate artificial intelligence into your marketing strategy. I help you identify the right AI tools, automate decision-making and personalise at scale.</p>
       <span class="service-tag">AI &amp; ML</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">03</span>
       <div class="service-icon">🎯</div>
-      <h3>Cookie Setup &amp; Conversion Tracking</h3>
+      <h3>Cookie setup &amp; conversion tracking</h3>
       <p>Precise conversion tracking setup across all channels. Measure every click, form, purchase and micro-conversion so you always know what's working.</p>
-      <span class="service-tag">Conversion Tracking</span>
+      <span class="service-tag">Tracking</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">04</span>
       <div class="service-icon">⚙️</div>
-      <h3>Marketing Technology Consulting</h3>
+      <h3>Marketing technology consulting</h3>
       <p>Right tools. Used right. I help you choose and implement marketing technologies that support growth — not complexity. MarTech stack design · Tool implementation &amp; onboarding · Integrations &amp; data flows · Process optimisation</p>
       <span class="service-tag">MarTech</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">05</span>
       <div class="service-icon">📈</div>
-      <h3>Reporting &amp; Continuous Improvement</h3>
+      <h3>Reporting &amp; continuous improvement</h3>
       <p>Data is not just reports — it is decisions. I build clear views into what is working and what to do next. Real-time dashboards · KPI frameworks · Ongoing optimisation · Business-focused analysis</p>
       <span class="service-tag">Reporting</span>
     </div>
@@ -904,12 +904,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="process-grid">
     <div class="process-step reveal">
       <div class="step-dot">01</div>
-      <h4>Audit &amp; Discovery</h4>
+      <h4>Audit &amp; discovery</h4>
       <p>I start by mapping your current marketing tech stack, data flows and tracking gaps.</p>
     </div>
     <div class="process-step reveal">
       <div class="step-dot">02</div>
-      <h4>Strategy &amp; Plan</h4>
+      <h4>Strategy &amp; plan</h4>
       <p>I design a tailored roadmap with clear priorities, timelines and measurable goals.</p>
     </div>
     <div class="process-step reveal">
@@ -919,7 +919,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="process-step reveal">
       <div class="step-dot">04</div>
-      <h4>Optimise &amp; Scale</h4>
+      <h4>Optimise &amp; scale</h4>
       <p>Ongoing monitoring, iteration and support to keep your marketing data infrastructure sharp.</p>
     </div>
   </div>
@@ -959,8 +959,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="modal-close" id="modalClose" aria-label="Close">&#x2715;</button>
     <div class="modal-label">Get in touch</div>
     <h3 class="modal-title" id="modalTitle">Let's talk about<br/><span class="accent">your marketing.</span></h3>
-    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="hidden" name="_subject" value="New enquiry – Markkinointidata"/>
+    <form id="contactForm" action="https://api.staticforms.dev/submit" method="POST">
+      <input type="hidden" name="accessKey" value="sf_000350cf791d98d408f5254f"/>
+      <input type="hidden" name="subject" value="New enquiry – Markkinointidata"/>
+      <input type="hidden" name="replyTo" value="@email"/>
       <div class="form-group">
         <label for="fname">Name</label>
         <input type="text" id="fname" name="name" required placeholder="Your name" autocomplete="name"/>
@@ -1058,6 +1060,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // Close menu on scroll
   window.addEventListener('scroll', () => closeMobile());
+
+  // ── CONTACT MODAL ──
+  (function(){
+    var modal=document.getElementById('contactModal');
+    var closeBtn=document.getElementById('modalClose');
+    var form=document.getElementById('contactForm');
+    var submitBtn=document.getElementById('formSubmit');
+    var success=document.getElementById('formSuccess');
+    var error=document.getElementById('formError');
+    function openModal(){modal.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var f=form.querySelector('input,textarea');if(f)f.focus();},120);}
+    function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}
+    document.querySelectorAll('.open-modal').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();openModal();});});
+    closeBtn.addEventListener('click',closeModal);
+    modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+    form.addEventListener('submit',async function(e){
+      e.preventDefault();
+      var orig=submitBtn.innerHTML;
+      submitBtn.disabled=true;submitBtn.innerHTML='&#x23F3; Sending...';
+      success.style.display='none';error.style.display='none';
+      try{
+        var res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+        if(res.ok){form.reset();submitBtn.style.display='none';success.style.display='block';setTimeout(closeModal,3500);}
+        else{throw new Error();}
+      }catch(err){error.style.display='block';submitBtn.disabled=false;submitBtn.innerHTML=orig;}
+    });
+  })();
 
 </script>
 </body>

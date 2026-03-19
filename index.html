@@ -543,7 +543,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="service-icon">🎯</div>
       <h3>Evästeasennukset &amp; konversioseuranta</h3>
       <p>Ilman mittaamista ei ole kasvua. Rakennan luotettavan ja GDPR-yhteensopivan mittauspohjan, jonka varaan markkinointi voidaan skaalata. Evästehallinnan käyttöönotto · Konversioseuranta (GA4, Google Ads, Meta) · Tagien ja data layerin toteutus · Server-side tracking</p>
-      <span class="service-tag">Konversioseuranta</span>
+      <span class="service-tag">Seuranta</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">04</span>
@@ -610,12 +610,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="process-grid">
     <div class="process-step reveal">
       <div class="step-dot">01</div>
-      <h4>Auditointi &amp; Kartoitus</h4>
+      <h4>Auditointi &amp; kartoitus</h4>
       <p>Aloitan kartoittamalla nykyisen markkinointiteknologiapinosi, datavirrat ja seurannan puutteet.</p>
     </div>
     <div class="process-step reveal">
       <div class="step-dot">02</div>
-      <h4>Strategia &amp; Suunnitelma</h4>
+      <h4>Strategia &amp; suunnitelma</h4>
       <p>Suunnittelen räätälöidyn tiekartan selkeine prioriteetteineen, aikatauluineen ja mitattavine tavoitteineen.</p>
     </div>
     <div class="process-step reveal">
@@ -625,7 +625,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="process-step reveal">
       <div class="step-dot">04</div>
-      <h4>Optimointi &amp; Skaalaus</h4>
+      <h4>Optimointi &amp; skaalaus</h4>
       <p>Jatkuva seuranta, iterointi ja tuki pitävät markkinointidatainfrastruktuurisi terävänä.</p>
     </div>
   </div>
@@ -665,8 +665,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="modal-close" id="modalClose" aria-label="Sulje">&#x2715;</button>
     <div class="modal-label">Ota yhteyttä</div>
     <h3 class="modal-title" id="modalTitle">Puhutaan<br/><span class="accent">markkinoinnistasi.</span></h3>
-    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="hidden" name="_subject" value="Uusi yhteydenotto – Markkinointidata"/>
+    <form id="contactForm" action="https://api.staticforms.dev/submit" method="POST">
+      <input type="hidden" name="accessKey" value="sf_000350cf791d98d408f5254f"/>
+      <input type="hidden" name="subject" value="Uusi yhteydenotto – Markkinointidata"/>
+      <input type="hidden" name="replyTo" value="@email"/>
       <div class="form-group">
         <label for="fname">Nimi</label>
         <input type="text" id="fname" name="name" required placeholder="Nimesi" autocomplete="name"/>
@@ -753,6 +755,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // Close menu on scroll
   window.addEventListener('scroll', () => closeMobile());
+
+  // ── CONTACT MODAL ──
+  (function(){
+    var modal=document.getElementById('contactModal');
+    var closeBtn=document.getElementById('modalClose');
+    var form=document.getElementById('contactForm');
+    var submitBtn=document.getElementById('formSubmit');
+    var success=document.getElementById('formSuccess');
+    var error=document.getElementById('formError');
+    function openModal(){modal.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var f=form.querySelector('input,textarea');if(f)f.focus();},120);}
+    function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}
+    document.querySelectorAll('.open-modal').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();openModal();});});
+    closeBtn.addEventListener('click',closeModal);
+    modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+    form.addEventListener('submit',async function(e){
+      e.preventDefault();
+      var orig=submitBtn.innerHTML;
+      submitBtn.disabled=true;submitBtn.innerHTML='&#x23F3; Sending...';
+      success.style.display='none';error.style.display='none';
+      try{
+        var res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+        if(res.ok){form.reset();submitBtn.style.display='none';success.style.display='block';setTimeout(closeModal,3500);}
+        else{throw new Error();}
+      }catch(err){error.style.display='block';submitBtn.disabled=false;submitBtn.innerHTML=orig;}
+    });
+  })();
 
 </script>
 </body>
