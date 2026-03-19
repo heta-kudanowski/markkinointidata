@@ -420,14 +420,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
+        @media (max-width: 900px) {
+      /* NAV */
+      nav { padding: 14px 20px; }
       .nav-links { display: none; }
-      section { padding: 70px 24px; }
-      #hero { padding: 120px 24px 60px; }
-      #why { grid-template-columns: 1fr; gap: 48px; }
-      .process-grid { grid-template-columns: 1fr 1fr; }
-    footer { flex-direction: column; gap: 20px; text-align: center; }
+      .nav-logo img { width: 36px; height: 36px; }
+      .nav-brand { font-size: 13px; }
+      .lang-switcher { padding: 6px 12px !important; font-size: 11px !important; }
+
+      /* HERO */
+      #hero { padding: 110px 20px 60px; min-height: auto; }
+      .hero-content { max-width: 100%; }
+      h1 { font-size: clamp(36px, 10vw, 56px); }
+      .hero-sub { font-size: 15px; }
+      .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .btn-primary { width: 100%; text-align: center; padding: 14px 24px; }
+      .hero-badge { font-size: 10px; padding: 6px 12px; }
+
+      /* SECTIONS */
+      section { padding: 60px 20px; }
+      .section-title { font-size: clamp(26px, 7vw, 40px); }
+
+      /* SERVICES */
+      .services-header { margin-bottom: 40px; }
+      .services-header p { font-size: 15px; }
+      .services-grid { grid-template-columns: 1fr; gap: 2px; }
+      .service-card { padding: 30px 24px; }
+      .service-card h3 { font-size: 17px; }
+
+      /* WHY */
+      #why { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px; }
+      .why-item { padding: 20px 20px; }
+      .why-item h4 { font-size: 15px; }
+
+      /* PROCESS */
+      .process-grid { grid-template-columns: 1fr; gap: 2px; }
+      .process-step { padding: 28px 24px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .process-step:last-child { border-bottom: none; }
+
+      /* CTA */
+      #contact { padding: 80px 20px; }
+      #contact h2 { font-size: clamp(32px, 8vw, 52px); }
+      .cta-actions { flex-direction: column; align-items: center; gap: 16px; }
+      .btn-primary, .btn-outline { width: 100%; text-align: center; }
+
+      /* FOOTER */
+      footer { flex-direction: column; gap: 20px; text-align: center; padding: 30px 20px; }
+      .footer-links { justify-content: center; }
+
+      /* CURSOR — hide on touch devices */
+      #cursor-dot, #cursor-ring { display: none; }
+      * { cursor: auto !important; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: clamp(32px, 11vw, 44px); }
+      .nav-brand { display: none; }
+      nav { padding: 12px 16px; }
+      #hero { padding: 100px 16px 50px; }
+      section { padding: 50px 16px; }
+      #why { padding: 50px 16px; }
+      #contact { padding: 60px 16px; }
+      footer { padding: 24px 16px; }
     }
 
     .lang-switcher {
@@ -495,6 +549,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     body.cursor-click #cursor-ring {
       width: 28px; height: 28px;
     }
+
+    /* ── HAMBURGER MENU ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 65px; left: 0; right: 0;
+      background: rgba(0,0,0,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--cyan-border);
+      padding: 20px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #aaa; text-decoration: none;
+      padding: 14px 16px;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--cyan); background: var(--cyan-dim); }
+    .mobile-menu .nav-cta {
+      margin-top: 8px;
+      border: 1.5px solid var(--cyan);
+      color: var(--cyan) !important;
+      text-align: center;
+    }
+    .mobile-menu .lang-switcher {
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .hamburger { display: flex; }
+    }
   </style>
 </head>
 <body>
@@ -519,7 +633,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#contact" class="nav-cta">Get in touch</a></li>
     <li><a href="index.html" class="lang-switcher">🇫🇮 FI</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#why" onclick="closeMobile()">Why me</a>
+  <a href="#process" onclick="closeMobile()">Process</a>
+  <a href="#contact" class="nav-cta" onclick="closeMobile()">Get in touch</a>
+  <a href="index.html" class="lang-switcher">🇫🇮 FI</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -741,6 +865,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // Click effect
   document.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
   document.addEventListener('mouseup', () => document.body.classList.remove('cursor-click'));
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+
+  // Close menu on scroll
+  window.addEventListener('scroll', () => closeMobile());
 
 </script>
 </body>
