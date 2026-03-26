@@ -401,9 +401,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .testimonials-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-top: 56px;
+    }
+    @media (max-width: 1024px) {
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
     }
     .testimonial-card {
       background: var(--dark3);
@@ -440,12 +443,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .author-logo img {
       height: 28px;
       width: auto;
-      max-width: 100px;
+      max-width: 110px;
       object-fit: contain;
       filter: brightness(0) invert(1);
       opacity: 0.7;
     }
     .author-logo img[src=""] { display: none; }
+    .author-logo svg {
+      height: 32px;
+      width: auto;
+      max-width: 140px;
+      opacity: 0.7;
+    }
     .author-info strong {
       display: block;
       font-size: 13px;
@@ -757,30 +766,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <blockquote>Markkinointidatan palvelut on ollut erittäin tervetullut apu yrityksellemme. Yhteistyö ja kommunikointi on ollut aina helppoa, toimivaa ja mutkatonta. Palvelut on toteutettu suurella ammattitaidolla ja intohimolla. Äärimmäisen luotettavaa ja tunnollista palvelua. Yhteistyö on lisännyt ihmisten tietoutta yrityksestämme ja palveluistamme.</blockquote>
       <div class="testimonial-author">
-        <div class="author-logo"><img src="assets/logo-hyvinvointia-kotiin.png" alt="Hyvinvointia Kotiin" onerror="this.style.display='none'"/></div>
         <div class="author-info">
           <strong>Mika Viinikainen</strong>
-          <span>Toimitusjohtaja, Koti- ja hoivapalvelut Hyvinvointia Kotiin Oy</span>
+          <span>Toimitusjohtaja, <a href="https://hyvinvointiakotiin.fi" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Koti- ja hoivapalvelut Hyvinvointia Kotiin Oy</a></span>
         </div>
       </div>
     </div>
     <div class="testimonial-card reveal">
       <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <blockquote>Meillä on pelkästään hyvää sanomista. Yhteistyö on sujuvaa, asiat hoituvat ja niistä pidetään aidosti huolta. Aina on voinut luottaa siihen, että asiat on hoidettu. Plussaa uusista ideoista ja mahdollisuuksista, joita ei tarvitse kysellä, vaan niitä ehdotetaan oma-aloitteisesti ja asiakkaan parhaaksi. Jämäkkää ja luotettavaa toimintaa!</blockquote>
+      <blockquote>Hetan palvelu oli selkeää, asiantuntevaa ja käytännönläheistä. Hän selvitti avoimet kysymykset, perusteli ratkaisunsa hyvin ja vei projektia eteenpäin analyyttisella, mutta samaan aikaan maanläheisellä otteella. Yhteistyö oli sujuvaa ja luotettavaa alusta loppuun.</blockquote>
       <div class="testimonial-author">
-        <div class="author-logo"><img src="assets/logo-wtf-design.png" alt="WTF Design" onerror="this.style.display='none'"/></div>
         <div class="author-info">
-          <strong>Mainos- ja viestintätoimisto WTF Design</strong>
+          <strong>Leo Sävel</strong>
+          <span>Toimitusjohtaja, osakas, <a href="https://helpotkotisivut.fi" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Helpotkotisivut.fi</a> MS Oy</span>
         </div>
       </div>
     </div>
   </div>
   <div class="client-logos">
-    <p class="logos-label">Yhteistyössä</p>
+    <p class="logos-label">Asiakkaitani</p>
     <div class="logos-row">
-      <div class="logo-item"><img src="assets/logo-hyvinvointia-kotiin.png" alt="Hyvinvointia Kotiin" onerror="this.style.display='none'"/></div>
-      <div class="logo-item"><img src="assets/logo-hello-creative.png" alt="hello creative." onerror="this.style.display='none'"/></div>
-      <div class="logo-item"><img src="assets/logo-wtf-design.png" alt="WTF Design" onerror="this.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-hyvinvointia-kotiin.png" alt="Hyvinvointia Kotiin" onerror="this.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-hello-creative.png" alt="hello creative." onerror="this.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-wtf-design.png" alt="WTF Design" onerror="this.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-helpotkotisivut.svg" alt="Helpotkotisivut.fi" onerror="this.style.display='none'"/></div>
       <div class="logo-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 19" fill="#ffffff"><path clip-rule="evenodd" fill-rule="evenodd" d="M68.1705 0.4529H65.0264C64.7871 0.4529 64.593 0.648791 64.593 0.890342V14.6705C64.593 14.8244 64.469 14.9489 64.3173 14.9489C64.1947 14.9489 64.089 14.8693 64.0532 14.7508L60.5619 3.07829C60.0213 1.2755 58.4288 0.0522796 56.5744 0.00146567C54.1503 -0.0648134 52.1654 2.02887 52.1654 4.47604V18.1317C52.1654 18.3733 52.3594 18.5692 52.5987 18.5692H55.7443C55.9836 18.5692 56.1776 18.3733 56.1776 18.1317V4.33023C56.1776 4.17631 56.3016 4.05185 56.4534 4.05185C56.5759 4.05185 56.6824 4.13139 56.7174 4.24995L60.2088 15.9224C60.7479 17.7252 62.3404 18.9484 64.1947 18.9993C66.6188 19.0655 68.6038 16.9726 68.6038 14.5247V0.890342C68.6038 0.648791 68.4097 0.4529 68.1705 0.4529ZM95.4433 0.0677463C96.8986 0.117087 98.1964 0.896971 98.9339 2.17616H98.9332L102.883 9.02131C103.394 9.90798 103.663 10.9147 103.663 11.9405V18.1163C103.663 18.3578 103.469 18.5537 103.23 18.5537H100.084C99.8443 18.5537 99.6503 18.3578 99.6503 18.1163V16.2568H90.9416V18.1163C90.9416 18.3578 90.7476 18.5537 90.5083 18.5537H87.3627C87.1234 18.5537 86.9294 18.3578 86.9294 18.1163V11.9405C86.9294 10.9162 87.1993 9.90651 87.7099 9.02131L91.5857 2.30356C92.3853 0.917591 93.8559 0.0139866 95.4433 0.0677463ZM90.9423 11.6681V12.2049L90.9431 12.2057H99.6517V11.9413C99.6517 11.632 99.57 11.3278 99.4161 11.0605L95.4674 4.21534L95.4666 4.21403C95.4487 4.18388 95.4088 4.11666 95.2974 4.11666C95.1843 4.11666 95.1442 4.18589 95.1274 4.21534L91.178 11.0605C91.1419 11.1227 91.1099 11.1722 91.082 11.2153L91.0819 11.2155C90.9899 11.3574 90.9423 11.4309 90.9423 11.6681ZM83.174 0.4529H86.3188C86.5581 0.4529 86.7521 0.648792 86.7521 0.890342V7.06608C86.7521 8.0912 86.4829 9.09864 85.9716 9.98457L82.0221 16.8297C81.2685 18.1362 79.8832 18.9403 78.3848 18.9403C76.8872 18.9403 75.5019 18.1369 74.7476 16.8297L70.7981 9.98457C70.2867 9.09864 70.0175 8.0912 70.0175 7.06608V0.890342C70.0175 0.648792 70.2116 0.4529 70.4509 0.4529H73.5972C73.8364 0.4529 74.0305 0.648792 74.0305 0.890342V7.06608C74.0305 7.37538 74.1122 7.67879 74.2661 7.94612L78.2156 14.7913L78.2164 14.7926C78.2343 14.8228 78.2742 14.89 78.3856 14.89C78.4986 14.89 78.5388 14.8207 78.5555 14.7913L82.505 7.94612C82.6597 7.67879 82.7406 7.37538 82.7406 7.06608V0.890342C82.7406 0.648792 82.9347 0.4529 83.174 0.4529ZM109.64 14.521H117.05C117.289 14.521 117.483 14.7169 117.483 14.9584V18.1347C117.483 18.3762 117.289 18.5721 117.05 18.5721H109.64C107.041 18.5721 104.933 16.4453 104.933 13.8207V0.890342C104.933 0.648792 105.127 0.4529 105.367 0.4529H108.513C108.752 0.4529 108.946 0.648792 108.946 0.890342V13.8207C108.946 14.2073 109.257 14.521 109.64 14.521ZM129.567 14.521H123.213C122.83 14.521 122.519 14.2073 122.519 13.8207V0.890342C122.519 0.648792 122.325 0.4529 122.086 0.4529H118.94C118.701 0.4529 118.507 0.648792 118.507 0.890342V13.8207C118.507 16.4453 120.614 18.5721 123.214 18.5721H129.568C129.807 18.5721 130.001 18.3762 130.001 18.1347V14.9584C130.001 14.7169 129.807 14.521 129.568 14.521H129.567ZM8.93347 14.496H14.1333V14.4967C14.3726 14.4967 14.5666 14.6926 14.5666 14.9341V18.1104C14.5666 18.3519 14.3726 18.5478 14.1333 18.5478H9.13627C4.13924 18.5478 -0.0830644 14.4194 0.00155677 9.3748C0.08326 4.4731 4.05827 0.511082 8.93347 0.511082H15.7761C16.0154 0.511082 16.2094 0.706974 16.2094 0.948524V4.12476C16.2094 4.36631 16.0154 4.56221 15.7761 4.56221H9.07645C6.42985 4.56221 4.15018 6.61097 4.0196 9.27907C3.88027 12.1305 6.13805 14.496 8.93347 14.496ZM32.1306 15.013C31.6068 12.6748 29.5489 11.0141 27.1744 11.0141H25.3325C25.0443 11.0141 24.7759 10.816 24.7292 10.5288C24.6693 10.1628 24.9487 9.8454 25.2996 9.8454H28.0651C30.6009 9.8454 32.6573 7.77013 32.6573 5.20955V5.07036C32.6573 2.51052 30.6016 0.434511 28.0651 0.434511H25.2048C19.8591 0.434511 15.5259 4.80893 15.5259 10.2055V18.131C15.5259 18.3726 15.7199 18.5685 15.9592 18.5685H19.1055C19.3448 18.5685 19.5388 18.3726 19.5388 18.131V10.2055C19.5388 7.04695 22.0753 4.48563 25.2048 4.48563H28.0651C28.3847 4.48563 28.6444 4.74707 28.6444 5.07036V5.20881C28.6444 5.53137 28.3854 5.79281 28.0659 5.79281H25.4346C23.0448 5.79281 20.9533 7.57939 20.7286 9.98164C20.4718 12.7374 22.6217 15.0645 25.2996 15.0645H27.1744C27.6734 15.0645 28.1067 15.4136 28.2169 15.9055L28.737 18.2275C28.7815 18.4271 28.9573 18.5685 29.1601 18.5685H32.3859C32.6639 18.5685 32.8703 18.3078 32.809 18.0345L32.1321 15.0122L32.1306 15.013ZM32.6325 9.51106C32.6325 4.28606 36.8439 0.0346244 42.0203 0.0346244C47.1968 0.0346244 51.4082 4.28606 51.4082 9.51106C51.4082 14.7361 47.1968 18.9875 42.0203 18.9875C36.8439 18.9875 32.6325 14.7361 32.6325 9.51106ZM36.6462 9.51179C36.6462 12.5032 39.0571 14.9371 42.0203 14.9371C44.9835 14.9371 47.3945 12.5032 47.3945 9.51179C47.3945 6.5204 44.9835 4.08648 42.0203 4.08648C39.0571 4.08648 36.6462 6.5204 36.6462 9.51179Z"/></svg></div>
     </div>
   </div>
