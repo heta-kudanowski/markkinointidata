@@ -10,7 +10,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-  <title>Markkinointidata | Markkinoinnin data- ja analytiikkakonsultti</title>
+  <title>Heta Kudanowski | Markkinointikonsultti – Data, kasvu &amp; strategia</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,6 +49,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-cta:hover { background: var(--cyan) !important; color: var(--black) !important; }
 
     #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 60px 80px; position: relative; overflow: hidden; }
+    .hero-inner { display: grid; grid-template-columns: 1fr minmax(0, 280px); align-items: center; gap: 60px; }
+    .hero-photo-wrap { position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden; min-width: 0; }
+    .hero-photo-ring { position: absolute; inset: -18px; border-radius: 50%; border: 1px solid var(--cyan-border); animation: spin 20s linear infinite; }
+    .hero-photo-ring::before { content: ''; position: absolute; top: -4px; left: 50%; width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 12px var(--cyan); }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .hero-photo-ring2 { position: absolute; inset: -36px; border-radius: 50%; border: 1px solid rgba(0,245,255,0.1); animation: spin 35s linear infinite reverse; }
+    .hero-photo { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--cyan-border); box-shadow: 0 0 60px rgba(0,245,255,0.18), 0 0 120px rgba(0,245,255,0.07); position: relative; z-index: 1; }
+    .hero-photo-badge { position: absolute; bottom: 32px; right: 16px; z-index: 2; background: var(--dark3); border: 1px solid var(--cyan-border); border-radius: 8px; padding: 10px 16px; display: flex; align-items: center; gap: 10px; backdrop-filter: blur(10px); }
+    .hero-photo-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #00e676; box-shadow: 0 0 8px #00e676; flex-shrink: 0; animation: blink 2s ease-in-out infinite; }
+    .hero-photo-badge span { font-size: 12px; font-weight: 600; color: var(--white); white-space: nowrap; }
     .hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(0,245,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,245,255,0.04) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent); }
     .hero-glow { position: absolute; top: 20%; right: 10%; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(0,245,255,0.08) 0%, transparent 70%); z-index: 0; pointer-events: none; animation: pulse 6s ease-in-out infinite; }
     @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.1); opacity: 1; } }
@@ -88,8 +98,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .service-tag { display: inline-block; margin-top: 20px; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); padding: 4px 10px; border: 1px solid var(--cyan-border); border-radius: 3px; background: var(--cyan-dim); }
 
     #why { background: var(--black); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .why-left h2 { margin-bottom: 24px; }
-    .why-left p { font-size: 16px; font-weight: 300; color: #888; line-height: 1.8; }
+    .why-photo-row { display: flex; align-items: flex-start; gap: 20px; margin: 20px 0 28px; }
+    .why-photo { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--cyan-border); box-shadow: 0 0 24px rgba(0,245,255,0.15); flex-shrink: 0; }
+    .why-photo-row p { font-size: 16px; font-weight: 300; color: #888; line-height: 1.8; }
+    .why-stats { display: flex; gap: 32px; margin-top: 4px; }
+    .why-stat { display: flex; flex-direction: column; gap: 4px; }
+    .stat-num { font-size: 32px; font-weight: 800; color: var(--cyan); letter-spacing: -0.02em; line-height: 1; }
+    .stat-label { font-size: 11px; font-weight: 500; color: #666; letter-spacing: 0.08em; text-transform: uppercase; }
     .why-right { display: flex; flex-direction: column; gap: 2px; }
     .why-item { display: flex; align-items: flex-start; gap: 20px; padding: 28px 32px; background: var(--dark3); border-left: 2px solid transparent; transition: border-color 0.3s, background 0.3s; }
     .why-item:hover { border-color: var(--cyan); background: #0a1515; }
@@ -136,6 +151,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       /* HERO */
       #hero { padding: 110px 20px 60px; min-height: auto; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-photo-wrap { order: -1; }
+      .hero-photo { width: 220px; height: 220px; }
+      .hero-photo-ring { inset: -12px; }
+      .hero-photo-ring2 { inset: -24px; }
+      .hero-photo-badge { bottom: 12px; right: -8px; }
       .hero-content { max-width: 100%; }
       h1 { font-size: clamp(36px, 10vw, 56px); }
       .hero-sub { font-size: 15px; }
@@ -156,6 +177,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       /* WHY */
       #why { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px; }
+      .why-photo-row { flex-direction: row; }
+      .why-stats { gap: 20px; }
+      .stat-num { font-size: 24px; }
       .why-item { padding: 20px 20px; }
       .why-item h4 { font-size: 15px; }
 
@@ -608,7 +632,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <ul class="nav-links">
     <li><a href="#services">Palvelut</a></li>
     <li><a href="#why">Miksi minä</a></li>
-    <li><a href="#process">Prosessi</a></li>
     <li><a href="#referenssit">Referenssit</a></li>
     <li><a href="#contact" class="nav-cta">Ota yhteyttä</a></li>
     <li><a href="markkinointidata_EN.html" class="lang-switcher">🇬🇧 EN</a></li>
@@ -620,7 +643,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" onclick="closeMobile()">Palvelut</a>
   <a href="#why" onclick="closeMobile()">Miksi minä</a>
-  <a href="#process" onclick="closeMobile()">Prosessi</a>
   <a href="#referenssit" onclick="closeMobile()">Referenssit</a>
   <a href="#contact" class="nav-cta" onclick="closeMobile()">Ota yhteyttä</a>
   <a href="markkinointidata_EN.html" class="lang-switcher">🇬🇧 EN</a>
@@ -630,14 +652,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-badge">Markkinoinnin data &amp; teknologia</div>
-    <h1>Ole muita edellä<br/><span class="accent">markkinoinnissa.</span></h1>
-    <p class="hero-sub">Autan yrityksiä rakentamaan markkinoinnista mitattavaa, tehokasta ja älykästä — yhdistämällä analytiikan, markkinointiteknologian ja tekoälyn.</p>
-    <div class="hero-actions">
-      <a href="#services" class="btn-primary">Tutustu palveluihin</a>
-      <a href="#contact" class="btn-ghost">Ota yhteyttä <span class="arrow">↓</span></a>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Freelance-markkinointikonsultti · Remote</div>
+      <h1>Ole muita edellä<br/><span class="accent">markkinoinnissa.</span></h1>
+      <p class="hero-sub">Tarvitsetko kokeneen markkinointikonsultin projektiin, kasvustrategiaan tai datan hyödyntämiseen? Konsultoin markkinoinnissa, datassa, kasvussa ja strategiassa — käytännönläheisellä otteella.</p>
+      <div class="hero-actions">
+        <a href="https://www.linkedin.com/in/heta-kudanowski/" target="_blank" rel="noopener" class="btn-primary">🔗 Verkostoidu LinkedInissä</a>
+        <a href="#contact" class="btn-ghost">Ota yhteyttä <span class="arrow">↓</span></a>
+      </div>
     </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-ring2"></div>
+      <div class="hero-photo-ring"></div>
+      <img src="heta-photo.jpeg" alt="Heta Kudanowski" class="hero-photo"/>
+      <div class="hero-photo-badge">
+        <span class="dot"></span>
+        <span>Avoin projekteille</span>
+      </div>
     </div>
   </div>
 </section>
@@ -645,44 +677,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- SERVICES -->
 <section id="services">
   <div class="services-header reveal">
-    <div class="section-label">Palvelut</div>
-    <h2 class="section-title">Markkinointi ei ole enää<br/><span class="accent">arvailua.</span></h2>
-    <p>Se on dataa, teknologiaa ja oikeita päätöksiä oikeaan aikaan. Tarjoan asiantuntijapalveluita, jotka auttavat sinua ymmärtämään asiakkaasi paremmin, optimoimaan markkinointiasi jatkuvasti, hyödyntämään tekoälyä käytännössä ja rakentamaan kestävää kilpailuetua.</p>
+    <div class="section-label">Osaamiseni</div>
+    <h2 class="section-title">Missä voin<br/><span class="accent">auttaa sinua.</span></h2>
+    <p>Olen työskennellyt markkinoinnin, datan ja kasvun parissa eri toimialoilla. Tässä on se, mitä osaan parhaiten — ja missä pystyn tuomaan sinulle eniten arvoa.</p>
   </div>
   <div class="services-grid">
     <div class="service-card reveal">
       <span class="service-num">01</span>
-      <div class="service-icon">📊</div>
+      <div class="service-icon">◈</div>
       <h3>Markkinoinnin data &amp; analytiikka</h3>
-      <p>Tee parempia päätöksiä datan avulla. Autan sinua keräämään, yhdistämään ja tulkitsemaan dataa niin, että se oikeasti ohjaa liiketoimintaa. Datan keruun suunnittelu · Dashboardit ja raportointi · Asiakaspolkujen analyysi · Markkinoinnin tehokkuuden optimointi</p>
+      <p>Datan avulla markkinoinnista tulee mitattavaa — ei arvailua. Rakennan analytiikkainfrastruktuurin, tulkitsen dataa ja muutan sen toimenpiteiksi, jotka oikeasti kasvattavat liiketoimintaa. GA4 &amp; konversioseuranta · Dashboardit &amp; raportointi · Asiakaspolkuanalyysit · Markkinoinnin ROI</p>
       <span class="service-tag">Analytiikka</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">02</span>
-      <div class="service-icon">🤖</div>
-      <h3>Markkinointi ja AI</h3>
-      <p>Tekoäly ei ole tulevaisuutta – se on etumatka nyt. Autan ottamaan tekoälyn käyttöön markkinoinnissa konkreettisesti, liiketoimintalähtöisesti ja vastuullisesti. AI:n käyttökohteiden tunnistaminen · Automaatio ja personointi · Sisällöntuotannon tehostaminen · AI-strategia markkinointiin</p>
-      <span class="service-tag">Tekoäly</span>
+      <div class="service-icon">▲</div>
+      <h3>Kasvu &amp; strategia</h3>
+      <p>Markkinointi ilman strategiaa on vain kuluerä. Autan rakentamaan selkeän kasvusuunnitelman — mitä tehdään, missä kanavissa, millä mittareilla ja miksi. Kasvustrategia · Kanavastrategia · Markkinointisuunnitelma · KPI-mittaristo · Kilpailija-analyysi</p>
+      <span class="service-tag">Strategia</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">03</span>
-      <div class="service-icon">📊</div>
+      <div class="service-icon">⬡</div>
       <h3>Google Stack</h3>
-      <p>Koko Google-ekosysteemi hallinnassa — yhdellä kumppanilla. Maksettu mainonta, orgaaninen näkyvyys, mittaaminen ja raportointi saman katon alla. Google Ads · GA4 &amp; GTM · Search Console &amp; SEO · Looker Studio · BigQuery · Konversioseuranta</p>
+      <p>Hallitsen koko Googlen markkinointikokonaisuuden. Google Ads, orgaaninen näkyvyys, mittaaminen ja raportointi saman katon alla. Google Ads · GA4 &amp; GTM · Search Console &amp; SEO · Looker Studio · BigQuery</p>
       <span class="service-tag">Google Stack</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">04</span>
-      <div class="service-icon">⚙️</div>
-      <h3>Markkinointiteknologian konsultointi</h3>
-      <p>Oikeat työkalut. Oikein käytettynä. Autan valitsemaan ja hyödyntämään markkinointiteknologiat, jotka tukevat kasvua – ei monimutkaisuutta. MarTech-stackin suunnittelu · Työkalujen käyttöönotto · Integraatiot ja datavirrat · Prosessien tehostaminen</p>
-      <span class="service-tag">Automaatio</span>
+      <div class="service-icon">◇</div>
+      <h3>Markkinoinnin projektinjohto</h3>
+      <p>Vien markkinointiprojektit maaliin — aikataulussa, budjetissa ja tavoitteiden mukaisesti. Olen tottunut työskentelemään sekä asiakkaan että agentuurin puolella. Projektien suunnittelu &amp; johtaminen · Toimittajayhteistyö · Kampanjatuotanto · Tiimin koordinointi</p>
+      <span class="service-tag">Projektinjohto</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">05</span>
-      <div class="service-icon">🍪</div>
-      <h3>Raportointi &amp; jatkuva kehitys</h3>
-      <p>Markkinoinnin data ei ole vain raportteja – se on päätöksiä. Rakennan selkeät näkymät siihen, mikä toimii ja mitä kannattaa tehdä seuraavaksi. Reaaliaikaiset dashboardit · KPI-mittaristo · Jatkuva optimointi · Liiketoimintalähtöinen analyysi</p>
+      <div class="service-icon">◎</div>
+      <h3>Raportointi &amp; optimointi</h3>
+      <p>Rakennan selkeät näkymät siihen, mikä toimii ja mitä kannattaa tehdä seuraavaksi — johdon tasolla ymmärrettävästi. En vain raportoi, vaan tulkitsen ja ehdotan konkreettisia toimenpiteitä. Looker Studio -raportit · KPI-mittaristot · Kuukausiraportointi · Jatkuva optimointi</p>
       <span class="service-tag">Optimointi</span>
     </div>
   </div>
@@ -691,71 +723,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- WHY US -->
 <section id="why">
   <div class="why-left reveal">
-    <div class="section-label">Miksi Markkinointidata</div>
-    <h2 class="section-title">Miksi<br/><span class="accent">valita minut?</span></h2>
-    <p>Kokonaisvaltainen osaaminen markkinoinnin strategisesta suunnittelusta käytännön data- ja analytikkaratkaisuihin. Käytännönläheisyys ja tuloksiin keskittyminen – kaikki samassa paketissa.</p>
+    <div class="section-label">Minusta</div>
+    <h2 class="section-title">Heta<br/><span class="accent">Kudanowski.</span></h2>
+    <div class="why-photo-row">
+      <img src="heta-photo.jpeg" alt="Heta Kudanowski" class="why-photo"/>
+      <p>Freelance-markkinointikonsultti, joka yhdistää datan, strategian ja käytännön tekemisen. Olen intohimoinen markkinoinnista ja siitä, miten data ohjaa oikeita päätöksiä.</p>
+    </div>
+    <div class="why-stats">
+      <div class="why-stat"><span class="stat-num">10+</span><span class="stat-label">vuotta kokemusta</span></div>
+      <div class="why-stat"><span class="stat-label" style="font-size:13px;color:#aaa;text-transform:none;letter-spacing:0;">Markkinointi &amp;<br>projektinhallinta</span></div>
+    </div>
   </div>
   <div class="why-right">
     <div class="why-item reveal">
       <span class="why-number">01</span>
       <div>
-        <h4>Kokonaisvaltainen osaaminen markkinoinnin data- ja analytiikkaratkaisuista</h4>
-        <p>Data, teknologia ja AI samassa paketissa – ei tarvetta usealle eri toimijalle.</p>
+        <h4>Laaja kokemus eri rooleista</h4>
+        <p>Olen työskennellyt sekä asiakkaan että agentuurin puolella — ymmärrän molemmat näkökulmat.</p>
       </div>
     </div>
     <div class="why-item reveal">
       <span class="why-number">02</span>
       <div>
         <h4>Käytännönläheisyys</h4>
-        <p>Ei pelkkää konsultointia, vaan konkreettista toteutusta. Kaikki markkinointitekeminen tähtää kasvuun.</p>
+        <p>Ei pelkkää konsultointia, vaan konkreettisia toteutuksia. Kaikki tekeminen tähtää kasvuun.</p>
       </div>
     </div>
     <div class="why-item reveal">
       <span class="why-number">03</span>
       <div>
-        <h4>Tuloksiin keskittyminen</h4>
-        <p>Vain Mitattavaa kasvua. Tiedät aina mitä tehdään ja miksi, pohjautuen dataan ei arvailuun.</p>
+        <h4>Data ohjaa kaikkea</h4>
+        <p>En tee päätöksiä mutuun — teen ne datan pohjalta. Mittaan, analysoin ja optimoin jatkuvasti.</p>
       </div>
     </div>
-    <div class="why-item reveal">
+    <div class="why-item reveal" style="background: var(--dark3); border-left: 2px solid var(--cyan)">
       <span class="why-number">04</span>
-      <div>
-        <h4>Moderni lähestymistapa</h4>
-        <p>Hyödynnät uusimmat markkinointityökalut ja teknologiat ennen kilpailijoita – pysyt kehityksen kärjessä.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <h4>Verkostoidu kanssani</h4>
+        <p>Jaan markkinoinnin ja datan näkemyksiä säännöllisesti LinkedInissä. Seuraa mukaan!</p>
+        <a href="https://www.linkedin.com/in/heta-kudanowski/" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;font-size:12px;">🔗 Seuraa LinkedInissä ↗</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section id="process">
-  <div class="reveal" style="max-width:500px">
-    <div class="section-label">Miten toimin</div>
-    <h2 class="section-title">Minun <span class="accent">prosessini.</span></h2>
-  </div>
-  <div class="process-grid">
-    <div class="process-step reveal">
-      <div class="step-dot">01</div>
-      <h4>Auditointi &amp; kartoitus</h4>
-      <p>Aloitan kartoittamalla nykyisen markkinointiteknologiapinosi, datavirrat ja seurannan puutteet.</p>
-    </div>
-    <div class="process-step reveal">
-      <div class="step-dot">02</div>
-      <h4>Digimarkkinoinnin strategia &amp; suunnitelma</h4>
-      <p>Suunnittelen räätälöidyn tiekartan selkeine prioriteetteineen, aikatauluineen ja mitattavine tavoitteineen.</p>
-    </div>
-    <div class="process-step reveal">
-      <div class="step-dot">03</div>
-      <h4>Markkinointiteknologioiden ja analytiikan toteutus</h4>
-      <p>Rakennan ja konfiguroin kaiken — seurannan, dashboardit, automaatiot ja integraatiot.</p>
-    </div>
-    <div class="process-step reveal">
-      <div class="step-dot">04</div>
-      <h4>Markkinoinnin optimointi &amp; skaalaus</h4>
-      <p>Säännöllinen seuranta ja prosessien iterointi varmistavat markkinointibudjetin parhaan tuoton ja pitkäaikaisen etumatkan markkinalla.</p>
-    </div>
-  </div>
-</section>
+
 
 <!-- CTA -->
 
@@ -801,8 +813,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="cta-glow"></div>
   <div class="cta-content reveal">
     <div class="section-label">Ota yhteyttä</div>
-    <h2>Älykkäämpää markkinointia,<br/><span class="accent">kovempaa kasvua.</span></h2>
-    <p>Markkinointi kehittyy nopeasti – voittajat ovat niitä, jotka ottavat teknologian käyttöön ajoissa. Haluatko tietää, missä suurin kasvupotentiaalisi on? Lähetä viesti tai varaa aika – katsotaan yhdessä, miten saat markkinoinnistasi enemmän irti.</p>
+    <h2>Pysy kehityksessä mukana<br/><span class="accent">— ja askeleen edellä.</span></h2>
+    <p>Tarvitsetko kokeneen markkinointikonsultin projektiin, kasvustrategiaan tai datan hyödyntämiseen? Ota yhteyttä — katsotaan yhdessä mikä sopii juuri teidän tilanteeseenne.</p>
     <div class="cta-actions">
       <button type="button" class="btn-primary open-modal">✉️ Lähetä viesti</button>
       
@@ -851,12 +863,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <button type="submit" class="btn-primary form-submit" id="formSubmit">&#x2709;&#xFE0F; Lähetä viesti</button>
       <p class="form-feedback success" id="formSuccess">&#x2713; Viesti lähetetty! Otan sinuun pian yhteyttä.</p>
-      <p class="form-feedback error" id="formError">Jotain meni pieleen. Lähetä viesti suoraan: heta@markkinointidata.fi</p>
+      <p class="form-feedback error" id="formError">Jotain meni pieleen. Lähetä viesti suoraan: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f49c918095b49995869f9f9d9a9b9d9a809d90958095da929d">[email&#160;protected]</a></p>
     </form>
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => {
       if (el.isIntersecting) { el.target.classList.add('visible'); observer.unobserve(el.target); }
