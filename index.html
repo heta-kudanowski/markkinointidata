@@ -96,6 +96,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .service-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; color: var(--white); }
     .service-card > p { font-size: 13.5px; font-weight: 300; color: #777; line-height: 1.75; }
     .service-tag { display: inline-block; margin-top: 20px; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); padding: 4px 10px; border: 1px solid var(--cyan-border); border-radius: 3px; background: var(--cyan-dim); }
+    .service-card--featured { border-top-color: var(--cyan); }
     .tool-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
     .tool-chip { font-size: 11px; font-weight: 500; color: #aaa; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 3px 8px; line-height: 1.4; }
 
@@ -176,6 +177,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .services-header p { font-size: 15px; }
       .services-grid { grid-template-columns: 1fr; gap: 2px; }
       .service-card { padding: 30px 24px; }
+      .service-card--featured > div > div:first-child + div { margin-top: 24px; }
+      .service-card--featured [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
       .service-card h3 { font-size: 17px; }
 
       /* WHY */
@@ -684,51 +687,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title">Missä voin<br/><span class="accent">auttaa sinua.</span></h2>
     <p>Olen työskennellyt markkinoinnin, datan ja kasvun parissa eri toimialoilla. Tässä on se, mitä osaan parhaiten. Missä pystyn tuomaan sinulle eniten arvoa.</p>
   </div>
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <span class="service-num">01</span>
-      <div class="service-icon">◈</div>
-      <h3>Markkinoinnin data &amp; analytiikka</h3>
-      <p>Datan avulla markkinoinnista tulee mitattavaa, ei arvailua. Rakennan koko analytiikkainfrastruktuurin alusta loppuun: seurannasta raportointiin ja jatkuvaan optimointiin.</p>
-      <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
-        <div style="font-size:12px;font-weight:600;color:var(--cyan);letter-spacing:0.08em;text-transform:uppercase;">Työkalut &amp; teknologiat</div>
-        <div style="font-size:13px;color:#888;line-height:1.8;">
-          <strong style="color:#bbb;font-size:12px;">Seuranta &amp; tagit:</strong><div class="tool-chips"><span class="tool-chip">Google Tag Manager</span><span class="tool-chip">Server-side GTM</span><span class="tool-chip">Tracklution</span><span class="tool-chip">Microsoft Clarity</span><span class="tool-chip">Pikselit</span><span class="tool-chip">Konversioasennus</span></div></div>
-        <div style="font-size:13px;color:#888;line-height:1.8;">
-          <strong style="color:#bbb;font-size:12px;">Evästeet &amp; consent:</strong><div class="tool-chips"><span class="tool-chip">Cookiebot</span><span class="tool-chip">CookieYes</span><span class="tool-chip">Cookiescript</span><span class="tool-chip">CMP-asennus</span><span class="tool-chip">GDPR-yhteensopivuus</span></div></div>
-        <div style="font-size:13px;color:#888;line-height:1.8;">
-          <strong style="color:#bbb;font-size:12px;">Analytiikka:</strong><div class="tool-chips"><span class="tool-chip">GA4</span><span class="tool-chip">BigQuery</span><span class="tool-chip">Coupler.io</span></div></div>
-        <div style="font-size:13px;color:#888;line-height:1.8;">
-          <strong style="color:#bbb;font-size:12px;">Raportointi:</strong><div class="tool-chips"><span class="tool-chip">Looker Studio / Data Studio</span><span class="tool-chip">Databox</span><span class="tool-chip">Whatagraph</span></div></div>
+  <!-- Card 01: full width featured -->
+  <div class="service-card service-card--featured reveal" style="margin-bottom:16px;">
+    <span class="service-num">01</span>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+      <div>
+        <div class="service-icon">◈</div>
+        <h3>Markkinoinnin data &amp; analytiikka</h3>
+        <p>Datan avulla markkinoinnista tulee mitattavaa, ei arvailua. Rakennan koko analytiikkainfrastruktuurin alusta loppuun: seurannasta raportointiin ja jatkuvaan optimointiin.</p>
       </div>
-      <span class="service-tag">Analytiikka</span>
+      <div style="margin-top:4px;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;">Työkalut &amp; teknologiat</div>
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#bbb;margin-bottom:5px;">Seuranta &amp; tagit</div>
+          <div class="tool-chips"><span class="tool-chip">Google Tag Manager</span><span class="tool-chip">Server-side GTM</span><span class="tool-chip">Tracklution</span><span class="tool-chip">Microsoft Clarity</span><span class="tool-chip">Pikselit</span><span class="tool-chip">Konversioasennus</span></div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#bbb;margin-bottom:5px;">Evästeet &amp; consent</div>
+          <div class="tool-chips"><span class="tool-chip">Cookiebot</span><span class="tool-chip">CookieYes</span><span class="tool-chip">Cookiescript</span><span class="tool-chip">CMP-asennus</span><span class="tool-chip">GDPR</span></div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#bbb;margin-bottom:5px;">Analytiikka</div>
+          <div class="tool-chips"><span class="tool-chip">GA4</span><span class="tool-chip">BigQuery</span><span class="tool-chip">Coupler.io</span></div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#bbb;margin-bottom:5px;">Raportointi</div>
+          <div class="tool-chips"><span class="tool-chip">Looker Studio</span><span class="tool-chip">Databox</span><span class="tool-chip">Whatagraph</span></div>
+        </div>
+      </div>
     </div>
+    <span class="service-tag" style="margin-top:24px;">Analytiikka</span>
+  </div>
+  <!-- Cards 02–05: smaller 2x2 grid -->
+  <div class="services-grid">
     <div class="service-card reveal">
       <span class="service-num">02</span>
       <div class="service-icon">▲</div>
       <h3>Kasvu &amp; strategia</h3>
-      <p>Markkinointi ilman strategiaa on vain kuluerä. Autan rakentamaan selkeän kasvusuunnitelman: mitä tehdään, missä kanavissa, millä mittareilla ja miksi. Kasvustrategia, Kanavastrategia, Markkinointisuunnitelma, KPI-mittaristo, Kilpailija-analyysi</p>
+      <p style="font-size:13px;">Markkinointi ilman strategiaa on vain kuluerä. Autan rakentamaan selkeän kasvusuunnitelman: mitä tehdään, missä kanavissa, millä mittareilla ja miksi.</p>
+      <div class="tool-chips" style="margin-top:14px;"><span class="tool-chip">Kasvustrategia</span><span class="tool-chip">Kanavastrategia</span><span class="tool-chip">Markkinointisuunnitelma</span><span class="tool-chip">KPI-mittaristo</span><span class="tool-chip">Kilpailija-analyysi</span></div>
       <span class="service-tag">Strategia</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">03</span>
       <div class="service-icon">⬡</div>
       <h3>Google Stack</h3>
-      <p>Hallitsen koko Googlen markkinointikokonaisuuden. Google Ads, orgaaninen näkyvyys, mittaaminen ja raportointi saman katon alla. Google Ads, GA4 &amp; GTM, Search Console &amp; SEO, Looker Studio, BigQuery</p>
+      <p style="font-size:13px;">Hallitsen koko Googlen markkinointikokonaisuuden. Google Ads, orgaaninen näkyvyys, mittaaminen ja raportointi saman katon alla.</p>
+      <div class="tool-chips" style="margin-top:14px;"><span class="tool-chip">Google Ads</span><span class="tool-chip">GA4 &amp; GTM</span><span class="tool-chip">Search Console &amp; SEO</span><span class="tool-chip">Looker Studio</span><span class="tool-chip">BigQuery</span></div>
       <span class="service-tag">Google Stack</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">04</span>
       <div class="service-icon">◇</div>
       <h3>Markkinoinnin projektinjohto</h3>
-      <p>Vien markkinointiprojektit maaliin, aikataulussa, budjetissa ja tavoitteiden mukaisesti. Olen tottunut työskentelemään sekä asiakkaan että agentuurin puolella. Projektien suunnittelu &amp; johtaminen, Toimittajayhteistyö, Kampanjatuotanto, Tiimin koordinointi</p>
+      <p style="font-size:13px;">Vien markkinointiprojektit maaliin, aikataulussa, budjetissa ja tavoitteiden mukaisesti. Olen tottunut työskentelemään sekä asiakkaan että agentuurin puolella.</p>
+      <div class="tool-chips" style="margin-top:14px;"><span class="tool-chip">Projektien suunnittelu</span><span class="tool-chip">Toimittajayhteistyö</span><span class="tool-chip">Kampanjatuotanto</span><span class="tool-chip">Tiimin koordinointi</span></div>
       <span class="service-tag">Projektinjohto</span>
     </div>
     <div class="service-card reveal">
       <span class="service-num">05</span>
       <div class="service-icon">◎</div>
       <h3>Raportointi &amp; optimointi</h3>
-      <p>Rakennan selkeät näkymät siihen, mikä toimii ja mitä kannattaa tehdä seuraavaksi, johdon tasolla ymmärrettävästi. En vain raportoi, vaan tulkitsen ja ehdotan konkreettisia toimenpiteitä. Looker Studio -raportit, KPI-mittaristot, Kuukausiraportointi, Jatkuva optimointi</p>
+      <p style="font-size:13px;">Rakennan selkeät näkymät siihen, mikä toimii ja mitä kannattaa tehdä seuraavaksi, johdon tasolla ymmärrettävästi. En vain raportoi, vaan tulkitsen ja ehdotan toimenpiteitä.</p>
+      <div class="tool-chips" style="margin-top:14px;"><span class="tool-chip">Looker Studio</span><span class="tool-chip">KPI-mittaristot</span><span class="tool-chip">Kuukausiraportointi</span><span class="tool-chip">Jatkuva optimointi</span></div>
       <span class="service-tag">Optimointi</span>
     </div>
   </div>
