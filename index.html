@@ -53,12 +53,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 140px 80px 80px; position: relative; overflow: hidden; }
     .hero-inner { display: grid; grid-template-columns: 1fr 280px; align-items: center; gap: 60px; max-width: 1100px; width: 100%; }
     #hero-canvas { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; opacity: 0.55; }
-    .hero-photo-wrap { position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden; min-width: 0; }
-    .hero-photo-ring { position: absolute; inset: -18px; border-radius: 50%; border: 1px solid var(--cyan-border); animation: spin 20s linear infinite; }
+    .hero-photo-wrap { position: relative; display: flex; justify-content: center; align-items: center; min-width: 0; padding: 48px; }
+    .hero-photo-ring { position: absolute; inset: -14px; border-radius: 50%; border: 1px solid var(--cyan-border); animation: spin 20s linear infinite; }
     .hero-photo-ring::before { content: ''; position: absolute; top: -4px; left: 50%; width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 12px var(--cyan); }
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    .hero-photo-ring2 { position: absolute; inset: -36px; border-radius: 50%; border: 1px solid rgba(0,245,255,0.1); animation: spin 35s linear infinite reverse; }
-    .hero-photo { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--cyan-border); box-shadow: 0 0 60px rgba(0,245,255,0.18), 0 0 120px rgba(0,245,255,0.07); position: relative; z-index: 1; }
+    .hero-photo-ring2 { position: absolute; inset: -28px; border-radius: 50%; border: 1px solid rgba(0,245,255,0.1); animation: spin 35s linear infinite reverse; }
+    .hero-photo { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--cyan-border); box-shadow: 0 0 60px rgba(0,245,255,0.18), 0 0 120px rgba(0,245,255,0.07); position: relative; z-index: 1; }
     .hero-photo-badge { position: absolute; bottom: 32px; right: 16px; z-index: 2; background: var(--dark3); border: 1px solid var(--cyan-border); border-radius: 8px; padding: 10px 16px; display: flex; align-items: center; gap: 10px; backdrop-filter: blur(10px); }
     .hero-photo-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #00e676; box-shadow: 0 0 8px #00e676; flex-shrink: 0; animation: blink 2s ease-in-out infinite; }
     .hero-photo-badge span { font-size: 12px; font-weight: 600; color: var(--white); white-space: nowrap; }
@@ -157,9 +157,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       #hero { padding: 110px 20px 60px; min-height: auto; }
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
       .hero-photo-wrap { order: -1; }
-      .hero-photo { width: 220px; height: 220px; }
-      .hero-photo-ring { inset: -12px; }
-      .hero-photo-ring2 { inset: -24px; }
+      .hero-photo { width: 180px; height: 180px; }
+      .hero-photo-ring { inset: -10px; }
+      .hero-photo-ring2 { inset: -20px; }
       .hero-photo-badge { bottom: 12px; right: -8px; }
       .hero-content { max-width: 100%; }
       h1 { font-size: clamp(36px, 10vw, 56px); }
