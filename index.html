@@ -50,8 +50,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-cta { padding: 10px 24px; border: 1.5px solid var(--cyan); color: var(--cyan) !important; border-radius: 4px; font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.1em !important; transition: background 0.2s, color 0.2s !important; }
     .nav-cta:hover { background: var(--cyan) !important; color: var(--black) !important; }
 
-    #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 60px 80px; position: relative; overflow: hidden; }
-    .hero-inner { display: grid; grid-template-columns: 1fr minmax(0, 280px); align-items: center; gap: 60px; }
+    #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 140px 80px 80px; position: relative; overflow: hidden; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 320px; align-items: center; gap: 80px; max-width: 1200px; width: 100%; }
+    #hero-canvas { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; opacity: 0.55; }
     .hero-photo-wrap { position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden; min-width: 0; }
     .hero-photo-ring { position: absolute; inset: -18px; border-radius: 50%; border: 1px solid var(--cyan-border); animation: spin 20s linear infinite; }
     .hero-photo-ring::before { content: ''; position: absolute; top: -4px; left: 50%; width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 12px var(--cyan); }
@@ -61,7 +62,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-photo-badge { position: absolute; bottom: 32px; right: 16px; z-index: 2; background: var(--dark3); border: 1px solid var(--cyan-border); border-radius: 8px; padding: 10px 16px; display: flex; align-items: center; gap: 10px; backdrop-filter: blur(10px); }
     .hero-photo-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #00e676; box-shadow: 0 0 8px #00e676; flex-shrink: 0; animation: blink 2s ease-in-out infinite; }
     .hero-photo-badge span { font-size: 12px; font-weight: 600; color: var(--white); white-space: nowrap; }
-    .hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(0,245,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,245,255,0.04) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent); }
     .hero-glow { position: absolute; top: 20%; right: 10%; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(0,245,255,0.08) 0%, transparent 70%); z-index: 0; pointer-events: none; animation: pulse 6s ease-in-out infinite; }
     @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.1); opacity: 1; } }
     .hero-content { position: relative; z-index: 1; max-width: 900px; }
@@ -652,12 +652,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-grid"></div>
+  <canvas id="hero-canvas"></canvas>
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge">Freelance-markkinointikonsultti · Remote</div>
-      <h1>Ole muita edellä<br/><span class="accent">markkinoinnissa.</span></h1>
+      <h1>Kokenut markkinointikonsultti<br/><span class="accent">data ja analytiikkaratkaisuihin.</span></h1>
       <p class="hero-sub">Tarvitsetko kokeneen markkinointikonsultin projektiin, kasvustrategiaan tai datan hyödyntämiseen? Konsultoin markkinoinnissa, datassa, kasvussa ja strategiassa — käytännönläheisellä otteella.</p>
       <div class="hero-actions">
         <a href="https://www.linkedin.com/in/heta-kudanowski/" target="_blank" rel="noopener" class="btn-primary">🔗 Verkostoidu LinkedInissä</a>
@@ -744,7 +744,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title">Heta<br/><span class="accent">Kudanowski.</span></h2>
     <div class="why-photo-row">
       <img src="heta-photo.jpeg" alt="Heta Kudanowski" class="why-photo"/>
-      <p>Freelance-markkinointikonsultti, joka yhdistää datan, strategian ja käytännön tekemisen. Olen intohimoinen markkinoinnista ja siitä, miten data ohjaa oikeita päätöksiä.</p>
+      <p>Freelance-markkinointikonsultti, joka yhdistää datan, strategian ja käytännön tekemisen. Olen intohimoinen oppimaan uutta markkinoinnin ja datan saralla — ja siitä, miten data ohjaa oikeita päätöksiä.</p>
     </div>
     <div class="why-stats">
       <div class="why-stat"><span class="stat-num">10+</span><span class="stat-label">vuotta kokemusta</span></div>
@@ -981,5 +981,121 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   })();
 
 </script>
+
+<script>
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const C = '#00f5ff';
+  const metrics = ['CTR','ROAS','CPC','GA4','GTM','ROI','CPA','CPM','CVR','KPI','SEO','LTV','+12%','+8.4%','94%','0.8x','3.2%','GA4','BigQuery','GTM','Meta','Ads','↑23%','↓CPA','x4.1'];
+
+  let W, H, particles, nodes, edges;
+
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+    init();
+  }
+
+  function init() {
+    // Floating metric particles
+    particles = Array.from({length: 55}, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: -0.15 - Math.random() * 0.25,
+      label: metrics[Math.floor(Math.random() * metrics.length)],
+      alpha: 0.08 + Math.random() * 0.18,
+      size: 9 + Math.floor(Math.random() * 6)
+    }));
+
+    // Network nodes
+    nodes = Array.from({length: 28}, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.18,
+      vy: (Math.random() - 0.5) * 0.18,
+      r: 1.5 + Math.random() * 2
+    }));
+
+    // Data stream columns
+    edges = Array.from({length: 12}, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      speed: 0.4 + Math.random() * 0.8,
+      chars: Array.from({length: 8}, () => Math.random() > 0.5 ? '1' : '0'),
+      alpha: 0.04 + Math.random() * 0.08
+    }));
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Grid
+    ctx.strokeStyle = 'rgba(0,245,255,0.03)';
+    ctx.lineWidth = 1;
+    for (let x = 0; x < W; x += 70) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for (let y = 0; y < H; y += 70) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+
+    // Network edges
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i+1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const d = Math.sqrt(dx*dx + dy*dy);
+        if (d < 160) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(0,245,255,${0.06 * (1 - d/160)})`;
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Network nodes
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(0,245,255,0.25)';
+      ctx.fill();
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+    });
+
+    // Floating metrics
+    particles.forEach(p => {
+      ctx.font = `600 ${p.size}px 'Poppins', monospace`;
+      ctx.fillStyle = `rgba(0,245,255,${p.alpha})`;
+      ctx.fillText(p.label, p.x, p.y);
+      p.x += p.vx; p.y += p.vy;
+      if (p.y < -20) { p.y = H + 10; p.x = Math.random() * W; }
+      if (p.x < -40) p.x = W + 10;
+      if (p.x > W + 40) p.x = -10;
+    });
+
+    // Binary streams
+    edges.forEach(e => {
+      e.chars.forEach((c, i) => {
+        ctx.font = '10px monospace';
+        ctx.fillStyle = `rgba(0,245,255,${e.alpha * (1 - i/e.chars.length)})`;
+        ctx.fillText(c, e.x, e.y + i * 14);
+      });
+      e.y -= e.speed;
+      if (e.y < -e.chars.length * 14) { e.y = H + 20; e.x = Math.random() * W; }
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+</script>
+
 </body>
 </html>
