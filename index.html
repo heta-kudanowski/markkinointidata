@@ -625,10 +625,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <style>
     /* ══════════════════════════════════════════
-       TERMINAL / GIRLY-CODER REDESIGN OVERRIDES
+       GIRLY-CODER REDESIGN OVERRIDES
        ══════════════════════════════════════════ */
     :root {
-      --mono: 'JetBrains Mono', 'Courier New', monospace;
       --pink: #f65ef9;
       --blue: #0df5ff;
     }
@@ -664,26 +663,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 0 40px rgba(246,94,249,0.18), 0 0 80px rgba(246,94,249,0.06) !important;
     }
 
-    /* ── Hero badge: monospace terminal style ── */
+    /* ── Hero badge ── */
     .hero-badge {
-      font-family: var(--mono) !important;
+      font-family: 'Poppins', sans-serif !important;
       font-size: 11px !important;
-      letter-spacing: 0.05em !important;
-      text-transform: lowercase !important;
+      letter-spacing: 0.12em !important;
+      text-transform: uppercase !important;
       background: rgba(246,94,249,0.06) !important;
       border: 1px solid rgba(246,94,249,0.3) !important;
-      border-radius: 3px !important;
+      border-radius: 100px !important;
     }
     .hero-badge::before {
-      content: '> ';
-      color: #f65ef9;
-      opacity: 0.8;
-      background: none !important;
-      width: auto !important;
-      height: auto !important;
-      border-radius: 0 !important;
-      animation: none !important;
-      font-family: var(--mono);
+      content: '';
+      width: 6px !important;
+      height: 6px !important;
+      border-radius: 50% !important;
+      background: linear-gradient(135deg, #0df5ff, #f65ef9) !important;
+      flex-shrink: 0;
+      animation: blink 1.5s ease-in-out infinite !important;
     }
 
     /* ── H1 blinking cursor ── */
@@ -702,40 +699,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       50%       { opacity: 0; }
     }
 
-    /* ── Section labels: terminal comment style ── */
+    /* ── Section labels ── */
     .section-label {
-      font-family: var(--mono) !important;
+      font-family: 'Poppins', sans-serif !important;
       font-size: 11px !important;
-      letter-spacing: 0.04em !important;
-      text-transform: lowercase !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.2em !important;
+      text-transform: uppercase !important;
       color: #0df5ff !important;
       -webkit-text-fill-color: #0df5ff !important;
       background: none !important;
     }
-    .section-label::before { content: '// '; opacity: 0.5; }
 
     /* ── Why-section numbers ── */
     .why-number {
-      font-family: var(--mono) !important;
+      font-family: 'Poppins', sans-serif !important;
       color: #f65ef9 !important;
       -webkit-text-fill-color: #f65ef9 !important;
       background: none !important;
     }
     .stat-num {
-      font-family: var(--mono) !important;
       color: #0df5ff !important;
     }
 
-    /* ── Buttons: clean border, no gradients, no emoji ── */
+    /* ── Buttons: clean border, no gradients ── */
     .btn-primary {
       background: transparent !important;
       color: #f65ef9 !important;
       border: 1.5px solid #f65ef9 !important;
-      font-family: var(--mono) !important;
-      font-size: 11px !important;
+      font-family: 'Poppins', sans-serif !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
       letter-spacing: 0.08em !important;
       text-transform: uppercase !important;
-      border-radius: 2px !important;
+      border-radius: 4px !important;
       box-shadow: none !important;
       transition: background 0.2s, color 0.2s !important;
     }
@@ -777,13 +774,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-top: 1px solid rgba(255,255,255,0.06);
     }
     .service-item-num {
-      font-family: var(--mono);
+      font-family: 'Poppins', sans-serif;
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       color: #0df5ff;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
       padding-top: 4px;
-      opacity: 0.7;
+      opacity: 0.6;
     }
     .service-item h3 {
       font-size: 20px;
@@ -800,13 +797,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-bottom: 20px;
     }
 
-    /* ── Tool chips: lighter, less AI-box ── */
+    /* ── Tool chips: brand gradient style ── */
     .tool-chip {
-      background: rgba(13,245,255,0.05) !important;
-      border-color: rgba(13,245,255,0.15) !important;
-      color: #aaa !important;
-      font-family: var(--mono) !important;
-      font-size: 10px !important;
+      font-family: 'Poppins', sans-serif !important;
+      font-size: 11px !important;
+      font-weight: 500 !important;
+      color: #e0aaff !important;
+      background: rgba(168,85,247,0.08) !important;
+      border: 1px solid rgba(168,85,247,0.25) !important;
+      border-radius: 100px !important;
+      padding: 4px 12px !important;
+      line-height: 1.5 !important;
+      transition: background 0.2s, border-color 0.2s !important;
+    }
+    .tool-chip:hover {
+      background: rgba(246,94,249,0.12) !important;
+      border-color: rgba(246,94,249,0.4) !important;
+      color: #f9d0ff !important;
+    }
+
+    /* ── Chip category sublabels ── */
+    .chip-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(246,94,249,0.45);
+      margin-bottom: 8px;
     }
 
     /* ── Why items: remove heavy box ── */
@@ -910,11 +928,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <h3>Markkinoinnin data &amp; analytiikka</h3>
         <p>Datan avulla markkinoinnista tulee mitattavaa, ei arvailua. Rakennan koko analytiikkainfrastruktuurin alusta loppuun: seurannasta raportointiin ja jatkuvaan optimointiin.</p>
-        <div style="margin-bottom:8px;font-size:10px;font-family:'JetBrains Mono',monospace;color:#555;letter-spacing:0.05em;text-transform:uppercase;">seuranta &amp; tagit</div>
-        <div class="tool-chips" style="margin-bottom:12px;"><span class="tool-chip">Google Tag Manager</span><span class="tool-chip">Server-side GTM</span><span class="tool-chip">Microsoft Clarity</span><span class="tool-chip">Pikselit</span><span class="tool-chip">Konversioasennus</span></div>
-        <div style="margin-bottom:8px;font-size:10px;font-family:'JetBrains Mono',monospace;color:#555;letter-spacing:0.05em;text-transform:uppercase;">evästeet &amp; consent</div>
-        <div class="tool-chips" style="margin-bottom:12px;"><span class="tool-chip">Cookiebot</span><span class="tool-chip">CookieYes</span><span class="tool-chip">Cookiescript</span><span class="tool-chip">CMP-asennus</span><span class="tool-chip">GDPR</span></div>
-        <div style="margin-bottom:8px;font-size:10px;font-family:'JetBrains Mono',monospace;color:#555;letter-spacing:0.05em;text-transform:uppercase;">analytiikka &amp; raportointi</div>
+        <div class="chip-label">Seuranta &amp; tagit</div>
+        <div class="tool-chips" style="margin-bottom:16px;"><span class="tool-chip">Google Tag Manager</span><span class="tool-chip">Server-side GTM</span><span class="tool-chip">Microsoft Clarity</span><span class="tool-chip">Pikselit</span><span class="tool-chip">Konversioasennus</span></div>
+        <div class="chip-label">Evästeet &amp; consent</div>
+        <div class="tool-chips" style="margin-bottom:16px;"><span class="tool-chip">Cookiebot</span><span class="tool-chip">CookieYes</span><span class="tool-chip">Cookiescript</span><span class="tool-chip">CMP-asennus</span><span class="tool-chip">GDPR</span></div>
+        <div class="chip-label">Analytiikka &amp; raportointi</div>
         <div class="tool-chips"><span class="tool-chip">GA4</span><span class="tool-chip">BigQuery</span><span class="tool-chip">Coupler.io</span><span class="tool-chip">Looker Studio</span><span class="tool-chip">Databox</span><span class="tool-chip">Whatagraph</span></div>
       </div>
     </div>
