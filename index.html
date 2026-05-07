@@ -871,24 +871,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       opacity: 0.9;
       transform: translateY(-1px);
     }
-    /* shimmer sweep */
-    .btn-cta::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -80%;
-      width: 45%;
-      height: 200%;
-      background: rgba(255,255,255,0.3);
-      transform: skewX(-20deg);
-      animation: btn-shimmer 2.8s ease-in-out infinite;
-    }
-    @keyframes btn-shimmer {
-      0%   { left: -80%; opacity: 0; }
-      15%  { opacity: 1; }
-      85%  { opacity: 1; }
-      100% { left: 160%; opacity: 0; }
-    }
 
     /* ── btn-primary: more visible (subtle fill) ── */
     .btn-primary {
