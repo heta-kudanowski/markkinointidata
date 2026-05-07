@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <title>Markkinointidata | Heta Kudanowski – Markkinointikonsultti</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="shortcut icon" href="favicon.svg"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -623,6 +623,222 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
   </style>
 
+  <style>
+    /* ══════════════════════════════════════════
+       TERMINAL / GIRLY-CODER REDESIGN OVERRIDES
+       ══════════════════════════════════════════ */
+    :root {
+      --mono: 'JetBrains Mono', 'Courier New', monospace;
+      --pink: #f65ef9;
+      --blue: #0df5ff;
+    }
+
+    /* ── Remove AI-looking glow elements ── */
+    #hero-canvas      { display: none !important; }
+    .hero-glow        { display: none !important; }
+    .hero-photo-ring  { display: none !important; }
+    .hero-photo-ring2 { display: none !important; }
+
+    /* ── Hero subtle grid background (CSS only) ── */
+    #hero {
+      background: var(--black);
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(246,94,249,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13,245,255,0.04) 1px, transparent 1px);
+      background-size: 52px 52px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ── Photo: no rings, clean pink border ── */
+    .hero-photo-wrap {
+      padding: 16px !important;
+    }
+    .hero-photo {
+      border: 2px solid rgba(246,94,249,0.5) !important;
+      box-shadow: 0 0 40px rgba(246,94,249,0.18), 0 0 80px rgba(246,94,249,0.06) !important;
+    }
+
+    /* ── Hero badge: monospace terminal style ── */
+    .hero-badge {
+      font-family: var(--mono) !important;
+      font-size: 11px !important;
+      letter-spacing: 0.05em !important;
+      text-transform: lowercase !important;
+      background: rgba(246,94,249,0.06) !important;
+      border: 1px solid rgba(246,94,249,0.3) !important;
+      border-radius: 3px !important;
+    }
+    .hero-badge::before {
+      content: '> ';
+      color: #f65ef9;
+      opacity: 0.8;
+      background: none !important;
+      width: auto !important;
+      height: auto !important;
+      border-radius: 0 !important;
+      animation: none !important;
+      font-family: var(--mono);
+    }
+
+    /* ── H1 blinking cursor ── */
+    .cursor-blink {
+      display: inline-block;
+      width: 3px;
+      height: 0.85em;
+      background: #f65ef9;
+      margin-left: 6px;
+      vertical-align: middle;
+      border-radius: 1px;
+      animation: cursor-flash 1s step-end infinite;
+    }
+    @keyframes cursor-flash {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /* ── Section labels: terminal comment style ── */
+    .section-label {
+      font-family: var(--mono) !important;
+      font-size: 11px !important;
+      letter-spacing: 0.04em !important;
+      text-transform: lowercase !important;
+      color: #0df5ff !important;
+      -webkit-text-fill-color: #0df5ff !important;
+      background: none !important;
+    }
+    .section-label::before { content: '// '; opacity: 0.5; }
+
+    /* ── Why-section numbers ── */
+    .why-number {
+      font-family: var(--mono) !important;
+      color: #f65ef9 !important;
+      -webkit-text-fill-color: #f65ef9 !important;
+      background: none !important;
+    }
+    .stat-num {
+      font-family: var(--mono) !important;
+      color: #0df5ff !important;
+    }
+
+    /* ── Buttons: clean border, no gradients, no emoji ── */
+    .btn-primary {
+      background: transparent !important;
+      color: #f65ef9 !important;
+      border: 1.5px solid #f65ef9 !important;
+      font-family: var(--mono) !important;
+      font-size: 11px !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase !important;
+      border-radius: 2px !important;
+      box-shadow: none !important;
+      transition: background 0.2s, color 0.2s !important;
+    }
+    .btn-primary:hover {
+      background: #f65ef9 !important;
+      color: #000 !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    /* ── Nav CTA button ── */
+    .nav-cta {
+      border-color: rgba(246,94,249,0.5) !important;
+      color: #f65ef9 !important;
+    }
+    .nav-cta:hover {
+      background: rgba(246,94,249,0.12) !important;
+      border-color: #f65ef9 !important;
+      color: #f65ef9 !important;
+    }
+
+    /* ── Services: hide old card layout ── */
+    .service-card--featured { display: none !important; }
+    .services-grid { display: none !important; }
+
+    /* ── Services: new numbered list ── */
+    .services-list {
+      margin-top: 48px;
+    }
+    .service-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 28px;
+      padding: 36px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      align-items: start;
+    }
+    .service-item:first-child {
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .service-item-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: #0df5ff;
+      letter-spacing: 0.1em;
+      padding-top: 4px;
+      opacity: 0.7;
+    }
+    .service-item h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .service-item > div > p {
+      font-size: 14px;
+      font-weight: 300;
+      color: #888;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    /* ── Tool chips: lighter, less AI-box ── */
+    .tool-chip {
+      background: rgba(13,245,255,0.05) !important;
+      border-color: rgba(13,245,255,0.15) !important;
+      color: #aaa !important;
+      font-family: var(--mono) !important;
+      font-size: 10px !important;
+    }
+
+    /* ── Why items: remove heavy box ── */
+    .why-item {
+      background: transparent !important;
+      border-left: 2px solid rgba(255,255,255,0.06) !important;
+    }
+    .why-item:hover {
+      background: rgba(246,94,249,0.03) !important;
+      border-color: #f65ef9 !important;
+    }
+
+    /* ── Testimonial cards: lighter border ── */
+    .testimonial-card {
+      background: #080808 !important;
+      border-color: rgba(255,255,255,0.07) !important;
+    }
+
+    /* ── Remove all gradient top-borders on service cards ── */
+    .service-card::after { display: none !important; }
+
+    /* ── Services mobile ── */
+    @media (max-width: 768px) {
+      .service-item { grid-template-columns: 40px 1fr; gap: 16px; padding: 28px 0; }
+      .service-item h3 { font-size: 17px; }
+    }
+    @media (max-width: 480px) {
+      .service-item { grid-template-columns: 36px 1fr; gap: 12px; padding: 24px 0; }
+      .service-item h3 { font-size: 16px; }
+    }
+  </style>
+
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -660,21 +876,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <section id="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badge">Freelance-markkinointikonsultti, Remote</div>
-      <h1><span class="accent">Markkinoinnin data- ja analytiikka</span></h1>
-      <p class="hero-sub">Tarvitsetko kokeneen markkinointikonsultin projektiin, kasvustrategiaan tai datan hyödyntämiseen? Konsultoin markkinoinnissa, datassa, kasvussa ja strategiassa. Käytännönläheisellä otteella.</p>
+      <div class="hero-badge">freelance-markkinointikonsultti, remote</div>
+      <h1><span class="accent">Markkinoinnin data- ja analytiikka</span><span class="cursor-blink"></span></h1>
+      <p class="hero-sub">Tarvitsetko kokeneen markkinointikonsultin ratkomaan yrityksesi data ja analytiikka-asioita? Konsultoin markkinoinnissa, datassa, kasvussa ja strategiassa. Käytännönläheisellä otteella.</p>
       <div class="hero-actions">
-        <a href="https://www.linkedin.com/in/heta-kudanowski/" target="_blank" rel="noopener" class="btn-primary">🔗 Verkostoidu LinkedInissä</a>
+        <a href="https://www.linkedin.com/in/heta-kudanowski/" target="_blank" rel="noopener" class="btn-primary">Verkostoidu LinkedInissä</a>
         <a href="#contact" class="btn-ghost">Ota yhteyttä <span class="arrow">↓</span></a>
       </div>
     </div>
     <div class="hero-photo-wrap">
-      <div class="hero-photo-ring2"></div>
-      <div class="hero-photo-ring"></div>
       <img src="heta-photo.jpeg" alt="Heta Kudanowski" class="hero-photo"/>
       <div class="hero-photo-badge">
         <span class="dot"></span>
@@ -689,60 +901,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="services-header reveal">
     <div class="section-label">Osaamiseni</div>
     <h2 class="section-title">Missä voin<br/><span class="accent">auttaa sinua.</span></h2>
-    <p>Olen työskennellyt markkinoinnin, datan ja kasvun parissa eri toimialoilla. Tässä on se, mitä osaan parhaiten. Missä pystyn tuomaan sinulle eniten arvoa.</p>
+    <p>Olen työskennellyt markkinoinnin, datan ja kasvun parissa eri toimialoilla. Tässä on se, mitä osaan parhaiten.</p>
   </div>
-  <!-- Card 01: full width featured -->
-  <div class="service-card service-card--featured reveal" style="margin-bottom:16px;">
-    <span class="service-num">01</span>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+
+  <div class="services-list">
+    <div class="service-item reveal">
+      <span class="service-item-num">01</span>
       <div>
-        <div class="service-icon">◈</div>
         <h3>Markkinoinnin data &amp; analytiikka</h3>
         <p>Datan avulla markkinoinnista tulee mitattavaa, ei arvailua. Rakennan koko analytiikkainfrastruktuurin alusta loppuun: seurannasta raportointiin ja jatkuvaan optimointiin.</p>
-      </div>
-      <div style="margin-top:4px;display:flex;flex-direction:column;gap:10px;">
-        <div style="font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;">Työkalut &amp; teknologiat</div>
-        <div>
-          <div style="font-size:11px;font-weight:600;color:#bbb;margin-bottom:5px;">Seuranta &amp; tagit</div>
-          <div class="tool-chips"><span class="tool-chip">Google Tag Manager</span><span class="tool-chip">Server-side GTM</span><span class="tool-chip">Tracklution</span><span class="tool-chip">Microsoft Clarity</span><span class="tool-chip">Pikselit</span><span class="tool-chip">Konversioasennus</span></div>
-        </div>
-        <div>
-          <div style="font-size:11px;font-weight:600;color:#bbb;margin-bottom:5px;">Evästeet &amp; consent</div>
-          <div class="tool-chips"><span class="tool-chip">Cookiebot</span><span class="tool-chip">CookieYes</span><span class="tool-chip">Cookiescript</span><span class="tool-chip">CMP-asennus</span><span class="tool-chip">GDPR</span></div>
-        </div>
-        <div>
-          <div style="font-size:11px;font-weight:600;color:#bbb;margin-bottom:5px;">Analytiikka</div>
-          <div class="tool-chips"><span class="tool-chip">GA4</span><span class="tool-chip">BigQuery</span><span class="tool-chip">Coupler.io</span></div>
-        </div>
-        <div>
-          <div style="font-size:11px;font-weight:600;color:#bbb;margin-bottom:5px;">Raportointi</div>
-          <div class="tool-chips"><span class="tool-chip">Looker Studio</span><span class="tool-chip">Databox</span><span class="tool-chip">Whatagraph</span></div>
-        </div>
+        <div style="margin-bottom:8px;font-size:10px;font-family:'JetBrains Mono',monospace;color:#555;letter-spacing:0.05em;text-transform:uppercase;">seuranta &amp; tagit</div>
+        <div class="tool-chips" style="margin-bottom:12px;"><span class="tool-chip">Google Tag Manager</span><span class="tool-chip">Server-side GTM</span><span class="tool-chip">Microsoft Clarity</span><span class="tool-chip">Pikselit</span><span class="tool-chip">Konversioasennus</span></div>
+        <div style="margin-bottom:8px;font-size:10px;font-family:'JetBrains Mono',monospace;color:#555;letter-spacing:0.05em;text-transform:uppercase;">evästeet &amp; consent</div>
+        <div class="tool-chips" style="margin-bottom:12px;"><span class="tool-chip">Cookiebot</span><span class="tool-chip">CookieYes</span><span class="tool-chip">Cookiescript</span><span class="tool-chip">CMP-asennus</span><span class="tool-chip">GDPR</span></div>
+        <div style="margin-bottom:8px;font-size:10px;font-family:'JetBrains Mono',monospace;color:#555;letter-spacing:0.05em;text-transform:uppercase;">analytiikka &amp; raportointi</div>
+        <div class="tool-chips"><span class="tool-chip">GA4</span><span class="tool-chip">BigQuery</span><span class="tool-chip">Coupler.io</span><span class="tool-chip">Looker Studio</span><span class="tool-chip">Databox</span><span class="tool-chip">Whatagraph</span></div>
       </div>
     </div>
-  </div>
-  <!-- Cards 02–05: smaller 2x2 grid -->
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <span class="service-num">02</span>
-      <div class="service-icon">▲</div>
-      <h3>Kasvu &amp; strategia</h3>
-      <p style="font-size:13px;">Markkinointi ilman strategiaa on vain kuluerä. Autan rakentamaan selkeän kasvusuunnitelman: mitä tehdään, missä kanavissa, millä mittareilla ja miksi.</p>
-      <div class="tool-chips" style="margin-top:14px;"><span class="tool-chip">Kasvustrategia</span><span class="tool-chip">Kanavastrategia</span><span class="tool-chip">Markkinointisuunnitelma</span><span class="tool-chip">KPI-mittaristo</span><span class="tool-chip">Kilpailija-analyysi</span></div>
+
+    <div class="service-item reveal">
+      <span class="service-item-num">02</span>
+      <div>
+        <h3>Kasvu &amp; strategia</h3>
+        <p>Markkinointi ilman strategiaa on vain kuluerä. Autan rakentamaan selkeän kasvusuunnitelman: mitä tehdään, missä kanavissa, millä mittareilla ja miksi.</p>
+        <div class="tool-chips"><span class="tool-chip">Kasvustrategia</span><span class="tool-chip">Kanavastrategia</span><span class="tool-chip">Markkinointisuunnitelma</span><span class="tool-chip">KPI-mittaristo</span><span class="tool-chip">Kilpailija-analyysi</span></div>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <span class="service-num">03</span>
-      <div class="service-icon">⬡</div>
-      <h3>Google Stack</h3>
-      <p style="font-size:13px;">Hallitsen koko Googlen markkinointikokonaisuuden. Google Ads, orgaaninen näkyvyys, mittaaminen ja raportointi saman katon alla.</p>
-      <div class="tool-chips" style="margin-top:14px;"><span class="tool-chip">Google Ads</span><span class="tool-chip">GA4 &amp; GTM</span><span class="tool-chip">Search Console &amp; SEO</span><span class="tool-chip">Looker Studio</span><span class="tool-chip">BigQuery</span></div>
+
+    <div class="service-item reveal">
+      <span class="service-item-num">03</span>
+      <div>
+        <h3>Google Stack</h3>
+        <p>Hallitsen koko Googlen markkinointikokonaisuuden. Google Ads, orgaaninen näkyvyys, mittaaminen ja raportointi saman katon alla.</p>
+        <div class="tool-chips"><span class="tool-chip">Google Ads</span><span class="tool-chip">GA4 &amp; GTM</span><span class="tool-chip">Search Console &amp; SEO</span><span class="tool-chip">Looker Studio</span><span class="tool-chip">BigQuery</span></div>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <span class="service-num">04</span>
-      <div class="service-icon">◇</div>
-      <h3>Markkinoinnin projektinjohto</h3>
-      <p style="font-size:13px;">Vien markkinointiprojektit maaliin, aikataulussa, budjetissa ja tavoitteiden mukaisesti. Olen tottunut työskentelemään sekä asiakkaan että agentuurin puolella.</p>
-      <div class="tool-chips" style="margin-top:14px;"><span class="tool-chip">Projektien suunnittelu</span><span class="tool-chip">Toimittajayhteistyö</span><span class="tool-chip">Kampanjatuotanto</span><span class="tool-chip">Tiimin koordinointi</span></div>
+
+    <div class="service-item reveal">
+      <span class="service-item-num">04</span>
+      <div>
+        <h3>Markkinoinnin projektinjohto</h3>
+        <p>Vien markkinointiprojektit maaliin, aikataulussa, budjetissa ja tavoitteiden mukaisesti. Olen tottunut työskentelemään sekä asiakkaan että agentuurin puolella.</p>
+        <div class="tool-chips"><span class="tool-chip">Projektien suunnittelu</span><span class="tool-chip">Toimittajayhteistyö</span><span class="tool-chip">Kampanjatuotanto</span><span class="tool-chip">Tiimin koordinointi</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -788,7 +989,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="display:flex;flex-direction:column;gap:10px;">
         <h4>Verkostoidu kanssani</h4>
         <p>Jaan markkinoinnin ja datan näkemyksiä säännöllisesti LinkedInissä. Seuraa mukaan!</p>
-        <a href="https://www.linkedin.com/in/heta-kudanowski/" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;font-size:12px;">🔗 Seuraa LinkedInissä ↗</a>
+        <a href="https://www.linkedin.com/in/heta-kudanowski/" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;font-size:12px;">Seuraa LinkedInissä ↗</a>
       </div>
     </div>
   </div>
@@ -843,7 +1044,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Saa markkinoinnistasi<br/><span class="accent">enemmän irti datalla.</span></h2>
     <p>Tarvitsetko kokeneen markkinointikonsultin projektiin, kasvustrategiaan tai datan hyödyntämiseen? Ota yhteyttä, katsotaan yhdessä mikä sopii juuri teidän tilanteeseenne.</p>
     <div class="cta-actions">
-      <button type="button" class="btn-primary open-modal">✉️ Lähetä viesti</button>
+      <button type="button" class="btn-primary open-modal">Lähetä viesti</button>
       
     </div>
   </div>
@@ -888,7 +1089,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <label for="fmsg">Viesti</label>
         <textarea id="fmsg" name="message" required placeholder="Kerro projektistasi tai haasteestasi..." rows="4"></textarea>
       </div>
-      <button type="submit" class="btn-primary form-submit" id="formSubmit">&#x2709;&#xFE0F; Lähetä viesti</button>
+      <button type="submit" class="btn-primary form-submit" id="formSubmit">Lähetä viesti</button>
       <p class="form-feedback success" id="formSuccess">&#x2713; Viesti lähetetty! Otan sinuun pian yhteyttä.</p>
       <p class="form-feedback error" id="formError">Jotain meni pieleen. Lähetä viesti suoraan: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f49c918095b49995869f9f9d9a9b9d9a809d90958095da929d">[email&#160;protected]</a></p>
     </form>
@@ -992,122 +1193,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </script>
 
-<script>
-(function(){
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const C = '#00d4ff';
-  const COLORS = ['#00d4ff','#a855f7','#ff44cc','#e879f9','#67e8f9'];
-  const metrics = ['CTR','ROAS','CPC','GA4','GTM','ROI','CPA','CPM','CVR','KPI','SEO','LTV','+12%','+8.4%','94%','0.8x','3.2%','GA4','BigQuery','GTM','Meta','Ads','↑23%','↓CPA','x4.1'];
-
-  let W, H, particles, nodes, edges;
-
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-    init();
-  }
-
-  function init() {
-    // Floating metric particles
-    particles = Array.from({length: 55}, () => ({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: -0.15 - Math.random() * 0.25,
-      label: metrics[Math.floor(Math.random() * metrics.length)],
-      alpha: 0.08 + Math.random() * 0.18,
-      size: 9 + Math.floor(Math.random() * 6)
-    }));
-
-    // Network nodes
-    nodes = Array.from({length: 28}, () => ({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.18,
-      vy: (Math.random() - 0.5) * 0.18,
-      r: 1.5 + Math.random() * 2
-    }));
-
-    // Data stream columns
-    edges = Array.from({length: 12}, () => ({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      speed: 0.4 + Math.random() * 0.8,
-      chars: Array.from({length: 8}, () => Math.random() > 0.5 ? '1' : '0'),
-      alpha: 0.04 + Math.random() * 0.08
-    }));
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-
-    // Grid
-    ctx.strokeStyle = 'rgba(0,245,255,0.03)';
-    ctx.lineWidth = 1;
-    for (let x = 0; x < W; x += 70) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
-    for (let y = 0; y < H; y += 70) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
-
-    // Network edges
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i+1; j < nodes.length; j++) {
-        const dx = nodes[i].x - nodes[j].x;
-        const dy = nodes[i].y - nodes[j].y;
-        const d = Math.sqrt(dx*dx + dy*dy);
-        if (d < 160) {
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(0,245,255,${0.06 * (1 - d/160)})`;
-          ctx.lineWidth = 0.5;
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    // Network nodes
-    nodes.forEach(n => {
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
-      ctx.fillStyle = 'rgba(13,245,255,0.2)';
-      ctx.fill();
-      n.x += n.vx; n.y += n.vy;
-      if (n.x < 0 || n.x > W) n.vx *= -1;
-      if (n.y < 0 || n.y > H) n.vy *= -1;
-    });
-
-    // Floating metrics
-    particles.forEach(p => {
-      ctx.font = `600 ${p.size}px 'Poppins', monospace`;
-      const col = COLORS[Math.floor(Math.abs(p.x * p.y) % COLORS.length)];
-      ctx.fillStyle = col.replace(')', `,${p.alpha})`).replace('rgb','rgba').replace('#00d4ff', `rgba(0,212,255,${p.alpha})`).replace('#a855f7',`rgba(155,93,229,${p.alpha})`).replace('#ff44cc',`rgba(255,68,204,${p.alpha})`).replace('#e879f9',`rgba(192,132,252,${p.alpha})`).replace('#67e8f9',`rgba(103,232,249,${p.alpha})`);
-      ctx.fillText(p.label, p.x, p.y);
-      p.x += p.vx; p.y += p.vy;
-      if (p.y < -20) { p.y = H + 10; p.x = Math.random() * W; }
-      if (p.x < -40) p.x = W + 10;
-      if (p.x > W + 40) p.x = -10;
-    });
-
-    // Binary streams
-    edges.forEach(e => {
-      e.chars.forEach((c, i) => {
-        ctx.font = '10px monospace';
-        ctx.fillStyle = `rgba(0,245,255,${e.alpha * (1 - i/e.chars.length)})`;
-        ctx.fillText(c, e.x, e.y + i * 14);
-      });
-      e.y -= e.speed;
-      if (e.y < -e.chars.length * 14) { e.y = H + 20; e.x = Math.random() * W; }
-    });
-
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', resize);
-  resize();
-  draw();
-})();
-</script>
 
 </body>
 </html>
