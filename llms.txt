@@ -1,0 +1,35 @@
+# Markkinointidata – Heta Kudanowski
+
+> Markkinointidata on Heta Kudanowskin tarjoama digimarkkinoinnin analytiikkapalvelu. Heta on freelance-konsultti, joka auttaa suomalaisia yrityksiä rakentamaan luotettavan ja GDPR-yhteensopivan mittaamisen perustan sekä kääntämään datan käytännön kasvuteoiksi.
+
+## Palvelut
+
+- **GA4-auditointi ja käyttöönotto** – Google Analytics 4:n oikea asennus, tapahtumamittaus, konversioseuranta ja raportointi
+- **Google Tag Manager** – GTM-säilön rakentaminen, tagien hallinta, server-side tracking
+- **Server-side tracking** – Evästeiden ja ad blockerien ohittaminen palvelinpuolen mittaamisella (mm. Tracklution)
+- **Markkinointidata Studio** – Oma BigQuery-pohjainen analytiikkatyökalu, joka yhdistää kanavadata yhdeksi näkymäksi AI-analyysillä
+- **Tietosuoja & Consent Mode** – GDPR-yhteensopiva mittaaminen, Consent Mode v2, Cookiebot-integraatiot
+
+## Ajankohtaista — sisältö
+
+Sivusto julkaisee säännöllisesti lyhyitä ajankohtaisia artikkeleita markkinoinnin analytiikan kehityksestä. Aiheet: GA4, GTM, server-side tracking, tietosuoja, AI-analytiikka.
+
+### Artikkelit
+
+- [Rakensin oman markkinoinnin analytiikkatyökalun – näin se toimii](https://markkinointidata.fi/ajankohtaista/markkinointidata-studio-bigquery/) — BigQuery-pohjainen Markkinointidata Studio -työkalu, vibe coding, kanavadata yhdessä paikassa
+- [GTM:n historian suurin muutos 2026: säilöt osaksi Google Tagia](https://markkinointidata.fi/ajankohtaista/gtm-containers-google-tag-2026/) — GTM-säilöjen integraatio Google Tag -ekosysteemiin, mitä se tarkoittaa käytännössä
+- [GA4:ään tulossa uusi AI-chatbot-seurantamalli](https://markkinointidata.fi/ajankohtaista/ga4-ai-chatbot-seurantamalli/) — AI-hakutyökaluista tulevan liikenteen tunnistaminen GA4:ssä, manuaalinen suodatus
+- [Analytics Advisor (Beta): kysy dataltasi suoraan](https://markkinointidata.fi/ajankohtaista/analytics-advisor-beta/) — Gemini-pohjainen AI-avustaja Google Analyticsissa
+- [Pysyvätkö suostumukset mukana? Google tiukentaa datan keruun hallintaa](https://markkinointidata.fi/ajankohtaista/google-analytics-data-controls/) — GA4 Data Controls, Consent Mode v2, GDPR
+- [GA4 Task Assistant: helpompi tapa varmistaa oikea asennus](https://markkinointidata.fi/ajankohtaista/ga4-task-assistant/) — GA4:n asennuksen tarkistustyökalu
+- [Tracklution ja server-side mittaaminen – miksi se kannattaa nyt](https://markkinointidata.fi/ajankohtaista/tracklution-ja-server-side-tracking/) — Server-side trackingin hyödyt pk-yrityksille, Tracklution-työkalu
+
+## Yhteystiedot
+
+- Sähköposti: heta@markkinointidata.fi
+- Verkkosivusto: https://markkinointidata.fi
+- Sijainti: Suomi
+
+## Sivukartta
+
+- https://markkinointidata.fi/sitemap.xml

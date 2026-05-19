@@ -1,20 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
     <loc>https://markkinointidata.fi/</loc>
     <xhtml:link rel="alternate" hreflang="fi" href="https://markkinointidata.fi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://markkinointidata.fi/markkinointidata_EN.html"/>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://markkinointidata.fi/markkinointidata_EN.html</loc>
     <xhtml:link rel="alternate" hreflang="fi" href="https://markkinointidata.fi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://markkinointidata.fi/markkinointidata_EN.html"/>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://markkinointidata.fi/ajankohtaista</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <url>
+    <loc>https://markkinointidata.fi/ajankohtaista/markkinointidata-studio-bigquery/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://markkinointidata.fi/ajankohtaista/gtm-containers-google-tag-2026/</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://markkinointidata.fi/ajankohtaista/ga4-ai-chatbot-seurantamalli/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://markkinointidata.fi/ajankohtaista/analytics-advisor-beta/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://markkinointidata.fi/ajankohtaista/google-analytics-data-controls/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://markkinointidata.fi/ajankohtaista/ga4-task-assistant/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://markkinointidata.fi/ajankohtaista/tracklution-ja-server-side-tracking/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
