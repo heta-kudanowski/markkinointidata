@@ -48,6 +48,22 @@
       "link": "https://www.linkedin.com/posts/simoahava_big-changes-coming-to-google-tag-manager-activity-7457415125600407553-xHZk/"
     },
     {
+      "id": "1",
+      "slug": "ga4-ai-chatbot-seurantamalli",
+      "date": "2026-05-14",
+      "category": "GA4",
+      "title": "GA4:ään tulossa uusi AI-chatbot-seurantamalli",
+      "excerpt": "Google kehittää GA4:ään seurantamallia, joka tunnistaa AI-chatboteista tulevan liikenteen. Siihen asti voit jo nyt suodattaa sen manuaalisesti.",
+      "body": "Tekoälyhaut yleistyvät kovaa vauhtia – ja se näkyy jo verkkosivujen liikenteessä. Perplexity, ChatGPT, Gemini ja muut AI-hakutyökalut ohjaavat käyttäjiä verkkosivuille, mutta tämä liikenne ei välttämättä näy analytiikassasi oikein tai erottuvasti.\n\nGoogle kehittää GA4:ään erillistä seurantamallia, joka tunnistaa ja luokittelee AI-chatboteista tulevan liikenteen automaattisesti. Tämä auttaa hahmottamaan, kuinka paljon tekoälyhaut jo tuovat kävijöitä ja millaisella käyttäytymisellä.\n\nSiihen asti voit tehdä tämän manuaalisesti:\n\n<ul style=\"list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;\"><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Luo GA4:ään uusi segmentti joka suodattaa tietyt referral-lähteet (esim. perplexity.ai, chat.openai.com)</li><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Seuraa näitä erikseen omana kanavaryhmänä</li><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Vertaa käyttäytymisdataa orgaaniseen hakuun</li></ul>\n\nMiksi tämä on tärkeää? Koska AI-liikenteen käyttäytyminen voi erota merkittävästi perinteisestä hakuliikenteestä – ja jos et erota niitä, kokonaisdata voi antaa harhaanjohtavan kuvan.",
+      "tags": [
+        "GA4",
+        "AI",
+        "chatbot",
+        "SEO"
+      ],
+      "link": "https://support.google.com/analytics/answer/9164320?hl=en#05132026"
+    },
+    {
       "id": "6",
       "slug": "analytics-advisor-beta",
       "date": "2026-05-12",
@@ -64,24 +80,9 @@
       "link": "https://support.google.com/analytics/answer/16675569?hl=en"
     },
     {
-      "id": "4",
-      "slug": "ga4-task-assistant",
-      "date": "2026-04-28",
-      "category": "GA4",
-      "title": "GA4 Task Assistant: helpompi tapa varmistaa oikea asennus",
-      "excerpt": "Google on lisännyt GA4:ään Task Assistant -työkalun, joka opastaa asennuksen läpi vaihe vaiheelta. Käytännöllinen apu erityisesti silloin kun epäilee, onko mittaus kohdallaan.",
-      "body": "GA4:n asennus voi olla monimutkainen kokonaisuus: datastream, tagging, konversiot, suodattimet, käyttäjäominaisuudet. Task Assistant tuo tähän rakenteen – se näyttää asennuksen edistymisen ja kertoo mitä puuttuu.\n\nTyökalu ei ole pelkkä checklist. Se antaa kontekstuaalisia ohjeita sen mukaan, mitä tietoja säilössäsi on – tai ei ole. Jos esimerkiksi konversiotapahtumia ei löydy, se ohjaa sinua suoraan oikeaan paikkaan korjaamaan tilanteen.\n\nErityisen hyödyllinen Task Assistant on silloin, kun otat haltuun jonkun toisen rakentaman GA4-tilin tai perustat uuden alusta. Se auttaa myös varmistamaan, että datan keruu on GDPR-vaatimusten mukainen ennen kuin syvennyt raportointiin.\n\nLöydät sen GA4:n hallintapaneelista kohdasta Admin → Setup Assistant.",
-      "tags": [
-        "GA4",
-        "asennus",
-        "analytiikka"
-      ],
-      "link": "https://support.google.com/analytics/answer/16888318?hl=en"
-    },
-    {
       "id": "3",
       "slug": "google-analytics-data-controls",
-      "date": "2026-04-21",
+      "date": "2026-05-05",
       "category": "Tietosuoja",
       "title": "Pysyvätkö suostumukset mukana? Google tiukentaa datan keruun hallintaa",
       "excerpt": "Google Analytics päivittää data controls -asetuksiaan. Muutokset koskevat sitä, miten käyttäjädata käsitellään ja millä ehdoilla sitä voi hyödyntää – ja vaatimukset tiukentuvat.",
@@ -95,20 +96,19 @@
       "link": "https://support.google.com/analytics/answer/17016975"
     },
     {
-      "id": "1",
-      "slug": "ga4-ai-chatbot-seurantamalli",
-      "date": "2026-05-14",
+      "id": "4",
+      "slug": "ga4-task-assistant",
+      "date": "2026-04-28",
       "category": "GA4",
-      "title": "GA4:ään tulossa uusi AI-chatbot-seurantamalli",
-      "excerpt": "Google kehittää GA4:ään seurantamallia, joka tunnistaa AI-chatboteista tulevan liikenteen. Siihen asti voit jo nyt suodattaa sen manuaalisesti.",
-      "body": "Tekoälyhaut yleistyvät kovaa vauhtia – ja se näkyy jo verkkosivujen liikenteessä. Perplexity, ChatGPT, Gemini ja muut AI-hakutyökalut ohjaavat käyttäjiä verkkosivuille, mutta tämä liikenne ei välttämättä näy analytiikassasi oikein tai erottuvasti.\n\nGoogle kehittää GA4:ään erillistä seurantamallia, joka tunnistaa ja luokittelee AI-chatboteista tulevan liikenteen automaattisesti. Tämä auttaa hahmottamaan, kuinka paljon tekoälyhaut jo tuovat kävijöitä ja millaisella käyttäytymisellä.\n\nSiihen asti voit tehdä tämän manuaalisesti:\n\n<ul style=\"list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;\"><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Luo GA4:ään uusi segmentti joka suodattaa tietyt referral-lähteet (esim. perplexity.ai, chat.openai.com)</li><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Seuraa näitä erikseen omana kanavaryhmänä</li><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Vertaa käyttäytymisdataa orgaaniseen hakuun</li></ul>\n\nMiksi tämä on tärkeää? Koska AI-liikenteen käyttäytyminen voi erota merkittävästi perinteisestä hakuliikenteestä – ja jos et erota niitä, kokonaisdata voi antaa harhaanjohtavan kuvan.",
+      "title": "GA4 Task Assistant: helpompi tapa varmistaa oikea asennus",
+      "excerpt": "Google on lisännyt GA4:ään Task Assistant -työkalun, joka opastaa asennuksen läpi vaihe vaiheelta. Käytännöllinen apu erityisesti silloin kun epäilee, onko mittaus kohdallaan.",
+      "body": "GA4:n asennus voi olla monimutkainen kokonaisuus: datastream, tagging, konversiot, suodattimet, käyttäjäominaisuudet. Task Assistant tuo tähän rakenteen – se näyttää asennuksen edistymisen ja kertoo mitä puuttuu.\n\nTyökalu ei ole pelkkä checklist. Se antaa kontekstuaalisia ohjeita sen mukaan, mitä tietoja säilössäsi on – tai ei ole. Jos esimerkiksi konversiotapahtumia ei löydy, se ohjaa sinua suoraan oikeaan paikkaan korjaamaan tilanteen.\n\nErityisen hyödyllinen Task Assistant on silloin, kun otat haltuun jonkun toisen rakentaman GA4-tilin tai perustat uuden alusta. Se auttaa myös varmistamaan, että datan keruu on GDPR-vaatimusten mukainen ennen kuin syvennyt raportointiin.\n\nLöydät sen GA4:n hallintapaneelista kohdasta Admin → Setup Assistant.",
       "tags": [
         "GA4",
-        "AI",
-        "chatbot",
-        "SEO"
+        "asennus",
+        "analytiikka"
       ],
-      "link": "https://support.google.com/analytics/answer/9164320?hl=en#05132026"
+      "link": "https://support.google.com/analytics/answer/16888318?hl=en"
     }
   ]
 }

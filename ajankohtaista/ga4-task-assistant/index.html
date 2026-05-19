@@ -172,7 +172,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         '<a href="/ajankohtaista" class="back-link">← Ajankohtaista</a>' +
         '<div class="article-meta">' +
           '<span class="article-category">' + article.category + '</span>' +
-          '<span class="article-date">' + new Date(article.date).toLocaleDateString('fi-FI', { day: 'numeric', month: 'numeric', year: 'numeric' }) + '</span>' +
+          '<span class="article-date">' + (function(){ var s = new Date(article.date).toLocaleDateString('fi-FI', { month: 'long', year: 'numeric' }); return s.charAt(0).toUpperCase() + s.slice(1); })() + '</span>' +
         '</div>' +
         '<h1>' + article.title + '</h1>' +
         '<div class="article-body">' + paragraphs + '</div>' +

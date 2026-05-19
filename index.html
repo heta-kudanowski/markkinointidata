@@ -1450,7 +1450,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   function formatDate(iso) {
     var d = new Date(iso);
-    return d.toLocaleDateString('fi-FI', { day: 'numeric', month: 'numeric', year: 'numeric' });
+    var s = d.toLocaleDateString('fi-FI', { month: 'long', year: 'numeric' });
+    return s.charAt(0).toUpperCase() + s.slice(1);
   }
 
   function buildCard(a) {
