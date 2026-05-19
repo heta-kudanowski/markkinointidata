@@ -543,6 +543,120 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       #referenssit { padding: 72px 24px; }
       .testimonials-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── Ajankohtaista ── */
+    #ajankohtaista {
+      padding: 120px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .article-card {
+      background: var(--dark2);
+      border: 1px solid rgba(246,94,249,0.15);
+      border-radius: 12px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: default;
+    }
+    .article-card:hover {
+      border-color: rgba(246,94,249,0.4);
+      transform: translateY(-3px);
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .article-category {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f65ef9;
+      background: rgba(246,94,249,0.1);
+      border: 1px solid rgba(246,94,249,0.25);
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+    .article-date {
+      font-size: 11px;
+      color: var(--grey);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .article-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--white);
+    }
+    .article-excerpt {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #999;
+      flex: 1;
+    }
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .article-tag {
+      font-size: 10px;
+      color: #0df5ff;
+      background: rgba(13,245,255,0.07);
+      border: 1px solid rgba(13,245,255,0.15);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .article-read-more {
+      font-size: 12px;
+      font-weight: 600;
+      color: #f65ef9;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      text-align: left;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .article-read-more:hover { color: #0df5ff; }
+    .article-body {
+      display: none;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #bbb;
+      white-space: pre-wrap;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 14px;
+      margin-top: 4px;
+    }
+    .article-body.open { display: block; }
+    .article-external {
+      font-size: 12px;
+      font-weight: 600;
+      color: #0df5ff;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .article-external:hover { text-decoration: underline; }
+    @media (max-width: 1024px) {
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      #ajankohtaista { padding: 80px 20px; }
+      .articles-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 430px) {
       #referenssit { padding: 56px 16px; }
       .testimonial-card { padding: 24px 20px; }
@@ -1000,6 +1114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#services">Palvelut</a></li>
     <li><a href="#why">Miksi minä</a></li>
     <li><a href="#referenssit">Referenssit</a></li>
+    <li><a href="#ajankohtaista">Ajankohtaista</a></li>
     <li><a href="#contact" class="nav-cta">Ota yhteyttä</a></li>
     <li><a href="markkinointidata_EN.html" class="lang-switcher">🇬🇧 EN</a></li>
   </ul>
@@ -1011,6 +1126,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="#services" onclick="closeMobile()">Palvelut</a>
   <a href="#why" onclick="closeMobile()">Miksi minä</a>
   <a href="#referenssit" onclick="closeMobile()">Referenssit</a>
+  <a href="#ajankohtaista" onclick="closeMobile()">Ajankohtaista</a>
   <a href="#contact" class="nav-cta" onclick="closeMobile()">Ota yhteyttä</a>
   <a href="markkinointidata_EN.html" class="lang-switcher">🇬🇧 EN</a>
 </div>
@@ -1178,6 +1294,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- AJANKOHTAISTA -->
+<section id="ajankohtaista">
+  <div class="section-label reveal">Digimarkkinoinnin analytiikka</div>
+  <h2 class="section-title reveal">Ajankohtaista <span class="accent">alalta.</span></h2>
+  <p class="reveal" style="color:#999;font-size:15px;max-width:600px;line-height:1.7;">Seuraan aktiivisesti markkinoinnin analytiikan kehitystä. Tässä tuoreimmat huomioni ja ajatukseni alan tapahtumista.</p>
+  <div class="articles-grid" id="articles-grid">
+    <!-- Artikkelit ladataan JS:llä -->
+  </div>
+</section>
+
 <section id="contact">
   <div class="cta-glow"></div>
   <div class="cta-content reveal">
@@ -1332,6 +1458,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   })();
 
+</script>
+
+<script>
+(function() {
+  var grid = document.getElementById('articles-grid');
+  if (!grid) return;
+
+  function formatDate(iso) {
+    var d = new Date(iso);
+    return d.toLocaleDateString('fi-FI', { day: 'numeric', month: 'numeric', year: 'numeric' });
+  }
+
+  function buildCard(a) {
+    var card = document.createElement('div');
+    card.className = 'article-card';
+
+    var tagsHtml = (a.tags || []).map(function(t) {
+      return '<span class="article-tag">' + t + '</span>';
+    }).join('');
+
+    var linkHtml = a.link
+      ? '<a class="article-external" href="' + a.link + '" target="_blank" rel="noopener">Lue lisää ↗</a>'
+      : '';
+
+    card.innerHTML =
+      '<div class="article-meta">' +
+        '<span class="article-category">' + a.category + '</span>' +
+        '<span class="article-date">' + formatDate(a.date) + '</span>' +
+      '</div>' +
+      '<div class="article-title">' + a.title + '</div>' +
+      '<div class="article-excerpt">' + a.excerpt + '</div>' +
+      '<div class="article-body" id="body-' + a.id + '">' + a.body + '</div>' +
+      '<div class="article-tags">' + tagsHtml + '</div>' +
+      (linkHtml ? linkHtml : '') +
+      '<button class="article-read-more" data-id="' + a.id + '">Lue lisää ↓</button>';
+
+    return card;
+  }
+
+  function toggleBody(id) {
+    var body = document.getElementById('body-' + id);
+    var btn = document.querySelector('[data-id="' + id + '"]');
+    if (!body || !btn) return;
+    var open = body.classList.toggle('open');
+    btn.textContent = open ? 'Sulje ↑' : 'Lue lisää ↓';
+  }
+
+  fetch('articles.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var articles = data.articles || [];
+      articles.forEach(function(a) {
+        grid.appendChild(buildCard(a));
+      });
+      grid.addEventListener('click', function(e) {
+        if (e.target.classList.contains('article-read-more')) {
+          toggleBody(e.target.getAttribute('data-id'));
+        }
+      });
+    })
+    .catch(function() {
+      grid.innerHTML = '<p style="color:#888">Artikkeleita ei voitu ladata.</p>';
+    });
+})();
 </script>
 
 
