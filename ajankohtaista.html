@@ -309,12 +309,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   }
 
+  var initialCat = new URLSearchParams(window.location.search).get('cat') || 'all';
+
   fetch('articles.json')
     .then(function (r) { return r.json(); })
     .then(function (data) {
       allArticles = data.articles || [];
       buildFilters(allArticles);
-      renderArticles(allArticles);
+      filterArticles(initialCat);
     })
     .catch(function () {
       grid.innerHTML = '<div class="no-results">Artikkeleita ei voitu ladata.</div>';
