@@ -1508,10 +1508,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   fetch('articles.json')
     .then(function(r) { return r.json(); })
     .then(function(data) {
-      var articles = data.articles || [];
+      var articles = (data.articles || []).slice(0, 6);
       articles.forEach(function(a) {
         grid.appendChild(buildCard(a));
       });
+      var more = document.createElement('div');
+      more.style.cssText = 'grid-column:1/-1;text-align:center;margin-top:16px;';
+      more.innerHTML = '<a href="/ajankohtaista" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#f65ef9;text-decoration:none;border:1px solid rgba(246,94,249,0.35);padding:12px 28px;border-radius:100px;transition:background 0.2s;" onmouseover="this.style.background=\'rgba(246,94,249,0.1)\'" onmouseout="this.style.background=\'\'">Katso kaikki artikkelit ↗</a>';
+      grid.appendChild(more);
       grid.addEventListener('click', function(e) {
         if (e.target.classList.contains('article-read-more')) {
           toggleBody(e.target.getAttribute('data-id'));
