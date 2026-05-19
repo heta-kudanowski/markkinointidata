@@ -1,6 +1,22 @@
 {
   "articles": [
     {
+      "id": "2",
+      "slug": "markkinointidata-studio-bigquery",
+      "date": "2026-05-20",
+      "category": "Markkinointidata Studio",
+      "title": "Rakensin oman markkinoinnin analytiikkatyökalun – näin se toimii",
+      "excerpt": "Markkinoinnin data on hajallaan kymmenessä eri kanavassa ja jokainen alusta tulkitsee attribuutiota omaksi edukseen. Ratkaisin tämän rakentamalla oman BigQuery-pohjaisen työkalun.",
+      "body": "Vibe coding on uusi lempilapseni, ja sen pohjalta syntyi ensimmäinen oma työkalu – tietenkin liittyen markkinoinnin analytiikkaan.\n\nLähtökohta oli tuttu ongelma: data on hajallaan Metan, Googlen, LinkedInin ja muiden kanavien välillä. Jokainen alusta tulkitsee attribuutiota niin, että se näyttää itse mahdollisimman hyvältä. Lisäksi historiadataa saa rajallisesti – GA4:ssä on omat säilytysrajoituksensa.\n\nNiin rakensin oman ratkaisun. Näin se toimii:\n\n→ Kaikki data BigQueryyn. Data pysyy tallessa eikä kukaan pääse manipuloimaan sitä. Googlen kanavat integroituvat siististi, LinkedIn-datan toin Coupler.iolla.\n\n→ BigQuery yhdistetään Markkinointidata Studio -työkaluuni. Se hoitaa SQL-kyselyt automaattisesti ja rakentaa valmiit taulukot sen mukaan, mitä tietolähteitä löytyy.\n\n→ AI-chat päällä: se nostaa insightit esiin ja voit pyytää lisää analyysia suoraan.\n\nEi alustakohtaista tulkintaa. Ei katoavaa historiaa. Kaikki yhdessä paikassa omassa hallinnassa.\n\nMitä ajatuksia herää? Mitä toiminnallisuuksia te kaipaisitte omaan data-arsenaaliinne?\n\n🚀 Beta-versio tulossa pian kokeiltavaksi.",
+      "tags": [
+        "BigQuery",
+        "työkalu",
+        "vibe coding",
+        "analytiikka"
+      ],
+      "link": null
+    },
+    {
       "id": "7",
       "slug": "tracklution-ja-server-side-tracking",
       "date": "2026-05-19",
@@ -8,7 +24,12 @@
       "title": "Tracklution ja server-side mittaaminen – miksi se kannattaa nyt",
       "excerpt": "Server-side tracking ei ole enää vain isojen pelaajien etuoikeus. Tracklution tekee siitä käytännöllisen myös pk-yrityksille – ja syyt siirtyä ovat vahvemmat kuin koskaan.",
       "body": "Evästeiden rajoitukset, ad blockerit ja iOS:n yksityisyyspäivitykset ovat nakertaneet perinteisen client-side mittaamisen tarkkuutta jo vuosia. Server-side tracking on vastaus tähän: data kulkee selaimen sijaan palvelimen kautta, jolloin se ei ole alttiina blockaukselle.\n\n<a href=\"https://tracklution.com\" target=\"_blank\" rel=\"noopener\" style=\"color:#0df5ff;text-decoration:underline;\">Tracklution</a> on suomalainen server-side tagging -työkalu, joka tekee siirtymästä konkreettisen helpon. Se toimii välityspalvelimena selaimen ja Google Tag Managerin välillä – sinun ei tarvitse rakentaa omaa tagging-infrastruktuuria tyhjästä.\n\nKäytännön hyödyt ovat selvät: parempi datan laatu GA4:ssä ja Meta Pixelissä, pidempi evästeen elinkaari (first-party kontekstissa), ja mahdollisuus kontrolloida mitä dataa lähetät kolmansille osapuolille. Viimeksi mainittu ei ole vain tekninen etu – se on kasvava compliance-vaatimus.\n\nJos mittaat konversioita ja kärsit attribution-katoamisesta, server-side on konkreettisin askel jonka voit ottaa tänä vuonna.",
-      "tags": ["server-side", "Tracklution", "GTM", "tietosuoja"],
+      "tags": [
+        "server-side",
+        "Tracklution",
+        "GTM",
+        "tietosuoja"
+      ],
       "link": null
     },
     {
@@ -19,7 +40,12 @@
       "title": "Analytics Advisor (Beta): kysy dataltasi suoraan",
       "excerpt": "Google Analytics sai Gemini-pohjaisen AI-avustajan. Sen sijaan että avaat raportin, voit nyt kirjoittaa kysymyksen – ja saada vastauksen visualisoineen.",
       "body": "Analytiikka on perinteisesti tarkoittanut raporttien selailua ja omien johtopäätösten vetämistä. Analytics Advisor muuttaa tätä logiikkaa: voit kirjoittaa suoraan 'miksi myynti laski viime viikolla?' ja Gemini analysoi datan, visualisoi syyt ja ehdottaa toimenpiteitä.\n\nBeta-vaiheessa oleva ominaisuus ei korvaa analyytikkoa, mutta se madaltaa kynnystä datan hyödyntämiseen koko tiimissä. Markkinoija voi itse kysyä datalta ilman SQL-osaamista tai GA4:n syvällistä tuntemusta.\n\nKiinnostavinta on suunnan muutos: analytiikka ei ole enää vain raporttinäkymä vaan vuoropuhelu. Tämä sopii hyvin yhteen sen kanssa, miten AI muuttaa tietotyötä laajemminkin.\n\nKannattaa ottaa käyttöön ja kokeilla käytännössä – mutta muista arvioida kriittisesti mitä se sanoo. AI-avustajat voivat antaa itsevarman kuuloisia vastauksia myös silloin kun data on epätäydellistä.",
-      "tags": ["GA4", "Gemini", "AI", "analytiikka"],
+      "tags": [
+        "GA4",
+        "Gemini",
+        "AI",
+        "analytiikka"
+      ],
       "link": null
     },
     {
@@ -30,7 +56,11 @@
       "title": "GTM:n historian suurin muutos 2026: säilöt osaksi Google Tagia",
       "excerpt": "Perinteiset Google Tag Manager -säilöt integroituvat osaksi Google Tag -kokonaisuutta. Muutos lupaa sujuvampaa hallintaa, mutta vaatii yrityksiltä huolellisuutta siirtymävaiheessa.",
       "body": "Google Tag Manager on ollut digimarkkinoijien perustyökalu jo yli vuosikymmenen. Vuoden 2026 päivitys on kuitenkin sen historian merkittävin: perinteiset GTM-säilöt (containers) yhdistyvät laajempaan Google Tag -ekosysteemiin.\n\nKäytännössä tämä tarkoittaa, että tagging-hallinta keskittyy entistä tiiviimmin Googlen omaan infrastruktuuriin. Hyötyjä on – eri Google-tuotteiden välinen data-integraatio helpottuu ja joitain työvaiheita voidaan automatisoida.\n\nMutta: siirtymävaihe vaatii tarkkuutta. Jos sinulla on monimutkaisia triggereitä, mukautettuja muuttujia tai kolmansien osapuolien tageja, kannattaa käydä läpi säilön sisältö ennen muutosta. Dokumentaatio auttaa, jos jokin menee pieleen.\n\nSuositus: tee lista kriittisistä tageista ja testaa staging-ympäristössä ennen siirtoa tuotantoon.",
-      "tags": ["GTM", "Google Tag", "tagging"],
+      "tags": [
+        "GTM",
+        "Google Tag",
+        "tagging"
+      ],
       "link": null
     },
     {
@@ -41,7 +71,11 @@
       "title": "GA4 Task Assistant: helpompi tapa varmistaa oikea asennus",
       "excerpt": "Google on lisännyt GA4:ään Task Assistant -työkalun, joka opastaa asennuksen läpi vaihe vaiheelta. Käytännöllinen apu erityisesti silloin kun epäilee, onko mittaus kohdallaan.",
       "body": "GA4:n asennus voi olla monimutkainen kokonaisuus: datastream, tagging, konversiot, suodattimet, käyttäjäominaisuudet. Task Assistant tuo tähän rakenteen – se näyttää asennuksen edistymisen ja kertoo mitä puuttuu.\n\nTyökalu ei ole pelkkä checklist. Se antaa kontekstuaalisia ohjeita sen mukaan, mitä tietoja säilössäsi on – tai ei ole. Jos esimerkiksi konversiotapahtumia ei löydy, se ohjaa sinua suoraan oikeaan paikkaan korjaamaan tilanteen.\n\nErityisen hyödyllinen Task Assistant on silloin, kun otat haltuun jonkun toisen rakentaman GA4-tilin tai perustat uuden alusta. Se auttaa myös varmistamaan, että datan keruu on GDPR-vaatimusten mukainen ennen kuin syvennyt raportointiin.\n\nLöydät sen GA4:n hallintapaneelista kohdasta Admin → Setup Assistant.",
-      "tags": ["GA4", "asennus", "analytiikka"],
+      "tags": [
+        "GA4",
+        "asennus",
+        "analytiikka"
+      ],
       "link": null
     },
     {
@@ -52,19 +86,13 @@
       "title": "Pysyvätkö suostumukset mukana? Google tiukentaa datan keruun hallintaa",
       "excerpt": "Google Analytics päivittää data controls -asetuksiaan. Muutokset koskevat sitä, miten käyttäjädata käsitellään ja millä ehdoilla sitä voi hyödyntää – ja vaatimukset tiukentuvat.",
       "body": "Tietosuoja ei ole enää pelkästään lakiosaston asia. Se vaikuttaa suoraan siihen, mitä dataa analytiikassasi on ja miten luotettavia raporttisi ovat.\n\nGoogle on päivittänyt GA4:n Data Controls -asetuksia, jotka määrittelevät muun muassa sen, voiko Google käyttää kerättyä dataa omiin malliinsa ja miten IP-osoitteita käsitellään. Uudet vaatimukset ohjaavat tarkempaan käyttäjien suostumushallintaan Consent Mode v2:n kautta.\n\nMitä käytännössä kannattaa tarkistaa:\n• Onko Consent Mode v2 (Basic tai Advanced) käytössä?\n• Onko Google Signals -ominaisuus tarkoituksenmukaisesti kytketty vai ei?\n• Mitä tietoja lähetät GA4:ään ja onko siihen käyttäjän suostumus?\n\nJos et ole varma, käy läpi GA4:n Admin → Data Settings → Data Collection ja Data Retention. Pieni tarkistus nyt voi säästää isomman selvittelytyön myöhemmin.",
-      "tags": ["tietosuoja", "GDPR", "GA4", "Consent Mode"],
+      "tags": [
+        "tietosuoja",
+        "GDPR",
+        "GA4",
+        "Consent Mode"
+      ],
       "link": "https://support.google.com/analytics/answer/17016975"
-    },
-    {
-      "id": "2",
-      "slug": "markkinointidata-studio-bigquery",
-      "date": "2026-04-14",
-      "category": "Markkinointidata Studio",
-      "title": "Rakensin oman markkinoinnin analytiikkatyökalun – näin se toimii",
-      "excerpt": "Markkinoinnin data on hajallaan kymmenessä eri kanavassa ja jokainen alusta tulkitsee attribuutiota omaksi edukseen. Ratkaisin tämän rakentamalla oman BigQuery-pohjaisen työkalun.",
-      "body": "Vibe coding on uusi lempilapseni, ja sen pohjalta syntyi ensimmäinen oma työkalu – tietenkin liittyen markkinoinnin analytiikkaan.\n\nLähtökohta oli tuttu ongelma: data on hajallaan Metan, Googlen, LinkedInin ja muiden kanavien välillä. Jokainen alusta tulkitsee attribuutiota niin, että se näyttää itse mahdollisimman hyvältä. Lisäksi historiadataa saa rajallisesti – GA4:ssä on omat säilytysrajoituksensa.\n\nNiin rakensin oman ratkaisun. Näin se toimii:\n\n→ Kaikki data BigQueryyn. Data pysyy tallessa eikä kukaan pääse manipuloimaan sitä. Googlen kanavat integroituvat siististi, LinkedIn-datan toin Coupler.iolla.\n\n→ BigQuery yhdistetään Markkinointidata Studio -työkaluuni. Se hoitaa SQL-kyselyt automaattisesti ja rakentaa valmiit taulukot sen mukaan, mitä tietolähteitä löytyy.\n\n→ AI-chat päällä: se nostaa insightit esiin ja voit pyytää lisää analyysia suoraan.\n\nEi alustakohtaista tulkintaa. Ei katoavaa historiaa. Kaikki yhdessä paikassa omassa hallinnassa.\n\nMitä ajatuksia herää? Mitä toiminnallisuuksia te kaipaisitte omaan data-arsenaaliinne?\n\n🚀 Beta-versio tulossa pian kokeiltavaksi.",
-      "tags": ["BigQuery", "työkalu", "vibe coding", "analytiikka"],
-      "link": null
     },
     {
       "id": "1",
@@ -74,7 +102,12 @@
       "title": "GA4:ään tulossa uusi AI-chatbot-seurantamalli",
       "excerpt": "Google kehittää GA4:ään seurantamallia, joka tunnistaa AI-chatboteista tulevan liikenteen. Siihen asti voit jo nyt suodattaa sen manuaalisesti.",
       "body": "Tekoälyhaut yleistyvät kovaa vauhtia – ja se näkyy jo verkkosivujen liikenteessä. Perplexity, ChatGPT, Gemini ja muut AI-hakutyökalut ohjaavat käyttäjiä verkkosivuille, mutta tämä liikenne ei välttämättä näy analytiikassasi oikein tai erottuvasti.\n\nGoogle kehittää GA4:ään erillistä seurantamallia, joka tunnistaa ja luokittelee AI-chatboteista tulevan liikenteen automaattisesti. Tämä auttaa hahmottamaan, kuinka paljon tekoälyhaut jo tuovat kävijöitä ja millaisella käyttäytymisellä.\n\nSiihen asti voit tehdä tämän manuaalisesti:\n• Luo GA4:ään uusi segmentti joka suodattaa tietyt referral-lähteet (esim. perplexity.ai, chat.openai.com)\n• Seuraa näitä erikseen omana kanavaryhmänä\n• Vertaa käyttäytymisdataa orgaaniseen hakuun\n\nMiksi tämä on tärkeää? Koska AI-liikenteen käyttäytyminen voi erota merkittävästi perinteisestä hakuliikenteestä – ja jos et erota niitä, kokonaisdata voi antaa harhaanjohtavan kuvan.",
-      "tags": ["GA4", "AI", "chatbot", "SEO"],
+      "tags": [
+        "GA4",
+        "AI",
+        "chatbot",
+        "SEO"
+      ],
       "link": null
     }
   ]
