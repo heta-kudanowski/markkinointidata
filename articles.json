@@ -97,7 +97,7 @@
     {
       "id": "1",
       "slug": "ga4-ai-chatbot-seurantamalli",
-      "date": "2026-04-07",
+      "date": "2026-05-14",
       "category": "GA4",
       "title": "GA4:ään tulossa uusi AI-chatbot-seurantamalli",
       "excerpt": "Google kehittää GA4:ään seurantamallia, joka tunnistaa AI-chatboteista tulevan liikenteen. Siihen asti voit jo nyt suodattaa sen manuaalisesti.",
@@ -108,7 +108,7 @@
         "chatbot",
         "SEO"
       ],
-      "link": null
+      "link": "https://support.google.com/analytics/answer/9164320?hl=en#05132026"
     }
   ]
 }
