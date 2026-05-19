@@ -3,7 +3,7 @@
     {
       "id": "2",
       "slug": "markkinointidata-studio-bigquery",
-      "date": "2026-05-20",
+      "date": "2026-05-19",
       "category": "Markkinointidata Studio",
       "title": "Rakensin oman markkinoinnin analytiikkatyökalun – näin se toimii",
       "excerpt": "Markkinoinnin data on hajallaan kymmenessä eri kanavassa ja jokainen alusta tulkitsee attribuutiota omaksi edukseen. Ratkaisin tämän rakentamalla oman BigQuery-pohjaisen työkalun.",
