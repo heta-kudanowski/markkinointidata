@@ -17,20 +17,20 @@
       "link": null
     },
     {
-      "id": "6",
-      "slug": "analytics-advisor-beta",
-      "date": "2026-05-12",
-      "category": "GA4",
-      "title": "Analytics Advisor (Beta): kysy dataltasi suoraan",
-      "excerpt": "Google Analytics sai Gemini-pohjaisen AI-avustajan. Sen sijaan että avaat raportin, voit nyt kirjoittaa kysymyksen – ja saada vastauksen visualisoineen.",
-      "body": "Analytiikka on perinteisesti tarkoittanut raporttien selailua ja omien johtopäätösten vetämistä. Analytics Advisor muuttaa tätä logiikkaa: voit kirjoittaa suoraan 'miksi myynti laski viime viikolla?' ja Gemini analysoi datan, visualisoi syyt ja ehdottaa toimenpiteitä.\n\nBeta-vaiheessa oleva ominaisuus ei korvaa analyytikkoa, mutta se madaltaa kynnystä datan hyödyntämiseen koko tiimissä. Markkinoija voi itse kysyä datalta ilman SQL-osaamista tai GA4:n syvällistä tuntemusta.\n\nKiinnostavinta on suunnan muutos: analytiikka ei ole enää vain raporttinäkymä vaan vuoropuhelu. Tämä sopii hyvin yhteen sen kanssa, miten AI muuttaa tietotyötä laajemminkin.\n\nKannattaa ottaa käyttöön ja kokeilla käytännössä – mutta muista arvioida kriittisesti mitä se sanoo. AI-avustajat voivat antaa itsevarman kuuloisia vastauksia myös silloin kun data on epätäydellistä.",
+      "id": "7",
+      "slug": "tracklution-ja-server-side-tracking",
+      "date": "2026-05-19",
+      "category": "Server-side",
+      "title": "Tracklution ja server-side mittaaminen – miksi se kannattaa nyt",
+      "excerpt": "Server-side tracking ei ole enää vain isojen pelaajien etuoikeus. Tracklution tekee siitä käytännöllisen myös pk-yrityksille – ja syyt siirtyä ovat vahvemmat kuin koskaan.",
+      "body": "Evästeiden rajoitukset, ad blockerit ja iOS:n yksityisyyspäivitykset ovat nakertaneet perinteisen client-side mittaamisen tarkkuutta jo vuosia. Server-side tracking on vastaus tähän: data kulkee selaimen sijaan palvelimen kautta, jolloin se ei ole alttiina blockaukselle.\n\nOngelma oli pitkään se, että server-side setupin rakentaminen oli oikeasti raskasta. Piti miettiä mille palvelimelle rakennetaan – Google Cloud, AWS, oma VPS? Sitten server-side GTM -kontti piti pystyttää, konfiguroida, ylläpitää ja skaalata itse. Se vaati teknistä osaamista tai kehittäjän apua, maksoi enemmän kuin kukaan halusi myöntää, ja vei aikaa pois itse tekemisestä. Useimmille pk-yrityksille kynnys oli yksinkertaisesti liian korkea.\n\n<a href=\"https://tracklution.com\" target=\"_blank\" rel=\"noopener\" style=\"color:#0df5ff;text-decoration:underline;\">Tracklution</a> on muuttanut tämän yhtälön. Se on suomalainen server-side tagging -työkalu, joka hoitaa infrastruktuurin puolestasi – ei omia palvelimia, ei Docker-kontteja, ei ylläpitotyötä. Se toimii välityspalvelimena selaimen ja Google Tag Managerin välillä niin, että pääset alkuun murto-osalla siitä vaivasta mitä ennen tarvittiin.\n\nJa hinta? Se ei päätä huimaa. Verrattuna siihen mitä oman server-side infrastruktuurin pyörittäminen maksaa – tai mitä menettää huonon datan takia väärin kohdennetuissa kampanjoissa – Tracklution on helppo perustella.\n\nKäytännön hyödyt ovat selvät: parempi datan laatu GA4:ssä ja Meta Pixelissä, pidempi evästeen elinkaari (first-party kontekstissa), ja mahdollisuus kontrolloida mitä dataa lähetät kolmansille osapuolille. Viimeksi mainittu ei ole vain tekninen etu – se on kasvava compliance-vaatimus.\n\nJos seurataan konversioita yhtään vakavissaan, suosittelen tutustumaan. Server-side tracking ei ole enää vain isojen budjettien asia.",
       "tags": [
-        "GA4",
-        "Gemini",
-        "AI",
-        "analytiikka"
+        "server-side",
+        "Tracklution",
+        "GTM",
+        "tietosuoja"
       ],
-      "link": "https://support.google.com/analytics/answer/16675569?hl=en"
+      "link": null
     },
     {
       "id": "5",
@@ -46,6 +46,22 @@
         "tagging"
       ],
       "link": "https://www.linkedin.com/posts/simoahava_big-changes-coming-to-google-tag-manager-activity-7457415125600407553-xHZk/"
+    },
+    {
+      "id": "6",
+      "slug": "analytics-advisor-beta",
+      "date": "2026-05-12",
+      "category": "GA4",
+      "title": "Analytics Advisor (Beta): kysy dataltasi suoraan",
+      "excerpt": "Google Analytics sai Gemini-pohjaisen AI-avustajan. Sen sijaan että avaat raportin, voit nyt kirjoittaa kysymyksen – ja saada vastauksen visualisoineen.",
+      "body": "Analytiikka on perinteisesti tarkoittanut raporttien selailua ja omien johtopäätösten vetämistä. Analytics Advisor muuttaa tätä logiikkaa: voit kirjoittaa suoraan 'miksi myynti laski viime viikolla?' ja Gemini analysoi datan, visualisoi syyt ja ehdottaa toimenpiteitä.\n\nBeta-vaiheessa oleva ominaisuus ei korvaa analyytikkoa, mutta se madaltaa kynnystä datan hyödyntämiseen koko tiimissä. Markkinoija voi itse kysyä datalta ilman SQL-osaamista tai GA4:n syvällistä tuntemusta.\n\nKiinnostavinta on suunnan muutos: analytiikka ei ole enää vain raporttinäkymä vaan vuoropuhelu. Tämä sopii hyvin yhteen sen kanssa, miten AI muuttaa tietotyötä laajemminkin.\n\nKannattaa ottaa käyttöön ja kokeilla käytännössä – mutta muista arvioida kriittisesti mitä se sanoo. AI-avustajat voivat antaa itsevarman kuuloisia vastauksia myös silloin kun data on epätäydellistä.",
+      "tags": [
+        "GA4",
+        "Gemini",
+        "AI",
+        "analytiikka"
+      ],
+      "link": "https://support.google.com/analytics/answer/16675569?hl=en"
     },
     {
       "id": "4",
@@ -91,22 +107,6 @@
         "AI",
         "chatbot",
         "SEO"
-      ],
-      "link": null
-    },
-    {
-      "id": "7",
-      "slug": "tracklution-ja-server-side-tracking",
-      "date": "2026-05-19",
-      "category": "Server-side",
-      "title": "Tracklution ja server-side mittaaminen – miksi se kannattaa nyt",
-      "excerpt": "Server-side tracking ei ole enää vain isojen pelaajien etuoikeus. Tracklution tekee siitä käytännöllisen myös pk-yrityksille – ja syyt siirtyä ovat vahvemmat kuin koskaan.",
-      "body": "Evästeiden rajoitukset, ad blockerit ja iOS:n yksityisyyspäivitykset ovat nakertaneet perinteisen client-side mittaamisen tarkkuutta jo vuosia. Server-side tracking on vastaus tähän: data kulkee selaimen sijaan palvelimen kautta, jolloin se ei ole alttiina blockaukselle.\n\nOngelma oli pitkään se, että server-side setupin rakentaminen oli oikeasti raskasta. Piti miettiä mille palvelimelle rakennetaan – Google Cloud, AWS, oma VPS? Sitten server-side GTM -kontti piti pystyttää, konfiguroida, ylläpitää ja skaalata itse. Se vaati teknistä osaamista tai kehittäjän apua, maksoi enemmän kuin kukaan halusi myöntää, ja vei aikaa pois itse tekemisestä. Useimmille pk-yrityksille kynnys oli yksinkertaisesti liian korkea.\n\n<a href=\"https://tracklution.com\" target=\"_blank\" rel=\"noopener\" style=\"color:#0df5ff;text-decoration:underline;\">Tracklution</a> on muuttanut tämän yhtälön. Se on suomalainen server-side tagging -työkalu, joka hoitaa infrastruktuurin puolestasi – ei omia palvelimia, ei Docker-kontteja, ei ylläpitotyötä. Se toimii välityspalvelimena selaimen ja Google Tag Managerin välillä niin, että pääset alkuun murto-osalla siitä vaivasta mitä ennen tarvittiin.\n\nJa hinta? Se ei päätä huimaa. Verrattuna siihen mitä oman server-side infrastruktuurin pyörittäminen maksaa – tai mitä menettää huonon datan takia väärin kohdennetuissa kampanjoissa – Tracklution on helppo perustella.\n\nKäytännön hyödyt ovat selvät: parempi datan laatu GA4:ssä ja Meta Pixelissä, pidempi evästeen elinkaari (first-party kontekstissa), ja mahdollisuus kontrolloida mitä dataa lähetät kolmansille osapuolille. Viimeksi mainittu ei ole vain tekninen etu – se on kasvava compliance-vaatimus.\n\nJos seurataan konversioita yhtään vakavissaan, suosittelen tutustumaan. Server-side tracking ei ole enää vain isojen budjettien asia.",
-      "tags": [
-        "server-side",
-        "Tracklution",
-        "GTM",
-        "tietosuoja"
       ],
       "link": null
     }
