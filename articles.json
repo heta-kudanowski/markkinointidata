@@ -2,6 +2,7 @@
   "articles": [
     {
       "id": "7",
+      "slug": "tracklution-ja-server-side-tracking",
       "date": "2026-05-19",
       "category": "Server-side",
       "title": "Tracklution ja server-side mittaaminen – miksi se kannattaa nyt",
@@ -12,6 +13,7 @@
     },
     {
       "id": "6",
+      "slug": "analytics-advisor-beta",
       "date": "2026-05-12",
       "category": "GA4",
       "title": "Analytics Advisor (Beta): kysy dataltasi suoraan",
@@ -22,6 +24,7 @@
     },
     {
       "id": "5",
+      "slug": "gtm-containers-google-tag-2026",
       "date": "2026-05-05",
       "category": "GTM",
       "title": "GTM:n historian suurin muutos 2026: säilöt osaksi Google Tagia",
@@ -32,6 +35,7 @@
     },
     {
       "id": "4",
+      "slug": "ga4-task-assistant",
       "date": "2026-04-28",
       "category": "GA4",
       "title": "GA4 Task Assistant: helpompi tapa varmistaa oikea asennus",
@@ -42,6 +46,7 @@
     },
     {
       "id": "3",
+      "slug": "google-analytics-data-controls",
       "date": "2026-04-21",
       "category": "Tietosuoja",
       "title": "Pysyvätkö suostumukset mukana? Google tiukentaa datan keruun hallintaa",
@@ -52,8 +57,9 @@
     },
     {
       "id": "2",
+      "slug": "markkinointidata-studio-bigquery",
       "date": "2026-04-14",
-      "category": "Työkalu",
+      "category": "Markkinointidata Studio",
       "title": "Rakensin oman markkinoinnin analytiikkatyökalun – näin se toimii",
       "excerpt": "Markkinoinnin data on hajallaan kymmenessä eri kanavassa ja jokainen alusta tulkitsee attribuutiota omaksi edukseen. Ratkaisin tämän rakentamalla oman BigQuery-pohjaisen työkalun.",
       "body": "Vibe coding on uusi lempilapseni, ja sen pohjalta syntyi ensimmäinen oma työkalu – tietenkin liittyen markkinoinnin analytiikkaan.\n\nLähtökohta oli tuttu ongelma: data on hajallaan Metan, Googlen, LinkedInin ja muiden kanavien välillä. Jokainen alusta tulkitsee attribuutiota niin, että se näyttää itse mahdollisimman hyvältä. Lisäksi historiadataa saa rajallisesti – GA4:ssä on omat säilytysrajoituksensa.\n\nNiin rakensin oman ratkaisun. Näin se toimii:\n\n→ Kaikki data BigQueryyn. Data pysyy tallessa eikä kukaan pääse manipuloimaan sitä. Googlen kanavat integroituvat siististi, LinkedIn-datan toin Coupler.iolla.\n\n→ BigQuery yhdistetään Markkinointidata Studio -työkaluuni. Se hoitaa SQL-kyselyt automaattisesti ja rakentaa valmiit taulukot sen mukaan, mitä tietolähteitä löytyy.\n\n→ AI-chat päällä: se nostaa insightit esiin ja voit pyytää lisää analyysia suoraan.\n\nEi alustakohtaista tulkintaa. Ei katoavaa historiaa. Kaikki yhdessä paikassa omassa hallinnassa.\n\nMitä ajatuksia herää? Mitä toiminnallisuuksia te kaipaisitte omaan data-arsenaaliinne?",
@@ -62,6 +68,7 @@
     },
     {
       "id": "1",
+      "slug": "ga4-ai-chatbot-seurantamalli",
       "date": "2026-04-07",
       "category": "GA4",
       "title": "GA4:ään tulossa uusi AI-chatbot-seurantamalli",

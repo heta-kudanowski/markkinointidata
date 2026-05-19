@@ -618,38 +618,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 2px 8px;
       border-radius: 4px;
     }
-    .article-read-more {
+    .article-action-link {
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       color: #f65ef9;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-      text-align: left;
-      letter-spacing: 0.05em;
-      transition: color 0.2s;
-    }
-    .article-read-more:hover { color: #0df5ff; }
-    .article-body {
-      display: none;
-      font-size: 13px;
-      line-height: 1.8;
-      color: #bbb;
-      white-space: pre-wrap;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 14px;
-      margin-top: 4px;
-    }
-    .article-body.open { display: block; }
-    .article-external {
-      font-size: 12px;
-      font-weight: 600;
-      color: #0df5ff;
       text-decoration: none;
       letter-spacing: 0.05em;
+      transition: opacity 0.2s;
+      align-self: flex-start;
     }
-    .article-external:hover { text-decoration: underline; }
+    .article-action-link.external { color: #0df5ff; }
+    .article-action-link:hover { opacity: 0.7; }
     @media (max-width: 1024px) {
       .articles-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -1478,9 +1457,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return '<span class="article-tag">' + t + '</span>';
     }).join('');
 
-    var linkHtml = a.link
-      ? '<a class="article-external" href="' + a.link + '" target="_blank" rel="noopener">Lue lisää ↗</a>'
-      : '';
+    var actionHtml = a.link
+      ? '<a class="article-action-link external" href="' + a.link + '" target="_blank" rel="noopener">Lue lisää ↗</a>'
+      : (a.slug ? '<a class="article-action-link" href="/ajankohtaista/' + a.slug + '/">Lue lisää →</a>' : '');
 
     card.innerHTML =
       '<div class="article-meta">' +
@@ -1489,20 +1468,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       '</div>' +
       '<div class="article-title">' + a.title + '</div>' +
       '<div class="article-excerpt">' + a.excerpt + '</div>' +
-      '<div class="article-body" id="body-' + a.id + '">' + a.body + '</div>' +
       '<div class="article-tags">' + tagsHtml + '</div>' +
-      (linkHtml ? linkHtml : '') +
-      '<button class="article-read-more" data-id="' + a.id + '">Lue lisää ↓</button>';
+      actionHtml;
 
     return card;
-  }
-
-  function toggleBody(id) {
-    var body = document.getElementById('body-' + id);
-    var btn = document.querySelector('[data-id="' + id + '"]');
-    if (!body || !btn) return;
-    var open = body.classList.toggle('open');
-    btn.textContent = open ? 'Sulje ↑' : 'Lue lisää ↓';
   }
 
   fetch('articles.json')
@@ -1516,11 +1485,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       more.style.cssText = 'grid-column:1/-1;text-align:center;margin-top:16px;';
       more.innerHTML = '<a href="/ajankohtaista" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#f65ef9;text-decoration:none;border:1px solid rgba(246,94,249,0.35);padding:12px 28px;border-radius:100px;transition:background 0.2s;" onmouseover="this.style.background=\'rgba(246,94,249,0.1)\'" onmouseout="this.style.background=\'\'">Katso kaikki artikkelit ↗</a>';
       grid.appendChild(more);
-      grid.addEventListener('click', function(e) {
-        if (e.target.classList.contains('article-read-more')) {
-          toggleBody(e.target.getAttribute('data-id'));
-        }
-      });
     })
     .catch(function() {
       grid.innerHTML = '<p style="color:#888">Artikkeleita ei voitu ladata.</p>';

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TB9GWPC4');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ajankohtaista – Markkinointidata</title>
+  <meta name="description" content=""/>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cyan: #00F5FF; --cyan-border: rgba(0,245,255,0.25);
+      --grad: linear-gradient(135deg, #0df5ff 0%, #a855f7 50%, #f65ef9 100%);
+      --black: #000; --dark2: #0a0a0a; --white: #fff; --grey: #888;
+      --pink: #f65ef9; --blue: #0df5ff;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
+    ::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-track { background: #000; } ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 60px;
+      background: rgba(0,0,0,0.9); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--cyan-border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .nav-logo img { width: 44px; height: 44px; border-radius: 50%; }
+    .nav-brand { font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-links a.active { color: var(--cyan); }
+    .nav-cta { padding: 10px 24px; border: 1.5px solid #a855f7 !important; color: #e879f9 !important; border-radius: 4px; }
+
+    main { flex: 1; padding: 140px 80px 80px; max-width: 780px; margin: 0 auto; width: 100%; }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--grey); text-decoration: none; margin-bottom: 48px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--cyan); }
+
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .article-category {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--pink); background: rgba(246,94,249,0.1); border: 1px solid rgba(246,94,249,0.25);
+      padding: 3px 10px; border-radius: 100px;
+    }
+    .article-date { font-size: 12px; color: var(--grey); font-family: 'JetBrains Mono', monospace; }
+
+    h1 {
+      font-size: clamp(24px, 3vw, 40px); font-weight: 800; line-height: 1.2;
+      letter-spacing: -0.02em; margin-bottom: 32px;
+    }
+
+    .article-body { color: #bbb; line-height: 1.85; }
+    .article-body p { font-size: 15px; margin-bottom: 18px; }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body a { color: var(--blue); text-decoration: underline; }
+
+    .external-link-wrap { margin-top: 32px; }
+    .external-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 700; letter-spacing: 0.06em;
+      color: var(--blue); text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .external-link:hover { opacity: 0.75; }
+
+    .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .tag {
+      font-size: 11px; color: var(--blue);
+      background: rgba(13,245,255,0.07); border: 1px solid rgba(13,245,255,0.15);
+      padding: 3px 10px; border-radius: 4px;
+    }
+
+    .not-found { color: var(--grey); margin-bottom: 24px; }
+
+    footer {
+      border-top: 1px solid rgba(0,245,255,0.1);
+      padding: 32px 80px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-copy { font-size: 12px; color: #555; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: #555; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--cyan); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      main { padding: 120px 20px 60px; }
+      footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB9GWPC4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="../../heta-photo.jpeg" alt="Heta Kudanowski"/>
+    <span class="nav-brand">Markkinointidata</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#services">Palvelut</a></li>
+    <li><a href="/#why">Miksi minä</a></li>
+    <li><a href="/#referenssit">Referenssit</a></li>
+    <li><a href="/ajankohtaista" class="active">Ajankohtaista</a></li>
+    <li><a href="/#contact" class="nav-cta">Ota yhteyttä</a></li>
+  </ul>
+</nav>
+
+<main id="article-main">
+  <p style="color:#888">Ladataan...</p>
+</main>
+
+<footer>
+  <span class="footer-copy">© 2026 Markkinointidata. Kaikki oikeudet pidätetään.</span>
+  <div class="footer-links">
+    <a href="/">Etusivu</a>
+    <a href="/ajankohtaista">Ajankohtaista</a>
+    <a href="/tietosuoja.html">Tietosuoja</a>
+    <a href="mailto:heta@markkinointidata.fi">heta@markkinointidata.fi</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var main = document.getElementById('article-main');
+  var pathParts = window.location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+  var slug = pathParts[pathParts.length - 1];
+
+  fetch('../../articles.json')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var article = (data.articles || []).find(function (a) { return a.slug === slug; });
+      if (!article) {
+        main.innerHTML = '<a href="/ajankohtaista" class="back-link">← Ajankohtaista</a><p class="not-found">Artikkelia ei löydy.</p>';
+        return;
+      }
+
+      document.title = article.title + ' – Markkinointidata';
+      var metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', article.excerpt);
+
+      var paragraphs = article.body.split('\n\n').map(function (p) {
+        return '<p>' + p + '</p>';
+      }).join('');
+
+      var linkHtml = article.link
+        ? '<div class="external-link-wrap"><a class="external-link" href="' + article.link + '" target="_blank" rel="noopener">Lue lisää ↗</a></div>'
+        : '';
+
+      var tagsHtml = (article.tags || []).map(function (t) {
+        return '<span class="tag">' + t + '</span>';
+      }).join('');
+
+      main.innerHTML =
+        '<a href="/ajankohtaista" class="back-link">← Ajankohtaista</a>' +
+        '<div class="article-meta">' +
+          '<span class="article-category">' + article.category + '</span>' +
+          '<span class="article-date">' + new Date(article.date).toLocaleDateString('fi-FI', { day: 'numeric', month: 'numeric', year: 'numeric' }) + '</span>' +
+        '</div>' +
+        '<h1>' + article.title + '</h1>' +
+        '<div class="article-body">' + paragraphs + '</div>' +
+        linkHtml +
+        '<div class="article-tags">' + tagsHtml + '</div>';
+    })
+    .catch(function () {
+      main.innerHTML = '<a href="/ajankohtaista" class="back-link">← Ajankohtaista</a><p class="not-found">Sisältöä ei voitu ladata.</p>';
+    });
+})();
+</script>
+</body>
+</html>
