@@ -565,12 +565,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       flex-direction: column;
       gap: 14px;
       transition: border-color 0.2s, transform 0.2s;
-      cursor: default;
+      position: relative;
+      cursor: pointer;
     }
     .article-card:hover {
       border-color: rgba(246,94,249,0.4);
       transform: translateY(-3px);
     }
+    .card-overlay { position: absolute; inset: 0; border-radius: 12px; z-index: 0; }
+    .article-action-link { position: relative; z-index: 1; }
     .article-meta {
       display: flex;
       align-items: center;
@@ -1462,11 +1465,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return '<span class="article-tag">' + t + '</span>';
     }).join('');
 
+    var cardHref = a.slug
+      ? '/ajankohtaista/' + a.slug + '/'
+      : (a.link || '#');
+    var cardTarget = (!a.slug && a.link) ? ' target="_blank" rel="noopener"' : '';
+
     var actionHtml = a.slug
       ? '<a class="article-action-link" href="/ajankohtaista/' + a.slug + '/">Lue lisää →</a>'
       : '';
 
     card.innerHTML =
+      '<a class="card-overlay" href="' + cardHref + '"' + cardTarget + ' aria-label="' + a.title + '"></a>' +
       '<div class="article-meta">' +
         '<span class="article-category">' + a.category + '</span>' +
         '<span class="article-date">' + formatDate(a.date) + '</span>' +
