@@ -1,6 +1,22 @@
 {
   "articles": [
     {
+      "id": "9",
+      "slug": "tekoalyagentit-vastuu-markkinoija",
+      "date": "2026-05-28",
+      "category": "Tekoäly",
+      "title": "Kun tekoäly tekee virheen, kuka maksaa? Markkinoijan vastuu AI-aikakaudella",
+      "excerpt": "Olen tekoälymyönteinen ja käytän AI-työkaluja päivittäin. Juuri siksi haluan puhua siitä, mistä puhutaan liian vähän: vastuusta, datasta ja siitä, mitä tapahtuu kun jokin menee pieleen.",
+      "body": "Haluan sanoa heti suoraan: olen tekoälymyönteinen. Käytän AI-työkaluja päivittäin, testailen agentteja, vibe koodaan työkaluja mielenkiinnosta ja huomaan joka päivä, miten paljon ne nopeuttavat työtäni. En siis puhu tekoälyä vastaan, vaan sen puolesta, että käyttäisimme sitä ajatuksella.\n\nPidän kuitenkin erittäin huolestuttavana sitä, että vastuullisuudesta ja tietoturvasta puhutaan liian vähän juuri niissä ympäristöissä, joissa tekoäly voisi tuoda eksponentiaalista hyötyä. Taloudellisten voittojen tavoittelu sokaisee helposti näkemästä riskejä.\n\n<b style=\"color:#fff;\">Kysymyksiä, joita pitäisi kysyä ennen kuin kytkee asiakkaan datan AI-työkaluun</b>\n\n<ul style=\"list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;\"><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Minne data menee, kun mainostili tai CRM kytketään AI-työkaluun? Käsitelläänkö se EU:n alueella vai sen ulkopuolella?</li><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Päätyykö data osaksi mallin koulutusdataa?</li><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Onko käytössä kuluttajaversio vai yritysversio? Sopimusehdot ovat lähtökohtaisesti erilaisia. Kuluttajaversiossa promptit voivat päätyä AI-mallien koulutusdataan, enterprise-sopimuksessa yleensä luvataan, että ne eivät päädy.</li><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Onko asiakas ylipäätään tietoinen siitä, että hänen dataansa viedään AI-työkaluun?</li><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Onko asiakassopimuksessa kohta, jossa AI:n käytöstä on sovittu?</li></ul>\n\nNämä eivät ole teoreettisia kysymyksiä. Kun tekoäly tekee virheen, oli se sitten mediabudjettien kanssa tai julkaisee jotain vahingollista, niin kuka sen maksaa?\n\n<b style=\"color:#fff;\">Vastuu ei siirry algoritmille</b>\n\nTivin jutussa asianajotoimisto Krogeruksen osakas Pessi Honkasalo tiivistää asian ytimen: tekoälyä ei voi nykyisellään ajatella itsessään vastuussa olevana tahona. Kyse on isännänvastuusta. Ihminen ja yritys ovat viime kädessä aina vastuussa käyttämistään työkaluista.\n\nTekoälyagenttien vakuuttaminen on lisäksi Honkasalon mukaan jopa hankalampaa kuin kyberturvavakuutusten luominen. Vahinkojen syntymiseen on liian monta mekanismia: hallusinaatiot, syrjivät päätökset, tekijänoikeusloukkaukset, luottamuksellisen tiedon väärinkäyttö. Yhtä selkeää vakuutustuotetta ei helposti löydy.\n\nEU:n uusi tuotevastuudirektiivi tuo tekoälyjärjestelmät tuotevastuusääntelyn piiriin joulukuussa 2026, mikä on askel oikeaan suuntaan. Mutta se ei poista markkinoijan omaa vastuuta tänään.\n\nNämä ovat asioita, joista pitäisi puhua nyt ja paljon enemmän. Se fakta ei muutu mihinkään: markkinoijana pelissä on asiakkaan data, maine, brändi ja rahat, vaikka työkalu olisi kuinka kätevä.",
+      "tags": [
+        "tekoäly",
+        "tietosuoja",
+        "vastuu",
+        "AI-agentit"
+      ],
+      "link": "https://www.tivi.fi/uutiset/a/346404c3-a4a8-489f-b19b-e03b3828f14d"
+    },
+    {
       "id": "8",
       "slug": "google-data-retention-bigquery-2026",
       "date": "2026-05-19",
