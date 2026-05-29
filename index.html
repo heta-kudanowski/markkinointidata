@@ -155,8 +155,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .nav-links { display: none; }
       .nav-logo img { width: 36px; height: 36px; }
       .nav-brand { font-size: 13px; }
-      .lang-switcher { padding: 6px 12px !important; font-size: 11px !important; }
-
       /* HERO */
       #hero { padding: 100px 20px 60px; min-height: auto; overflow-x: hidden; }
       .hero-inner { grid-template-columns: 1fr; gap: 0; }
@@ -222,24 +220,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       #why { padding: 50px 16px; }
       #contact { padding: 60px 16px; }
       footer { padding: 24px 16px; }
-    }
-
-    .lang-switcher {
-      padding: 8px 18px;
-      border: 1.5px solid var(--cyan-border);
-      border-radius: 4px;
-      font-size: 12px !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.08em !important;
-      color: var(--cyan) !important;
-      text-decoration: none;
-      background: var(--cyan-dim);
-      transition: background 0.2s, border-color 0.2s !important;
-    }
-    .lang-switcher:hover {
-      background: var(--cyan) !important;
-      color: var(--black) !important;
-      border-color: var(--cyan) !important;
     }
 
     /* ── CUSTOM CURSOR ── */
@@ -341,11 +321,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: var(--cyan) !important;
       text-align: center;
     }
-    .mobile-menu .lang-switcher {
-      text-align: center;
-      margin-top: 4px;
-    }
-
     @media (max-width: 900px) {
       .hamburger { display: flex; }
     }
@@ -354,8 +329,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="description" content="Freelance Google-markkinoinnin ja analytiikan konsultti. Google Ads, GA4, GTM, Search Console, Looker Studio, BigQuery. Datalähtöistä markkinointia, joka tuottaa tuloksia. heta@markkinointidata.fi"/>
   <meta name="keywords" content="Google Ads konsultti, GA4 käyttöönotto, Google Tag Manager, Search Console analytiikka, Looker Studio raportit, BigQuery markkinointi, markkinoinnin datakonsultti, SEO konsultti, konversioseuranta, MarTech, datalähtöinen markkinointi, freelance markkinointikonsultti"/>
   <link rel="alternate" hreflang="fi" href="https://heta-kudanowski.github.io/"/>
-  <link rel="alternate" hreflang="en" href="https://heta-kudanowski.github.io/markkinointidata_EN.html"/>
-  <link rel="alternate" hreflang="x-default" href="https://heta-kudanowski.github.io/markkinointidata_EN.html"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Markkinointidata | Markkinoinnin data- ja analytiikkakonsultti"/>
   <meta property="og:description" content="Freelance markkinointikonsultointi. Analytiikka, AI, konversioseuranta, MarTech ja raportointi. heta@markkinointidata.fi"/>
@@ -1080,6 +1053,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .service-item { grid-template-columns: 40px 1fr; gap: 16px; padding: 28px 0; }
       .service-item h3 { font-size: 17px; }
 
+      /* Articles grid: 2 cols on tablet */
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+
       /* Testimonials */
       .testimonials-grid { grid-template-columns: 1fr !important; }
     }
@@ -1105,6 +1081,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .service-item h3 { font-size: 16px; }
       .services-header p { font-size: 14px; }
 
+      /* Articles grid: 1 col on mobile */
+      .articles-grid { grid-template-columns: 1fr; gap: 16px; }
+
       /* Why */
       .why-photo-row { flex-direction: column; gap: 12px; }
       .why-photo { width: 72px !important; height: 72px !important; }
@@ -1117,6 +1096,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       /* Chips: smaller on mobile */
       .tool-chip { font-size: 10px !important; padding: 3px 10px !important; }
+
+      /* Reading rec: compact on mobile */
+      .reading-rec { padding: 16px 18px; gap: 14px; }
+      .reading-rec-title { font-size: 14px; }
+
+      /* Accordion toggle: full-width tap area */
+      .service-toggle { padding: 4px 0; }
+      .service-toggle-icon { width: 20px; height: 20px; font-size: 13px; }
 
       /* Contact heading */
       #contact h2 { font-size: clamp(28px, 8vw, 48px) !important; }
@@ -1152,7 +1139,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#referenssit">Referenssit</a></li>
     <li><a href="#ajankohtaista">Ajankohtaista</a></li>
     <li><a href="#contact" class="nav-cta">Ota yhteyttä</a></li>
-    <li><a href="markkinointidata_EN.html" class="lang-switcher">EN</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -1164,7 +1150,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="#referenssit" onclick="closeMobile()">Referenssit</a>
   <a href="#ajankohtaista" onclick="closeMobile()">Ajankohtaista</a>
   <a href="#contact" class="nav-cta" onclick="closeMobile()">Ota yhteyttä</a>
-  <a href="markkinointidata_EN.html" class="lang-switcher">EN</a>
 </div>
 
 <!-- HERO -->
@@ -1351,12 +1336,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- AJANKOHTAISTA -->
 <section id="ajankohtaista">
-  <div class="section-label reveal">Digimarkkinoinnin analytiikka</div>
-  <h2 class="section-title reveal">Ajankohtaista <span class="accent">alalta.</span></h2>
-  <p class="reveal" style="color:#999;font-size:15px;max-width:600px;line-height:1.7;">Seuraan aktiivisesti markkinoinnin analytiikan kehitystä. Tässä tuoreimmat huomioni ja ajatukseni alan tapahtumista.</p>
+  <h2 class="section-title reveal">Mitä markkinoinnissa <span class="accent">tapahtuu?</span></h2>
+  <p class="reveal" style="color:#999;font-size:15px;max-width:600px;line-height:1.7;">Seuraan aktiivisesti markkinoinnin alan kehitystä. Tässä tuoreimmat huomioni ja ajatukseni alalta.</p>
   <a class="reading-rec reveal" href="https://www.mkollektiivi.fi/julkaisut/markkinointi-ja-ai---missa-menee-raja" target="_blank" rel="noopener">
     <div>
-      <div class="reading-rec-label">Lukusuositus</div>
+      <div class="reading-rec-label">Kirjoittamiani artikkeleita</div>
       <div class="reading-rec-title">Sokeasti kohti euroja? Markkinoinnin tekoälykupla kaipaa kipeästi pelisääntöjä</div>
       <div class="reading-rec-desc">Tekoälyn eettiset rajat, juridinen vastuu asiakasdatasta, teknologiahypen sokeat pisteet ja jatkuvan muutoksen inhimillinen hinta.</div>
     </div>
