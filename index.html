@@ -906,6 +906,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-bottom: 20px;
     }
 
+    /* ── Accordion toggle ── */
+    .service-toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; gap: 12px;
+      user-select: none;
+    }
+    .service-toggle:hover h3 { color: #e0aaff; }
+    .service-toggle-icon {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border: 1px solid rgba(168,85,247,0.35);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #a855f7; font-size: 14px; line-height: 1;
+      transition: background 0.2s, border-color 0.2s, transform 0.3s;
+    }
+    .service-item.open .service-toggle-icon {
+      background: rgba(168,85,247,0.12);
+      border-color: rgba(168,85,247,0.6);
+      transform: rotate(45deg);
+    }
+    .service-tools {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.35s ease, opacity 0.25s ease;
+    }
+    .service-item.open .service-tools {
+      max-height: 400px;
+      opacity: 1;
+    }
+
     /* ── Tool chips: brand gradient style ── */
     .tool-chip {
       font-family: 'Poppins', sans-serif !important;
@@ -1120,7 +1152,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#referenssit">Referenssit</a></li>
     <li><a href="#ajankohtaista">Ajankohtaista</a></li>
     <li><a href="#contact" class="nav-cta">Ota yhteyttä</a></li>
-    <li><a href="markkinointidata_EN.html" class="lang-switcher">🇬🇧 EN</a></li>
+    <li><a href="markkinointidata_EN.html" class="lang-switcher">EN</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -1132,7 +1164,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="#referenssit" onclick="closeMobile()">Referenssit</a>
   <a href="#ajankohtaista" onclick="closeMobile()">Ajankohtaista</a>
   <a href="#contact" class="nav-cta" onclick="closeMobile()">Ota yhteyttä</a>
-  <a href="markkinointidata_EN.html" class="lang-switcher">🇬🇧 EN</a>
+  <a href="markkinointidata_EN.html" class="lang-switcher">EN</a>
 </div>
 
 <!-- HERO -->
@@ -1169,41 +1201,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="service-item reveal">
       <span class="service-item-num">01</span>
       <div>
-        <h3>Markkinoinnin data &amp; analytiikka</h3>
+        <div class="service-toggle" onclick="toggleService(this)">
+          <h3>Markkinoinnin data &amp; analytiikka</h3>
+          <span class="service-toggle-icon">+</span>
+        </div>
         <p>Datan avulla markkinoinnista tulee mitattavaa, ei arvailua. Rakennan koko analytiikkainfrastruktuurin alusta loppuun: seurannasta raportointiin ja jatkuvaan optimointiin.</p>
-        <div class="chip-label">Seuranta &amp; tagit</div>
-        <div class="tool-chips" style="margin-bottom:16px;"><a href="/ajankohtaista?cat=GTM" class="tool-chip">Google Tag Manager</a><a href="/ajankohtaista?cat=Server-side" class="tool-chip">Server-side GTM</a><span class="tool-chip">Microsoft Clarity</span><span class="tool-chip">Pikselit</span><span class="tool-chip">Konversioasennus</span></div>
-        <div class="chip-label">Evästeet &amp; consent</div>
-        <div class="tool-chips" style="margin-bottom:16px;"><a href="/ajankohtaista?cat=Tietosuoja" class="tool-chip">Cookiebot</a><a href="/ajankohtaista?cat=Tietosuoja" class="tool-chip">CookieYes</a><a href="/ajankohtaista?cat=Tietosuoja" class="tool-chip">Cookiescript</a><a href="/ajankohtaista?cat=Tietosuoja" class="tool-chip">CMP-asennus</a><a href="/ajankohtaista?cat=Tietosuoja" class="tool-chip">GDPR</a></div>
-        <div class="chip-label">Analytiikka &amp; raportointi</div>
-        <div class="tool-chips"><a href="/ajankohtaista?cat=GA4" class="tool-chip">GA4</a><a href="/ajankohtaista?cat=Markkinointidata+Studio" class="tool-chip">BigQuery</a><span class="tool-chip">Coupler.io</span><span class="tool-chip">Looker Studio</span><span class="tool-chip">Databox</span><span class="tool-chip">Whatagraph</span></div>
+        <div class="service-tools">
+          <div class="chip-label">Seuranta &amp; tagit</div>
+          <div class="tool-chips" style="margin-bottom:16px;"><a href="/ajankohtaista?cat=GTM" class="tool-chip">Google Tag Manager</a><a href="/ajankohtaista?cat=Server-side" class="tool-chip">Server-side GTM</a><span class="tool-chip">Microsoft Clarity</span><span class="tool-chip">Pikselit</span><span class="tool-chip">Konversioasennus</span></div>
+          <div class="chip-label">Evästeet &amp; consent</div>
+          <div class="tool-chips" style="margin-bottom:16px;"><a href="/ajankohtaista?cat=Tietosuoja" class="tool-chip">Cookiebot</a><a href="/ajankohtaista?cat=Tietosuoja" class="tool-chip">CookieYes</a><a href="/ajankohtaista?cat=Tietosuoja" class="tool-chip">Cookiescript</a><a href="/ajankohtaista?cat=Tietosuoja" class="tool-chip">CMP-asennus</a><a href="/ajankohtaista?cat=Tietosuoja" class="tool-chip">GDPR</a></div>
+          <div class="chip-label">Analytiikka &amp; raportointi</div>
+          <div class="tool-chips" style="margin-bottom:4px;"><a href="/ajankohtaista?cat=GA4" class="tool-chip">GA4</a><a href="/ajankohtaista?cat=Markkinointidata+Studio" class="tool-chip">BigQuery</a><span class="tool-chip">Coupler.io</span><span class="tool-chip">Looker Studio</span><span class="tool-chip">Databox</span><span class="tool-chip">Whatagraph</span></div>
+        </div>
       </div>
     </div>
 
     <div class="service-item reveal">
       <span class="service-item-num">02</span>
       <div>
-        <h3>Kasvu &amp; strategia</h3>
+        <div class="service-toggle" onclick="toggleService(this)">
+          <h3>Kasvu &amp; strategia</h3>
+          <span class="service-toggle-icon">+</span>
+        </div>
         <p>Markkinointi ilman strategiaa on vain kuluerä. Autan rakentamaan selkeän kasvusuunnitelman: mitä tehdään, missä kanavissa, millä mittareilla ja miksi.</p>
-        <div class="tool-chips"><span class="tool-chip">Kasvustrategia</span><span class="tool-chip">Kanavastrategia</span><span class="tool-chip">Markkinointisuunnitelma</span><span class="tool-chip">KPI-mittaristo</span><span class="tool-chip">Kilpailija-analyysi</span></div>
+        <div class="service-tools">
+          <div class="tool-chips" style="margin-bottom:4px;"><span class="tool-chip">Kasvustrategia</span><span class="tool-chip">Kanavastrategia</span><span class="tool-chip">Markkinointisuunnitelma</span><span class="tool-chip">KPI-mittaristo</span><span class="tool-chip">Kilpailija-analyysi</span></div>
+        </div>
       </div>
     </div>
 
     <div class="service-item reveal">
       <span class="service-item-num">03</span>
       <div>
-        <h3>Markkinoinnin projektinjohto</h3>
+        <div class="service-toggle" onclick="toggleService(this)">
+          <h3>Markkinoinnin projektinjohto</h3>
+          <span class="service-toggle-icon">+</span>
+        </div>
         <p>Vien markkinointiprojektit maaliin, aikataulussa, budjetissa ja tavoitteiden mukaisesti. Olen tottunut työskentelemään sekä asiakkaan että agentuurin puolella.</p>
-        <div class="tool-chips"><span class="tool-chip">Projektien suunnittelu</span><span class="tool-chip">Toimittajayhteistyö</span><span class="tool-chip">Kampanjatuotanto</span><span class="tool-chip">Tiimin koordinointi</span></div>
+        <div class="service-tools">
+          <div class="tool-chips" style="margin-bottom:4px;"><span class="tool-chip">Projektien suunnittelu</span><span class="tool-chip">Toimittajayhteistyö</span><span class="tool-chip">Kampanjatuotanto</span><span class="tool-chip">Tiimin koordinointi</span></div>
+        </div>
       </div>
     </div>
 
     <div class="service-item reveal">
       <span class="service-item-num">05</span>
       <div>
-        <h3>LinkedIn, CRM &amp; Account-Based Marketing</h3>
+        <div class="service-toggle" onclick="toggleService(this)">
+          <h3>LinkedIn, CRM &amp; Account-Based Marketing</h3>
+          <span class="service-toggle-icon">+</span>
+        </div>
         <p>B2B-markkinoinnissa oikea kohdentaminen ratkaisee. Rakennan LinkedIn-strategian ja ABM-lähestymisen, joka tavoittaa päättäjät oikeaan aikaan ja yhdistää datan CRM:ään niin, että myynti ja markkinointi puhuvat samaa kieltä.</p>
-        <div class="tool-chips"><span class="tool-chip">LinkedIn Ads</span><span class="tool-chip">LinkedIn Organic</span><span class="tool-chip">Account-Based Marketing</span><span class="tool-chip">CRM-integraatiot</span><span class="tool-chip">Lead Scoring</span></div>
+        <div class="service-tools">
+          <div class="tool-chips" style="margin-bottom:4px;"><span class="tool-chip">LinkedIn Ads</span><span class="tool-chip">LinkedIn Organic</span><span class="tool-chip">Account-Based Marketing</span><span class="tool-chip">CRM-integraatiot</span><span class="tool-chip">Lead Scoring</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1438,6 +1490,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
   }
+
+  // Accordion for service items
+  window.toggleService = function(toggleEl) {
+    var item = toggleEl.closest('.service-item');
+    item.classList.toggle('open');
+  };
 
   // Close menu on scroll
   window.addEventListener('scroll', () => closeMobile());
