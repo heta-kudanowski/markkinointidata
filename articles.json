@@ -1,6 +1,17 @@
 {
   "articles": [
     {
+      "id": "10",
+      "slug": "",
+      "date": "2026-05-29",
+      "category": "Tekoäly",
+      "title": "Sokeasti kohti euroja? Markkinoinnin tekoälykupla kaipaa kipeästi pelisääntöjä",
+      "excerpt": "Tekoälyn eettiset rajat, juridinen vastuu asiakasdatasta, teknologiahypen sokeat pisteet sekä jatkuvan muutoksen inhimillinen hinta. Tärkeä kirjoitus kaikilta markkinoijilta luettavaksi.",
+      "body": "",
+      "tags": ["tekoäly", "etiikka", "vastuu", "markkinointi"],
+      "link": "https://www.mkollektiivi.fi/julkaisut/markkinointi-ja-ai---missa-menee-raja"
+    },
+    {
       "id": "9",
       "slug": "tekoalyagentit-vastuu-markkinoija",
       "date": "2026-05-28",

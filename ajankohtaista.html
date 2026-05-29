@@ -260,7 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     var actionHtml = a.slug
       ? '<a class="article-action-link" href="/ajankohtaista/' + a.slug + '/">Lue lisää →</a>'
-      : '';
+      : (a.link ? '<a class="article-action-link external" href="' + a.link + '" target="_blank" rel="noopener">Lue artikkeli ↗</a>' : '');
 
     if (cardHref) {
       card.addEventListener('click', function (e) {

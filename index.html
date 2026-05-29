@@ -550,11 +550,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       max-width: 1200px;
       margin: 0 auto;
     }
+    .reading-rec {
+      display: flex; align-items: flex-start; gap: 20px;
+      margin-top: 40px;
+      padding: 20px 24px;
+      background: rgba(13,245,255,0.04);
+      border: 1px solid rgba(13,245,255,0.15);
+      border-left: 3px solid var(--blue);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .reading-rec:hover { background: rgba(13,245,255,0.08); border-color: rgba(13,245,255,0.5); border-left-color: var(--blue); }
+    .reading-rec-label { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .reading-rec-title { font-size: 14px; font-weight: 700; color: var(--white); line-height: 1.4; margin-bottom: 6px; }
+    .reading-rec-desc { font-size: 12px; color: #888; line-height: 1.6; }
+    .reading-rec-arrow { font-size: 18px; color: var(--blue); flex-shrink: 0; margin-top: 2px; }
     .articles-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      margin-top: 56px;
+      margin-top: 40px;
     }
     .article-card {
       background: var(--dark2);
@@ -1281,6 +1297,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="section-label reveal">Digimarkkinoinnin analytiikka</div>
   <h2 class="section-title reveal">Ajankohtaista <span class="accent">alalta.</span></h2>
   <p class="reveal" style="color:#999;font-size:15px;max-width:600px;line-height:1.7;">Seuraan aktiivisesti markkinoinnin analytiikan kehitystä. Tässä tuoreimmat huomioni ja ajatukseni alan tapahtumista.</p>
+  <a class="reading-rec reveal" href="https://www.mkollektiivi.fi/julkaisut/markkinointi-ja-ai---missa-menee-raja" target="_blank" rel="noopener">
+    <div>
+      <div class="reading-rec-label">Lukusuositus</div>
+      <div class="reading-rec-title">Sokeasti kohti euroja? Markkinoinnin tekoälykupla kaipaa kipeästi pelisääntöjä</div>
+      <div class="reading-rec-desc">Tekoälyn eettiset rajat, juridinen vastuu asiakasdatasta, teknologiahypen sokeat pisteet ja jatkuvan muutoksen inhimillinen hinta.</div>
+    </div>
+    <span class="reading-rec-arrow">↗</span>
+  </a>
   <div class="articles-grid" id="articles-grid">
     <!-- Artikkelit ladataan JS:llä -->
   </div>
@@ -1468,7 +1492,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     var actionHtml = a.slug
       ? '<a class="article-action-link" href="/ajankohtaista/' + a.slug + '/">Lue lisää →</a>'
-      : '';
+      : (a.link ? '<a class="article-action-link external" href="' + a.link + '" target="_blank" rel="noopener">Lue artikkeli ↗</a>' : '');
 
     if (cardHref) {
       card.addEventListener('click', function(e) {
