@@ -995,19 +995,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* ── "Avoin projekteille" badge: brand colors ── */
     .hero-photo-badge {
-      background: rgba(0, 230, 118, 0.08) !important;
-      border: 1px solid rgba(0, 230, 118, 0.35) !important;
+      background: rgba(0, 230, 118, 0.15) !important;
+      border: 1.5px solid rgba(0, 230, 118, 0.7) !important;
       border-radius: 100px !important;
+      box-shadow: 0 0 20px rgba(0, 230, 118, 0.25), 0 0 40px rgba(0, 230, 118, 0.1) !important;
+      padding: 12px 20px !important;
     }
     .hero-photo-badge .dot {
       background: #00e676 !important;
-      box-shadow: 0 0 8px #00e676 !important;
-      animation: blink 2s ease-in-out infinite !important;
+      box-shadow: 0 0 10px #00e676, 0 0 20px rgba(0,230,118,0.6) !important;
+      animation: blink 1.5s ease-in-out infinite !important;
+      width: 9px !important; height: 9px !important;
     }
     .hero-photo-badge span {
       color: #fff;
       -webkit-text-fill-color: #fff;
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 13px !important;
+      letter-spacing: 0.04em;
     }
 
     /* ════════════════════════════════
