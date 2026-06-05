@@ -408,21 +408,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .testimonials-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
       margin-top: 56px;
     }
-    @media (max-width: 1024px) {
-      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 1200px) {
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .testimonials-grid { grid-template-columns: 1fr; gap: 14px; }
     }
     .testimonial-card {
       background: var(--dark3);
       border: 1px solid var(--cyan-border);
       border-radius: 8px;
-      padding: 36px 32px;
+      padding: 28px 24px;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 20px;
     }
     .testimonial-stars {
       color: var(--cyan);
@@ -514,7 +517,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     @media (max-width: 768px) {
       #referenssit { padding: 72px 24px; }
-      .testimonials-grid { grid-template-columns: 1fr; }
     }
 
     /* ── Ajankohtaista ── */
@@ -1056,8 +1058,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       /* Articles grid: 2 cols on tablet */
       .articles-grid { grid-template-columns: repeat(2, 1fr); }
 
-      /* Testimonials */
-      .testimonials-grid { grid-template-columns: 1fr !important; }
+      /* Testimonials: already handled by grid breakpoints */
     }
 
     @media (max-width: 480px) {
