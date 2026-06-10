@@ -1,6 +1,17 @@
 {
   "articles": [
     {
+      "id": "11",
+      "slug": "eu-tekoalylaki-ai-merkinta-markkinointi",
+      "date": "2026-05-29",
+      "category": "Tietosuoja",
+      "title": "EU:n tekoälylaki velvoittaa merkitsemään AI-sisällön - mitä se tarkoittaa markkinoijalle?",
+      "excerpt": "EU:n tekoälylain artikla 50 toi elokuusta 2025 alkaen velvoitteen merkitä tekoälyllä tuotetut kuvat, videot ja äänet. Mitä tämä käytännössä tarkoittaa markkinoinnissa?",
+      "body": "EU:n tekoälylain (AI Act) artikla 50 astui voimaan 2.8.2025. Sen myötä tekoälyllä tuotetuissa tai manipuloiduissa kuvissa, videoissa ja äänitiedostoissa täytyy olla selkeä merkintä - sisältö on tunnistettavissa tekoälyn tekemäksi.\n\n<b style=\"color:#fff;\">Kenen vastuu - alustan vai markkinoijan?</b>\n\nTekninen toteutusvastuu on suurelta osin tekoälyjärjestelmien ja alustojen tarjoajilla. Velvollisuus lisätä metatietoa tai vesileima AI-sisältöön kuuluu siis esimerkiksi Adobelle, Metalle tai muille työkalujen kehittäjille.\n\nMutta tässä tulee tärkeä kohta: jos käytät tekoälyä ammatillisiin, julkisiin tai kaupallisiin tarkoituksiin, myös sinä voit olla oikeudellisessa vastuussa. Varsinkin deepfake-tyyppisessä sisällössä, kuten AI-generoitu henkilö tai manipuloitu ääni, vastuu ei katoa vaikka alusta hoitaisi teknisen merkinnän.\n\n<b style=\"color:#fff;\">Mitä tämä tarkoittaa käytännön markkinoinnissa?</b>\n\n<ul style=\"list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;\"><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>AI-generoitu tuotekuva, malli tai esittelyvideo: pitää olla tunnistettavissa tekoälysisällöksi.</li><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Ääniklippi jossa AI puhuu tai laulaa: sama vaatimus.</li><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Mainoskuva johon on tekoälyllä lisätty tai poistettu henkilö: merkintä tarvitaan.</li><li style=\"display:flex;gap:10px;\"><span style=\"color:#0df5ff;flex-shrink:0;\">→</span>Puhtaasti tekstipohjainen AI-sisältö (esim. ChatGPT-tekstit) ei kuulu tämän velvoitteen piiriin.</li></ul>\n\nKäytännössä monet alustat alkavat huolehtia tästä automaattisesti - Adobe Fireflyssä ja muissa vastaavissa on jo C2PA-metatietomerkinnät. Mutta vastuu on silti lopulta myös julkaisijalla.\n\n<b style=\"color:#fff;\">Kysymys teille:</b>\n\nMiten olette ajatelleet käytännössä hoitaa AI-sisällön merkitsemisen? Onko teillä jo prosessi, vai onko tämä vielä auki? Kirjoita kommentti tai lähetä viesti - olen kiinnostunut kuulemaan miten muut tähän suhtautuvat.",
+      "tags": ["AI Act", "tekoäly", "GDPR", "markkinointi", "EU-sääntely"],
+      "link": "https://artificialintelligenceact.eu/article/50/"
+    },
+    {
       "id": "10",
       "slug": "",
       "date": "2026-05-29",
