@@ -61,6 +61,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-photo-ring { position: absolute; inset: -14px; border-radius: 50%; border: 1px solid var(--cyan-border); animation: spin 20s linear infinite; }
     .hero-photo-ring::before { content: ''; position: absolute; top: -4px; left: 50%; width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 12px var(--cyan); }
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes md-float {
+      0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+      50% { transform: translateY(-7px) rotate(var(--r, 0deg)); }
+    }
+    .md-float { animation: md-float 4s ease-in-out infinite; }
     .hero-photo-ring2 { position: absolute; inset: -28px; border-radius: 50%; border: 1px solid rgba(0,245,255,0.1); animation: spin 35s linear infinite reverse; }
     .hero-photo { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--cyan-border); box-shadow: 0 0 60px rgba(0,245,255,0.18), 0 0 120px rgba(0,245,255,0.07); position: relative; z-index: 1; }
     .hero-photo-badge { position: absolute; bottom: 32px; right: 16px; z-index: 2; background: var(--dark3); border: 1px solid var(--cyan-border); border-radius: 8px; padding: 10px 16px; display: flex; align-items: center; gap: 10px; backdrop-filter: blur(10px); }
@@ -395,9 +400,90 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <style>
     /* ── TESTIMONIALS ── */
     #referenssit {
-      padding: 100px 40px;
+      padding: 100px 40px 120px;
       max-width: 1200px;
       margin: 0 auto;
+      position: relative;
+    }
+    /* full-bleed paper bg */
+    #referenssit::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%; transform: translateX(-50%);
+      width: 100vw;
+      background: var(--paper, #F6F4EF);
+      z-index: -1;
+    }
+    /* torn paper top edge */
+    #referenssit::after {
+      content: '';
+      position: absolute;
+      top: -28px; left: 50%;
+      transform: translateX(-50%);
+      width: 100vw; height: 30px;
+      background: var(--paper, #F6F4EF);
+      clip-path: polygon(0 100%, 5% 20%, 10% 90%, 15% 10%, 20% 80%, 25% 15%, 30% 85%, 35% 5%, 40% 75%, 45% 20%, 50% 90%, 55% 10%, 60% 80%, 65% 25%, 70% 95%, 75% 15%, 80% 85%, 85% 5%, 90% 70%, 95% 20%, 100% 100%);
+    }
+
+    /* section heading on light bg */
+    #referenssit .section-label { color: rgba(10,10,10,0.4); }
+    #referenssit .section-title { color: #0a0a0a; }
+    #referenssit .section-title .accent { color: #f65ef9; -webkit-text-fill-color: #f65ef9; }
+
+    /* stickers */
+    .star-sticker {
+      width: 68px; height: 68px;
+      background: #0df5ff;
+      clip-path: polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+      box-shadow: 0 0 0 5px #fff, 0 0 0 7px #0a0a0a;
+      --r: 12deg;
+      position: absolute;
+      top: 60px; right: -20px;
+    }
+    .dashboard-sticker {
+      position: absolute;
+      top: 52px; right: 80px;
+      width: 130px; height: 72px;
+      background: #fff;
+      border: 2.5px solid #0a0a0a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 4px 5px 0 rgba(10,10,10,0.85);
+      --r: -4deg;
+    }
+    .dashboard-sticker .dash-title {
+      height: 20px;
+      background: #f65ef9;
+      border-bottom: 2px solid #0a0a0a;
+      display: flex; align-items: center; justify-content: flex-end; gap: 5px;
+      padding: 0 7px;
+    }
+    .dashboard-sticker .dash-title span {
+      width: 8px; height: 2.5px; background: #0a0a0a; display: inline-block; border-radius: 1px;
+    }
+    .dashboard-sticker .dash-title span:last-child {
+      width: 8px; height: 8px; background: transparent; border: 1.5px solid #0a0a0a; border-radius: 0;
+    }
+    .dashboard-sticker .dash-bars {
+      height: 46px;
+      display: flex; align-items: flex-end; justify-content: center; gap: 5px;
+      padding: 0 8px 6px;
+    }
+    .dashboard-sticker .dash-bars span {
+      width: 8px; border-radius: 2px 2px 0 0; display: inline-block;
+    }
+
+    /* pill stickers on hero */
+    .hero-pill-sticker {
+      display: inline-flex; align-items: center;
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      box-shadow: 0 0 0 3px #0a0a0a inset;
+      pointer-events: none;
     }
     .testimonials-grid {
       display: grid;
@@ -950,11 +1036,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-color: #f65ef9 !important;
     }
 
-    /* ── Testimonial cards: lighter border ── */
+    /* ── Testimonial cards: light sticker style ── */
     .testimonial-card {
-      background: #080808 !important;
-      border-color: rgba(255,255,255,0.07) !important;
+      background: #fff !important;
+      border: 2px solid #0a0a0a !important;
+      border-radius: 14px !important;
+      box-shadow: 4px 6px 0 #0a0a0a !important;
+      transition: transform 0.15s, box-shadow 0.15s !important;
     }
+    .testimonial-card:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 4px 9px 0 #0a0a0a !important;
+    }
+    .testimonial-card blockquote { color: #37414d !important; }
+    .testimonial-stars { color: #f65ef9 !important; }
+    .author-info strong { color: #0a0a0a !important; }
+    .author-info span { color: #5b6470 !important; }
+    .author-info a { color: #5b6470 !important; }
+    .testimonial-card .testimonial-author { border-top-color: rgba(10,10,10,0.1) !important; }
+    .author-logo svg { filter: brightness(0); opacity: 0.8; }
+    .author-logo img { filter: none !important; opacity: 0.85 !important; }
+    .logos-label { color: rgba(10,10,10,0.4) !important; }
 
     /* ── Remove all gradient top-borders on service cards ── */
     .service-card::after { display: none !important; }
@@ -1164,6 +1266,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="dot"></span>
         <span>Avoin projekteille</span>
       </div>
+      <!-- yellow star sticker -->
+      <div class="md-float" aria-hidden="true" style="
+        --r:-8deg;
+        position:absolute; top:-10px; left:0px;
+        width:52px; height:52px;
+        background:#ffd84d;
+        clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+        box-shadow:0 0 0 4px #0a0a0a;
+        animation-delay:0.8s;
+      "></div>
+      <!-- small cyan star -->
+      <div class="md-float" aria-hidden="true" style="
+        --r:15deg;
+        position:absolute; bottom:80px; left:-10px;
+        width:34px; height:34px;
+        background:#0df5ff;
+        clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+        box-shadow:0 0 0 3px #0a0a0a;
+        animation-delay:1.4s;
+      "></div>
     </div>
   </div>
 </section>
@@ -1306,6 +1428,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- TESTIMONIALS -->
 <section id="referenssit">
+  <!-- star sticker -->
+  <div class="star-sticker md-float" aria-hidden="true"></div>
+  <!-- dashboard sticker -->
+  <div class="dashboard-sticker md-float" aria-hidden="true" style="--r:-4deg;">
+    <div class="dash-title"><span></span><span></span><span class="last"></span></div>
+    <div class="dash-bars">
+      <span style="height:22px;background:#0df5ff;"></span>
+      <span style="height:34px;background:#f65ef9;"></span>
+      <span style="height:16px;background:#ffd84d;"></span>
+      <span style="height:28px;background:#0a0a0a;"></span>
+      <span style="height:20px;background:#0df5ff;"></span>
+      <span style="height:38px;background:#f65ef9;"></span>
+    </div>
+  </div>
   <div class="section-label">Asiakkaideni palautteita</div>
   <h2 class="section-title">Mitä <span class="accent">asiakkaat sanovat.</span></h2>
   <div class="testimonials-grid">
