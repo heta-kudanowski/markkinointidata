@@ -14,17 +14,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="description" content="Ajankohtaisia huomioita digimarkkinoinnin analytiikasta – GA4, GTM, server-side tracking ja enemmän."/>
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="shortcut icon" href="favicon.svg"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --cyan: #00F5FF;
-      --cyan-border: rgba(0,245,255,0.25);
-      --grad: linear-gradient(135deg, #0df5ff 0%, #a855f7 50%, #f65ef9 100%);
-      --black: #000000;
-      --dark: #050505;
+      --cyan: #0DF5FF;
+      --cyan-border: rgba(13,245,255,0.25);
+      --yellow: #FFD84D;
+      --grad: var(--pink);
+      --black: #0A0A0A;
+      --dark: #0A0A0A;
       --dark2: #0a0a0a;
-      --dark3: #111111;
+      --dark3: #131313;
       --white: #ffffff;
       --grey: #888;
       --pink: #f65ef9;
@@ -51,8 +52,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
     .nav-links a { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
-    .nav-cta { padding: 10px 24px; border: 1.5px solid #a855f7; color: #e879f9 !important; border-radius: 4px; font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.1em !important; transition: background 0.2s, color 0.2s !important; }
-    .nav-cta:hover { background: linear-gradient(135deg, #0df5ff, #a855f7, #f65ef9) !important; color: #fff !important; border-color: transparent !important; }
+    .nav-cta { padding: 10px 24px; border: 1.5px solid #f65ef9; color: #f65ef9 !important; border-radius: 40px; font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.1em !important; transition: background 0.2s, color 0.2s !important; }
+    .nav-cta:hover { background: #f65ef9 !important; color: #0a0a0a !important; border-color: transparent !important; }
 
     /* HERO HEADER */
     #page-hero {
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       letter-spacing: -0.02em; margin-bottom: 20px;
     }
     .page-title .accent {
-      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      color: #f65ef9; -webkit-text-fill-color: #f65ef9;
     }
     .page-desc { font-size: 17px; color: #aaa; line-height: 1.7; max-width: 560px; }
 
@@ -111,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .articles-count {
       font-size: 12px; color: var(--grey); margin-bottom: 28px;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'Space Mono', monospace;
     }
     .articles-grid {
       display: grid;
@@ -134,7 +135,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: var(--pink); background: rgba(246,94,249,0.1); border: 1px solid rgba(246,94,249,0.25);
       padding: 3px 10px; border-radius: 100px;
     }
-    .article-date { font-size: 11px; color: var(--grey); font-family: 'JetBrains Mono', monospace; }
+    .article-date { font-size: 11px; color: var(--grey); font-family: 'Space Mono', monospace; }
     .article-title { font-size: 15px; font-weight: 700; line-height: 1.4; color: var(--white); }
     .article-excerpt { font-size: 13px; line-height: 1.7; color: #999; flex: 1; }
     .article-tags { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -176,13 +177,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       #articles-section { padding: 0 20px 80px; }
       .articles-grid { grid-template-columns: 1fr; }
       footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+      #cursor-pixel { display: none; }
     }
+
+    /* ── CUSTOM CURSOR: pixel-art pointer ── */
+    * { cursor: none !important; }
+    #cursor-pixel {
+      --cc: var(--cyan);
+      position: fixed;
+      top: 0; left: 0;
+      width: 3px; height: 3px;
+      background: var(--cc);
+      pointer-events: none;
+      z-index: 2147483647;
+      image-rendering: pixelated;
+      box-shadow:
+        0px 3px 0 0 var(--cc), 3px 3px 0 0 var(--cc),
+        0px 6px 0 0 var(--cc), 3px 6px 0 0 var(--cc), 6px 6px 0 0 var(--cc),
+        0px 9px 0 0 var(--cc), 3px 9px 0 0 var(--cc), 6px 9px 0 0 var(--cc), 9px 9px 0 0 var(--cc),
+        0px 12px 0 0 var(--cc), 3px 12px 0 0 var(--cc), 6px 12px 0 0 var(--cc), 9px 12px 0 0 var(--cc), 12px 12px 0 0 var(--cc),
+        0px 15px 0 0 var(--cc), 3px 15px 0 0 var(--cc), 6px 15px 0 0 var(--cc), 9px 15px 0 0 var(--cc), 12px 15px 0 0 var(--cc), 15px 15px 0 0 var(--cc),
+        0px 18px 0 0 var(--cc), 3px 18px 0 0 var(--cc), 6px 18px 0 0 var(--cc), 9px 18px 0 0 var(--cc),
+        0px 21px 0 0 var(--cc), 3px 21px 0 0 var(--cc),
+        0px 24px 0 0 var(--cc);
+      filter:
+        drop-shadow(1px 0 0 #0a0a0a)
+        drop-shadow(-1px 0 0 #0a0a0a)
+        drop-shadow(0 1px 0 #0a0a0a)
+        drop-shadow(0 -1px 0 #0a0a0a);
+      transition: transform 0.08s ease;
+      transform-origin: top left;
+    }
+    body.cursor-hover #cursor-pixel { --cc: var(--pink); transform: scale(1.35); }
   </style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB9GWPC4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<!-- CUSTOM CURSOR -->
+<div id="cursor-pixel"></div>
 
 <!-- NAV -->
 <nav>
@@ -335,6 +369,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .catch(function () {
       grid.innerHTML = '<div class="no-results">Artikkeleita ei voitu ladata.</div>';
     });
+})();
+</script>
+<script>
+(function () {
+  var pixelCursor = document.getElementById('cursor-pixel');
+  if (!pixelCursor) return;
+  document.addEventListener('mousemove', function (e) {
+    pixelCursor.style.left = e.clientX + 'px';
+    pixelCursor.style.top = e.clientY + 'px';
+  });
+  document.addEventListener('mouseover', function (e) {
+    if (e.target.closest('a, button, .filter-btn, .article-card')) {
+      document.body.classList.add('cursor-hover');
+    }
+  });
+  document.addEventListener('mouseout', function (e) {
+    if (e.target.closest('a, button, .filter-btn, .article-card')) {
+      document.body.classList.remove('cursor-hover');
+    }
+  });
 })();
 </script>
 </body>

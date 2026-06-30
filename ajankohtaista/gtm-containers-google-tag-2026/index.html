@@ -13,13 +13,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <title>Ajankohtaista – Markkinointidata</title>
   <meta name="description" content=""/>
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --cyan: #00F5FF; --cyan-border: rgba(0,245,255,0.25);
-      --grad: linear-gradient(135deg, #0df5ff 0%, #a855f7 50%, #f65ef9 100%);
-      --black: #000; --dark2: #0a0a0a; --white: #fff; --grey: #888;
+      --cyan: #0DF5FF; --cyan-border: rgba(13,245,255,0.25);
+      --yellow: #FFD84D;
+      --black: #0A0A0A; --dark2: #0a0a0a; --white: #fff; --grey: #888;
       --pink: #f65ef9; --blue: #0df5ff;
     }
     html { scroll-behavior: smooth; }
@@ -40,7 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-links a { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--cyan); }
     .nav-links a.active { color: var(--cyan); }
-    .nav-cta { padding: 10px 24px; border: 1.5px solid #a855f7 !important; color: #e879f9 !important; border-radius: 4px; }
+    .nav-cta { padding: 10px 24px; border: 1.5px solid #f65ef9 !important; color: #f65ef9 !important; border-radius: 40px; }
 
     main { flex: 1; padding: 140px 80px 80px; max-width: 780px; margin: 0 auto; width: 100%; }
 
@@ -58,7 +58,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: var(--pink); background: rgba(246,94,249,0.1); border: 1px solid rgba(246,94,249,0.25);
       padding: 3px 10px; border-radius: 100px;
     }
-    .article-date { font-size: 12px; color: var(--grey); font-family: 'JetBrains Mono', monospace; }
+    .article-date { font-size: 12px; color: var(--grey); font-family: 'Space Mono', monospace; }
 
     h1 {
       font-size: clamp(24px, 3vw, 40px); font-weight: 800; line-height: 1.2;
@@ -81,15 +81,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06); }
     .tag {
-      font-size: 11px; color: var(--blue);
-      background: rgba(13,245,255,0.07); border: 1px solid rgba(13,245,255,0.15);
-      padding: 3px 10px; border-radius: 4px;
+      font-size: 11px; color: var(--yellow);
+      background: rgba(255,216,77,0.08); border: 1px solid rgba(255,216,77,0.3);
+      padding: 3px 10px; border-radius: 100px;
     }
 
     .not-found { color: var(--grey); margin-bottom: 24px; }
 
     footer {
-      border-top: 1px solid rgba(0,245,255,0.1);
+      border-top: 1px solid rgba(13,245,255,0.1);
       padding: 32px 80px;
       display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
     }
@@ -103,11 +103,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .nav-links { display: none; }
       main { padding: 120px 20px 60px; }
       footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+      #cursor-pixel { display: none; }
     }
+
+    /* ── CUSTOM CURSOR: pixel-art pointer ── */
+    * { cursor: none !important; }
+    #cursor-pixel {
+      --cc: var(--cyan);
+      position: fixed;
+      top: 0; left: 0;
+      width: 3px; height: 3px;
+      background: var(--cc);
+      pointer-events: none;
+      z-index: 2147483647;
+      image-rendering: pixelated;
+      box-shadow:
+        0px 3px 0 0 var(--cc), 3px 3px 0 0 var(--cc),
+        0px 6px 0 0 var(--cc), 3px 6px 0 0 var(--cc), 6px 6px 0 0 var(--cc),
+        0px 9px 0 0 var(--cc), 3px 9px 0 0 var(--cc), 6px 9px 0 0 var(--cc), 9px 9px 0 0 var(--cc),
+        0px 12px 0 0 var(--cc), 3px 12px 0 0 var(--cc), 6px 12px 0 0 var(--cc), 9px 12px 0 0 var(--cc), 12px 12px 0 0 var(--cc),
+        0px 15px 0 0 var(--cc), 3px 15px 0 0 var(--cc), 6px 15px 0 0 var(--cc), 9px 15px 0 0 var(--cc), 12px 15px 0 0 var(--cc), 15px 15px 0 0 var(--cc),
+        0px 18px 0 0 var(--cc), 3px 18px 0 0 var(--cc), 6px 18px 0 0 var(--cc), 9px 18px 0 0 var(--cc),
+        0px 21px 0 0 var(--cc), 3px 21px 0 0 var(--cc),
+        0px 24px 0 0 var(--cc);
+      filter:
+        drop-shadow(1px 0 0 #0a0a0a)
+        drop-shadow(-1px 0 0 #0a0a0a)
+        drop-shadow(0 1px 0 #0a0a0a)
+        drop-shadow(0 -1px 0 #0a0a0a);
+      transition: transform 0.08s ease;
+      transform-origin: top left;
+    }
+    body.cursor-hover #cursor-pixel { --cc: var(--pink); transform: scale(1.35); }
   </style>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB9GWPC4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- CUSTOM CURSOR -->
+<div id="cursor-pixel"></div>
 
 <nav>
   <a href="/" class="nav-logo">
@@ -182,6 +215,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .catch(function () {
       main.innerHTML = '<a href="/ajankohtaista" class="back-link">← Ajankohtaista</a><p class="not-found">Sisältöä ei voitu ladata.</p>';
     });
+})();
+</script>
+<script>
+(function () {
+  var pixelCursor = document.getElementById('cursor-pixel');
+  if (!pixelCursor) return;
+  document.addEventListener('mousemove', function (e) {
+    pixelCursor.style.left = e.clientX + 'px';
+    pixelCursor.style.top = e.clientY + 'px';
+  });
+  document.addEventListener('mouseover', function (e) {
+    if (e.target.closest('a, button')) {
+      document.body.classList.add('cursor-hover');
+    }
+  });
+  document.addEventListener('mouseout', function (e) {
+    if (e.target.closest('a, button')) {
+      document.body.classList.remove('cursor-hover');
+    }
+  });
 })();
 </script>
 </body>
