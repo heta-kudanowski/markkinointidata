@@ -116,6 +116,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .why-photo-row { display: flex; align-items: flex-start; gap: 20px; margin: 20px 0 28px; }
     .why-photo { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--cyan-border); box-shadow: 0 0 24px rgba(0,245,255,0.15); flex-shrink: 0; }
     .why-photo-row p { font-size: 16px; font-weight: 300; color: #888; line-height: 1.8; }
+
+    /* ── Event photos: sticker frame ── */
+    .event-photo-wrap {
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .event-photo {
+      width: 100%;
+      max-width: 380px;
+      height: 260px;
+      object-fit: cover;
+      object-position: center top;
+      border: 2.5px solid #0a0a0a;
+      border-radius: 14px;
+      box-shadow: 6px 8px 0 #0a0a0a;
+      display: block;
+    }
+    .event-photo-caption {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-top: 10px;
+    }
+    .services-photo-wrap {
+      float: right;
+      margin: 0 0 24px 40px;
+      position: relative;
+      shape-outside: margin-box;
+    }
+    .services-photo {
+      width: 220px;
+      height: 280px;
+      object-fit: cover;
+      object-position: center 20%;
+      border: 2.5px solid #0a0a0a;
+      border-radius: 14px;
+      box-shadow: 6px 8px 0 #0a0a0a;
+      display: block;
+      --r: 2deg;
+      transform: rotate(var(--r));
+    }
+    .services-photo-caption {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-top: 8px;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .services-photo-wrap { float: none; margin: 0 0 28px 0; }
+      .services-photo { width: 100%; height: 200px; max-width: 340px; }
+    }
     .why-stats { display: flex; gap: 32px; margin-top: 4px; }
     .why-stat { display: flex; flex-direction: column; gap: 4px; }
     .stat-num { font-size: 32px; font-weight: 800; color: var(--cyan); letter-spacing: -0.02em; line-height: 1; }
@@ -1298,6 +1354,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Olen työskennellyt markkinoinnin, datan ja kasvun parissa. Tässä on se, mitä osaan parhaiten.</p>
   </div>
 
+  <div class="services-photo-wrap">
+    <img src="heta-verkostoituminen.jpg" alt="Heta verkostoitumistilaisuudessa" class="services-photo"/>
+    <div class="services-photo-caption">B2B-markkinointi · Helsinki</div>
+  </div>
+
   <div class="services-list">
     <div class="service-item reveal">
       <span class="service-item-num">01</span>
@@ -1381,6 +1442,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="why-left reveal">
     <div class="section-label">Minusta</div>
     <h2 class="section-title">Heta<br/><span class="accent">Kudanowski</span></h2>
+    <div class="event-photo-wrap">
+      <img src="heta-puhujalavalla.jpg" alt="Heta Kudanowski puhujalavalla" class="event-photo"/>
+      <div class="event-photo-caption">Paneelikeskustelu · Helsinki</div>
+    </div>
     <div class="why-photo-row">
       <img src="heta-photo.jpeg" alt="Heta Kudanowski" class="why-photo"/>
       <p>Yrittäjähenkinen markkinointikonsultti, joka toimii strategian, datan ja teknologian rajapinnassa. IT-alan ymmärrys, vahva markkinointiteknologiaosaaminen ja hands-on B2B-kokemus yhdistyvät käytännönläheiseen tekemiseen.</p>
