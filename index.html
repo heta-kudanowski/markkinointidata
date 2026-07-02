@@ -613,6 +613,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: var(--grey);
       line-height: 1.4;
     }
+    /* ── Referenssit header flex ── */
+    .referenssit-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+    .referenssit-stickers {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-shrink: 0;
+      padding-top: 4px;
+    }
+    .testimonials-grid { margin-top: 0 !important; }
+    @media (max-width: 768px) {
+      .referenssit-header { flex-direction: column; gap: 24px; }
+      .referenssit-stickers { display: none; }
+    }
+
     /* ── CLIENT LOGOS BAR ── */
     .client-logos {
       margin-top: 72px;
@@ -1075,6 +1096,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       cursor: pointer;
     }
 
+    /* ── Services: light paper background ── */
+    #services {
+      background: var(--paper, #F6F4EF) !important;
+    }
+    #services .section-label { color: rgba(10,10,10,0.4) !important; -webkit-text-fill-color: rgba(10,10,10,0.4) !important; }
+    #services .section-title { color: #0a0a0a !important; }
+    #services .section-title .accent { color: #f65ef9 !important; -webkit-text-fill-color: #f65ef9 !important; }
+    #services .services-header p { color: #37414D !important; }
+    #services .services-photo-caption { color: #5b6470 !important; }
+    #services .service-item { border-bottom-color: rgba(10,10,10,0.12) !important; }
+    #services .service-item:first-child { border-top-color: rgba(10,10,10,0.12) !important; }
+    #services .service-item-num { color: rgba(10,10,10,0.3) !important; }
+    #services .service-item h3 { color: #0a0a0a !important; }
+    #services .service-item > div > p { color: #37414D !important; }
+    #services .service-toggle:hover h3 { color: #f65ef9 !important; }
+    #services .service-toggle-icon { border-color: rgba(10,10,10,0.35) !important; color: #0a0a0a !important; }
+    #services .service-item.open .service-toggle-icon { background: #ffd84d !important; border-color: #0a0a0a !important; color: #0a0a0a !important; }
+    /* ── Tool chips: solid yellow sticker buttons ── */
+    #services .tool-chip {
+      background: #FFD84D !important;
+      color: #0a0a0a !important;
+      border: 2px solid #0a0a0a !important;
+      box-shadow: 2px 2px 0 #0a0a0a !important;
+      border-radius: 100px !important;
+      font-weight: 600 !important;
+      transition: transform 0.1s, box-shadow 0.1s !important;
+    }
+    #services .tool-chip:hover {
+      background: #f65ef9 !important;
+      color: #0a0a0a !important;
+      transform: translateY(1px) !important;
+      box-shadow: 1px 1px 0 #0a0a0a !important;
+    }
+    #services a.tool-chip { text-decoration: none; }
+
     /* ── Chip category sublabels ── */
     .chip-label {
       font-family: 'Poppins', sans-serif;
@@ -1085,6 +1141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: rgba(246,94,249,0.45);
       margin-bottom: 8px;
     }
+    #services .chip-label { color: rgba(10,10,10,0.4) !important; }
 
     /* ── Why items: remove heavy box ── */
     .why-item {
@@ -1477,9 +1534,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- TESTIMONIALS -->
 <section id="referenssit">
+  <div class="referenssit-header">
+    <div>
+      <div class="section-label">Asiakkaideni palautteita</div>
+      <h2 class="section-title">Mitä <span class="accent">asiakkaat sanovat.</span></h2>
+    </div>
+    <div class="referenssit-stickers" aria-hidden="true">
+      <div class="dashboard-sticker md-float" style="--r:-4deg; --md-r:-4deg; position:relative; top:0; right:0; width:120px; height:66px;">
+        <div class="dash-title"><span></span><span></span><span class="last"></span></div>
+        <div class="dash-bars">
+          <span style="height:20px;background:#0df5ff;"></span>
+          <span style="height:32px;background:#f65ef9;"></span>
+          <span style="height:14px;background:#ffd84d;"></span>
+          <span style="height:26px;background:#0a0a0a;"></span>
+          <span style="height:18px;background:#0df5ff;"></span>
+          <span style="height:36px;background:#f65ef9;"></span>
+        </div>
+      </div>
+      <div class="md-float" style="
+        --md-r:14deg;
+        width:52px; height:52px;
+        background:#0df5ff;
+        clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+        box-shadow:0 0 0 4px #fff, 0 0 0 6px #0a0a0a;
+        animation-delay:0.9s;
+      "></div>
+    </div>
   </div>
-  <div class="section-label">Asiakkaideni palautteita</div>
-  <h2 class="section-title">Mitä <span class="accent">asiakkaat sanovat.</span></h2>
   <div class="testimonials-grid">
     <div class="testimonial-card reveal">
       <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
