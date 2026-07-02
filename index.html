@@ -95,7 +95,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .section-title .accent { color: #f65ef9; -webkit-text-fill-color: #f65ef9; }
 
     #services { background: var(--dark2); }
-    .services-header { max-width: 600px; margin-bottom: 64px; }
+    .services-top { display: flex; align-items: flex-start; gap: 48px; margin-bottom: 64px; }
+    .services-header { flex: 1; }
     .services-header p { font-size: 17px; font-weight: 300; color: #888; margin-top: 20px; line-height: 1.7; }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; padding: 8px 0; }
     .service-card { background: var(--dark3); padding: 36px 32px; position: relative; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s, background 0.25s; cursor: default; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); border-top: none; }
@@ -142,10 +143,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-top: 10px;
     }
     .services-photo-wrap {
-      float: right;
-      margin: 0 0 24px 40px;
+      flex-shrink: 0;
       position: relative;
-      shape-outside: margin-box;
     }
     .services-photo {
       width: 220px;
@@ -167,7 +166,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-align: center;
     }
     @media (max-width: 900px) {
-      .services-photo-wrap { float: none; margin: 0 0 28px 0; }
+      .services-top { flex-direction: column; }
+      .services-photo-wrap { width: 100%; }
       .services-photo { width: 100%; height: 200px; max-width: 340px; }
     }
     .why-stats { display: flex; gap: 32px; margin-top: 4px; }
@@ -473,7 +473,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     /* section heading on light bg */
-    #referenssit .section-label { color: rgba(10,10,10,0.4); }
+    #referenssit .section-label { color: #0a0a0a; }
     #referenssit .section-title { color: #0a0a0a; }
     #referenssit .section-title .accent { color: #f65ef9; -webkit-text-fill-color: #f65ef9; }
 
@@ -1403,14 +1403,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="zz zz-d2l" aria-hidden="true"></div>
 <!-- SERVICES -->
 <section id="services">
-  <div class="services-header reveal">
-    <div class="section-label">Osaamiseni</div>
-    <h2 class="section-title">Missä voin<br/><span class="accent">auttaa sinua.</span></h2>
-    <p>Olen työskennellyt markkinoinnin, datan ja kasvun parissa. Tässä on se, mitä osaan parhaiten.</p>
-  </div>
-
-  <div class="services-photo-wrap">
-    <img src="heta-verkostoituminen.jpg" alt="Heta verkostoitumistilaisuudessa" class="services-photo"/>
+  <div class="services-top reveal">
+    <div class="services-header">
+      <div class="section-label">Osaamiseni</div>
+      <h2 class="section-title">Missä voin<br/><span class="accent">auttaa sinua.</span></h2>
+      <p>Olen työskennellyt markkinoinnin, datan ja kasvun parissa. Tässä on se, mitä osaan parhaiten.</p>
+    </div>
+    <div class="services-photo-wrap">
+      <img src="heta-verkostoituminen.jpg" alt="Heta verkostoitumistilaisuudessa" class="services-photo"/>
+    </div>
   </div>
 
   <div class="services-list">
