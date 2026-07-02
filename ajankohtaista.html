@@ -120,15 +120,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       gap: 24px;
     }
     .article-card {
-      background: var(--dark2);
-      border: 1px solid rgba(246,94,249,0.15);
-      border-radius: 12px;
+      background: #111;
+      border: 2px solid #0a0a0a;
+      border-radius: 14px;
       padding: 28px 24px;
-      display: flex; flex-direction: column; gap: 14px;
-      transition: border-color 0.2s, transform 0.2s;
+      display: flex; flex-direction: column; gap: 16px;
+      box-shadow: 4px 5px 0 #0a0a0a;
+      transition: transform 0.15s, box-shadow 0.15s;
       cursor: pointer;
     }
-    .article-card:hover { border-color: rgba(246,94,249,0.4); transform: translateY(-3px); }
+    .article-card:hover { transform: translateY(2px); box-shadow: 2px 3px 0 #0a0a0a; }
     .article-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
     .article-category {
       font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
@@ -136,18 +137,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 3px 10px; border-radius: 100px;
     }
     .article-date { font-size: 11px; color: var(--grey); font-family: 'Space Mono', monospace; }
-    .article-title { font-size: 15px; font-weight: 700; line-height: 1.4; color: var(--white); }
+    .article-title { font-size: 16px; font-weight: 700; line-height: 1.4; color: var(--white); }
     .article-excerpt { font-size: 13px; line-height: 1.7; color: #999; flex: 1; }
-    .article-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .article-tag {
-      font-size: 10px; color: var(--blue);
-      background: rgba(13,245,255,0.07); border: 1px solid rgba(13,245,255,0.15);
-      padding: 2px 8px; border-radius: 4px;
-    }
     .article-action-link {
       font-size: 12px; font-weight: 700; color: var(--pink);
       text-decoration: none; letter-spacing: 0.05em;
       transition: opacity 0.2s; align-self: flex-start;
+      border-top: 1px solid rgba(255,255,255,0.07); padding-top: 12px; width: 100%;
     }
     .article-action-link.external { color: var(--blue); }
     .article-action-link:hover { opacity: 0.7; }
@@ -310,7 +306,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       '</div>' +
       '<div class="article-title">' + a.title + '</div>' +
       '<div class="article-excerpt">' + a.excerpt + '</div>' +
-      '<div class="article-tags">' + tagsHtml + '</div>' +
       actionHtml;
 
     return card;
