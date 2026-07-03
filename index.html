@@ -746,11 +746,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .article-category {
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: #f65ef9;
-      background: rgba(246,94,249,0.1);
-      border: 1px solid rgba(246,94,249,0.25);
+      color: #0a0a0a;
+      background: #f65ef9;
+      border: 1.5px solid #0a0a0a;
+      box-shadow: 2px 2px 0 #0a0a0a;
       padding: 3px 10px;
       border-radius: 100px;
     }
@@ -1850,7 +1851,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       '</div>' +
       '<div class="article-title">' + a.title + '</div>' +
       '<div class="article-excerpt">' + a.excerpt + '</div>' +
-      '<div class="article-tags">' + tagsHtml + '</div>' +
       actionHtml;
 
     return card;
