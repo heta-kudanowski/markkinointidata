@@ -1812,27 +1812,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function buildCard(a) {
     var card = document.createElement('div');
     card.className = 'article-card';
+    card.style.cursor = 'default';
 
-    var tagsHtml = (a.tags || []).map(function(t) {
-      return '<span class="article-tag">' + t + '</span>';
-    }).join('');
-
-    var cardHref = a.slug
-      ? '/ajankohtaista/' + a.slug + '/'
-      : (a.link || null);
-    var cardExternal = !a.slug && !!a.link;
-
-    var actionHtml = a.slug
-      ? '<a class="article-action-link" href="/ajankohtaista/' + a.slug + '/">Lue lisää →</a>'
-      : (a.link ? '<a class="article-action-link external" href="' + a.link + '" target="_blank" rel="noopener">Lue artikkeli ↗</a>' : '');
-
-    if (cardHref) {
-      card.addEventListener('click', function(e) {
-        if (e.target.closest('a')) return;
-        if (cardExternal) { window.open(cardHref, '_blank', 'noopener'); }
-        else { window.location.href = cardHref; }
-      });
-    }
+    var domain = a.link ? a.link.replace(/^https?:\/\/(www\.)?/, '').split('/')[0] : '';
 
     card.innerHTML =
       '<div class="article-meta">' +
@@ -1841,7 +1823,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       '</div>' +
       '<div class="article-title">' + a.title + '</div>' +
       '<div class="article-excerpt">' + a.excerpt + '</div>' +
-      actionHtml;
+      (domain ? '<div style="font-size:11px;color:#555;font-family:\'Space Mono\',monospace;padding-top:12px;border-top:1px solid rgba(255,255,255,0.07);">Julkaistu: ' + domain + '</div>' : '');
 
     return card;
   }
