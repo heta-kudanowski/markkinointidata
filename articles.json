@@ -14,6 +14,7 @@
     {
       "id": "10",
       "slug": "",
+      "external_authored": true,
       "date": "2026-05-29",
       "category": "Tekoäly",
       "title": "Sokeasti kohti euroja? Markkinoinnin tekoälykupla kaipaa kipeästi pelisääntöjä",
@@ -25,6 +26,7 @@
     {
       "id": "9",
       "slug": "tekoalyagentit-vastuu-markkinoija",
+      "external_authored": true,
       "date": "2026-05-28",
       "category": "Tekoäly",
       "title": "Kun tekoäly tekee virheen, kuka maksaa? Markkinoijan vastuu AI-aikakaudella",
