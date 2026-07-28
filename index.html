@@ -270,8 +270,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .footer-links { justify-content: center; }
 
       /* CURSOR - hide on touch devices */
-      #cursor-pixel { display: none; }
-      * { cursor: auto !important; }
     }
 
     @media (max-width: 480px) {
@@ -285,44 +283,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       footer { padding: 24px 16px; }
     }
 
-    /* ── CUSTOM CURSOR: pixel-art pointer ── */
-    * { cursor: none !important; }
-
-    #cursor-pixel {
-      --cc: var(--cyan);
-      position: fixed;
-      top: 0; left: 0;
-      width: 3px; height: 3px;
-      background: var(--cc);
-      pointer-events: none;
-      z-index: 2147483647;
-      image-rendering: pixelated;
-      box-shadow:
-        0px 3px 0 0 var(--cc), 3px 3px 0 0 var(--cc),
-        0px 6px 0 0 var(--cc), 3px 6px 0 0 var(--cc), 6px 6px 0 0 var(--cc),
-        0px 9px 0 0 var(--cc), 3px 9px 0 0 var(--cc), 6px 9px 0 0 var(--cc), 9px 9px 0 0 var(--cc),
-        0px 12px 0 0 var(--cc), 3px 12px 0 0 var(--cc), 6px 12px 0 0 var(--cc), 9px 12px 0 0 var(--cc), 12px 12px 0 0 var(--cc),
-        0px 15px 0 0 var(--cc), 3px 15px 0 0 var(--cc), 6px 15px 0 0 var(--cc), 9px 15px 0 0 var(--cc), 12px 15px 0 0 var(--cc), 15px 15px 0 0 var(--cc),
-        0px 18px 0 0 var(--cc), 3px 18px 0 0 var(--cc), 6px 18px 0 0 var(--cc), 9px 18px 0 0 var(--cc),
-        0px 21px 0 0 var(--cc), 3px 21px 0 0 var(--cc),
-        0px 24px 0 0 var(--cc);
-      filter:
-        drop-shadow(1px 0 0 #0a0a0a)
-        drop-shadow(-1px 0 0 #0a0a0a)
-        drop-shadow(0 1px 0 #0a0a0a)
-        drop-shadow(0 -1px 0 #0a0a0a);
-      transition: transform 0.08s ease, --cc 0.15s;
-      transform-origin: top left;
-    }
-
-    body.cursor-hover #cursor-pixel {
-      --cc: var(--pink, #f65ef9);
-      transform: scale(1.35);
-    }
-
-    body.cursor-click #cursor-pixel {
-      transform: scale(0.85);
-    }
 
     /* ── HAMBURGER MENU ── */
     .hamburger {
@@ -1355,7 +1315,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   <!-- CUSTOM CURSOR -->
-  <div id="cursor-pixel"></div>
 
 <!-- NAV -->
 <nav>
@@ -1726,25 +1685,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
     navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--cyan)' : ''; });
   });
-
-  // Custom pixel cursor
-  const pixelCursor = document.getElementById('cursor-pixel');
-
-  document.addEventListener('mousemove', (e) => {
-    pixelCursor.style.left = e.clientX + 'px';
-    pixelCursor.style.top = e.clientY + 'px';
-  });
-
-  // Hover effect on interactive elements
-  const hoverEls = document.querySelectorAll('a, button, .service-card, .why-item, .process-step, .btn-primary, .btn-ghost, .nav-cta');
-  hoverEls.forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-  });
-
-  // Click effect
-  document.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
-  document.addEventListener('mouseup', () => document.body.classList.remove('cursor-click'));
 
   // Hamburger menu
   const hamburger = document.getElementById('hamburger');
