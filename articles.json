@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "id": "12",
+      "slug": "",
+      "external_authored": true,
+      "date": "2026-08-05",
+      "category": "Reflektio",
+      "title": "Milloin pysähdyit viimeksi? Vapaapudotus omiin ajatuksiin ja kolme kysymystä pohdittavaksi",
+      "excerpt": "Työelämä on viime aikoina vaatinut meiltä paljon, AI-murros, geopolitiikka, talouden epävarmuus. Tarjoan pienen hengähdystauon ja kolme kysymystä pohdittavaksi.",
+      "body": "",
+      "tags": [],
+      "link": "https://www.mkollektiivi.fi/julkaisut/milloin-pysahdyit-viimeksi-vapaapudotus-omiin-ajatuksiin-ja-kolme-kysymysta-pohdittavaksi"
+    },
+    {
       "id": "11",
       "slug": "eu-tekoalylaki-ai-merkinta-markkinointi",
       "date": "2026-06-01",
