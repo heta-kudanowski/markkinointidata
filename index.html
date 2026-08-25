@@ -1643,29 +1643,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="modal-box">
     <button class="modal-close" id="modalClose" aria-label="Sulje">&#x2715;</button>
     <div class="modal-label">Ota yhteyttä</div>
-    <form id="contactForm" action="https://api.staticforms.dev/submit" method="POST">
-      <input type="hidden" name="accessKey" value="sf_000350cf791d98d408f5254f"/>
-      <input type="hidden" name="subject" value="Uusi yhteydenotto – Markkinointidata"/>
-      <input type="hidden" name="replyTo" value="@email"/>
-      <div class="form-group">
-        <label for="fname">Nimi</label>
-        <input type="text" id="fname" name="name" required placeholder="Nimesi" autocomplete="name"/>
-      </div>
-      <div class="form-group">
-        <label for="femail">Sähköposti</label>
-        <input type="email" id="femail" name="email" required placeholder="sinun@email.fi" autocomplete="email"/>
-      </div>
-      <div class="form-group">
-        <label for="fmsg">Viesti</label>
-        <textarea id="fmsg" name="message" required placeholder="Kerro projektistasi tai haasteestasi..." rows="4"></textarea>
-      </div>
-      <button type="submit" class="btn-cta form-submit" id="formSubmit">Lähetä viesti</button>
-      <p class="form-feedback success" id="formSuccess">&#x2713; Viesti lähetetty! Otan sinuun pian yhteyttä.</p>
-      <p class="form-feedback error" id="formError">Jotain meni pieleen. Lähetä viesti suoraan: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f49c918095b49995869f9f9d9a9b9d9a809d90958095da929d">[email&#160;protected]</a></p>
-    </form>
+    <div class="hs-form-frame" data-region="eu1" data-form-id="5077164b-0c72-408a-b4ec-0e3c668a3a37" data-portal-id="149176281"></div>
   </div>
 </div>
 
+<script src="https://js-eu1.hsforms.net/forms/embed/149176281.js" defer></script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => {
@@ -1709,27 +1691,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   (function(){
     var modal=document.getElementById('contactModal');
     var closeBtn=document.getElementById('modalClose');
-    var form=document.getElementById('contactForm');
-    var submitBtn=document.getElementById('formSubmit');
-    var success=document.getElementById('formSuccess');
-    var error=document.getElementById('formError');
-    function openModal(){modal.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var f=form.querySelector('input,textarea');if(f)f.focus();},120);}
+    function openModal(){modal.classList.add('open');document.body.style.overflow='hidden';}
     function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}
     document.querySelectorAll('.open-modal').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();openModal();});});
     closeBtn.addEventListener('click',closeModal);
     modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
     document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
-    form.addEventListener('submit',async function(e){
-      e.preventDefault();
-      var orig=submitBtn.innerHTML;
-      submitBtn.disabled=true;submitBtn.innerHTML='&#x23F3; Sending...';
-      success.style.display='none';error.style.display='none';
-      try{
-        var res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-        if(res.ok){form.reset();submitBtn.style.display='none';success.style.display='block';setTimeout(closeModal,3500);}
-        else{throw new Error();}
-      }catch(err){error.style.display='block';submitBtn.disabled=false;submitBtn.innerHTML=orig;}
-    });
   })();
 
 </script>
