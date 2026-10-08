@@ -10,7 +10,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-  <title>Minusta, Heta Kudanowski | Markkinointidata</title>
+  <title>Minusta | Heta Kudanowski | Markkinointidata</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="shortcut icon" href="favicon.svg"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
@@ -344,14 +344,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="keywords" content="Google Ads konsultti, GA4 käyttöönotto, Google Tag Manager, Search Console analytiikka, Looker Studio raportit, BigQuery markkinointi, markkinoinnin datakonsultti, SEO konsultti, konversioseuranta, MarTech, datalähtöinen markkinointi, freelance markkinointikonsultti"/>
   <link rel="alternate" hreflang="fi" href="https://markkinointidata.fi/"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Markkinointidata | Markkinoinnin data- ja analytiikkakonsultti"/>
+  <meta property="og:title" content="Heta Kudanowski | B2B Marketing &amp; Growth Strategist"/>
   <meta property="og:description" content="Freelance markkinointikonsultointi. Analytiikka, AI, konversioseuranta, MarTech ja raportointi. heta@markkinointidata.fi"/>
   <link rel="canonical" href="https://markkinointidata.fi/minusta"/>
   <meta property="og:url" content="https://markkinointidata.fi/minusta"/>
   <meta property="og:site_name" content="Markkinointidata"/>
   <meta property="og:image" content="https://markkinointidata.fi/heta-photo.jpeg"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Markkinointidata, markkinoinnin datakonsultti"/>
+  <meta name="twitter:title" content="Heta Kudanowski | B2B Marketing &amp; Growth Strategist"/>
   <meta name="twitter:description" content="Datalähtöinen markkinointikonsultointi: analytiikka, AI, konversioseuranta, MarTech. heta@markkinointidata.fi"/>
   <meta name="twitter:image" content="https://markkinointidata.fi/heta-photo.jpeg"/>
   <script type="application/ld+json">
@@ -1315,8 +1315,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB9GWPC4"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <!-- CUSTOM CURSOR -->
-
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">
@@ -1595,14 +1593,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- AJANKOHTAISTA -->
-<section id="ajankohtaista">
-  <h2 class="section-title reveal">Kirjoittamiani <span class="accent">artikkeleita.</span></h2>
-  <div class="articles-grid" id="articles-grid">
-    <!-- Artikkelit ladataan JS:llä -->
-  </div>
-</section>
-
 <!-- FOOTER -->
 </main>
 <footer>
@@ -1675,49 +1665,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </script>
 
-<script>
-(function() {
-  var grid = document.getElementById('articles-grid');
-  if (!grid) return;
-
-  function formatDate(iso) {
-    var d = new Date(iso);
-    var s = d.toLocaleDateString('fi-FI', { month: 'long', year: 'numeric' });
-    return s.charAt(0).toUpperCase() + s.slice(1);
-  }
-
-  function buildCard(a) {
-    var card = document.createElement('div');
-    card.className = 'article-card';
-    card.style.cursor = 'default';
-
-    var domain = a.link ? a.link.replace(/^https?:\/\/(www\.)?/, '').split('/')[0] : '';
-
-    card.innerHTML =
-      '<div class="article-meta">' +
-        '<span class="article-category">' + a.category + '</span>' +
-        '<span class="article-date">' + formatDate(a.date) + '</span>' +
-      '</div>' +
-      '<div class="article-title">' + a.title + '</div>' +
-      '<div class="article-excerpt">' + a.excerpt + '</div>' +
-      (domain ? '<div style="font-size:11px;font-family:\'Space Mono\',monospace;padding-top:12px;border-top:1px solid rgba(255,255,255,0.07);"><a href="' + a.link + '" target="_blank" rel="noopener" style="color:#0df5ff;text-decoration:none;">Lue artikkeli: ' + domain + ' ↗</a></div>' : '');
-
-    return card;
-  }
-
-  fetch('articles.json')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      var articles = (data.articles || []).filter(function(a) { return a.external_authored === true; });
-      articles.forEach(function(a) {
-        grid.appendChild(buildCard(a));
-      });
-    })
-    .catch(function() {
-      grid.innerHTML = '<p style="color:#888">Artikkeleita ei voitu ladata.</p>';
-    });
-})();
-</script>
 
 
 </body>
