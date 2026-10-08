@@ -213,9 +213,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="tulossa-badge">Tulossa pian</div>
     <h2 class="reveal">Studio on<br/><span class="accent">työn alla.</span></h2>
     <p class="reveal">Rakennamme parhaillaan Marketing Mix Modeling -työkalua B2B-yrityksille. Jätä yhteystietosi ja olet ensimmäisten joukossa kuulemaan, kun Studio aukeaa.</p>
-    <a href="/minusta#contact" class="btn-cta reveal">Ilmoittaudu kiinnostuneeksi &#x2192;</a>
+    <button type="button" class="btn-cta reveal open-hs-modal">Ilmoittaudu kiinnostuneeksi &#x2192;</button>
   </div>
 </section>
+
+<div id="hsModal" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;border:2px solid #0a0a0a;box-shadow:4px 4px 0 #0a0a0a;border-radius:8px;padding:40px 32px;max-width:520px;width:100%;position:relative;max-height:90vh;overflow-y:auto;">
+    <button id="hsModalClose" aria-label="Sulje" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:#0a0a0a;">&#x2715;</button>
+    <div class="hs-form-frame" data-region="eu1" data-form-id="5077164b-0c72-408a-b4ec-0e3c668a3a37" data-portal-id="149176281"></div>
+  </div>
+</div>
+<script src="https://js-eu1.hsforms.net/forms/embed/149176281.js" defer></script>
+<script>
+  (function(){
+    var modal = document.getElementById('hsModal');
+    document.querySelectorAll('.open-hs-modal').forEach(function(btn){
+      btn.addEventListener('click', function(){ modal.style.display='flex'; });
+    });
+    document.getElementById('hsModalClose').addEventListener('click', function(){ modal.style.display='none'; });
+    modal.addEventListener('click', function(e){ if(e.target===modal) modal.style.display='none'; });
+  })();
+</script>
+
 </main>
 <footer>
   <a href="/" class="footer-logo">
