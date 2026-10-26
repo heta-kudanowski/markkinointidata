@@ -17,10 +17,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:title" content="Markkinointidata Studio | B2B Marketing Intelligence"/>
   <meta property="og:description" content="Marketing Mix Modeling B2B-yrityksille. Mittaa ROI, lopeta arvailu ja tee parempia päätöksiä."/>
   <meta property="og:url" content="https://markkinointidata.fi/"/>
-  <meta property="og:image" content="https://markkinointidata.fi/heta-photo.jpeg"/>
+  <meta property="og:image" content="https://markkinointidata.fi/linkedin-cover.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Markkinointidata Studio | B2B Marketing Intelligence"/>
-  <meta name="twitter:image" content="https://markkinointidata.fi/heta-photo.jpeg"/>
+  <meta name="twitter:image" content="https://markkinointidata.fi/linkedin-cover.png"/>
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="shortcut icon" href="favicon.svg"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
@@ -36,7 +36,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-track { background: #000; } ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 60px; background: rgba(0,0,0,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--cyan-border); }
     .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-    .nav-logo img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: center top; }
+    .nav-logo img { width: 36px; height: 36px; border-radius: 6px; object-fit: contain; }
     .nav-brand { font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); }
     .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
     .nav-links a { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.2s; }
@@ -99,23 +99,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     #tulossa p { font-size: 17px; font-weight: 300; color: #888; line-height: 1.75; margin-bottom: 40px; }
     footer { border-top: 1px solid rgba(13,245,255,0.08); padding: 32px 80px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; background: var(--black); }
     .footer-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .footer-logo img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; object-position: center top; }
+    .footer-logo img { width: 28px; height: 28px; border-radius: 4px; object-fit: contain; }
     .footer-brand { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); }
     .footer-copy { font-size: 12px; font-weight: 300; color: #555; }
     .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
     .footer-links a { font-size: 12px; color: #555; text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--cyan); }
+    #boardview { background: var(--dark3); padding: 100px 80px; }
+    .boardview-inner { max-width: 900px; margin: 0 auto; }
+    .boardview-intro { font-size: 17px; font-weight: 300; color: #888; line-height: 1.75; max-width: 640px; margin-top: 24px; margin-bottom: 48px; }
+    .boardview-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .bv-card { background: var(--black); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 32px 28px; }
+    .bv-card-highlight { border-color: var(--cyan-border); background: rgba(13,245,255,0.04); }
+    .bv-icon { font-size: 20px; margin-bottom: 16px; display: block; }
+    .bv-card h4 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .bv-card p { font-size: 14px; font-weight: 300; color: #888; line-height: 1.7; }
+    .price-callout { display: inline-flex; align-items: center; gap: 10px; margin-top: 48px; padding: 16px 28px; border: 1.5px solid var(--cyan-border); border-radius: 8px; background: var(--cyan-dim); }
+    .price-callout strong { font-size: 22px; font-weight: 900; color: var(--cyan); }
+    .price-callout span { font-size: 14px; font-weight: 300; color: #888; line-height: 1.5; }
     @media (max-width: 1024px) {
       .manifesto-grid { grid-template-columns: 1fr; gap: 24px; }
       .kenelle-grid { grid-template-columns: 1fr 1fr; }
       .mita-pillars { grid-template-columns: 1fr 1fr; }
+      .boardview-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
       #hero { padding: 120px 24px 60px; }
-      #manifesto, #kenelle, #mita, #tulossa { padding: 60px 24px; }
+      #manifesto, #kenelle, #mita, #tulossa, #boardview { padding: 60px 24px; }
       .kenelle-grid, .mita-pillars { grid-template-columns: 1fr; }
       footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
     }
@@ -136,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB9GWPC4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav>
   <a href="/" class="nav-logo">
-    <img src="heta-photo.jpeg" alt="Heta Kudanowski"/>
+    <img src="logo-md-cyan.png" alt="Markkinointidata Studio"/>
     <span class="nav-brand">Markkinointidata</span>
   </a>
   <ul class="nav-links">
@@ -157,7 +170,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section id="hero">
   <div class="hero-inner">
     <h1><span style="color:#0df5ff;-webkit-text-fill-color:#0df5ff;">B2B-markkinoinnin ROI</span><br/>näkyväksi Marketing Mix&#8209;mallinnuksella</h1>
-    <p class="hero-desc">B2B-markkinoinnin uusi aikakausi. Markkinointidata Studio tuo Marketing Mix Modeling -työkalut B2B-yritysten ulottuville. Mittaa ROI, lopeta arvailu ja tee parempia päätöksiä.</p>
+    <p class="hero-desc">Markkinointidata Studio tuo markkinoinnin ROI-mittauksen pk-yritysten ulottuville. Näe markkinoinnin tuotto euroissa, ei klikkauksissa. Lopeta arvailu ja tee päätökset datan pohjalta.</p>
   </div>
 </section>
 <div class="zz zz-d2l" aria-hidden="true"></div>
@@ -165,12 +178,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="manifesto-inner">
     <div class="section-label" style="color:rgba(10,10,10,0.45);">Miksi</div>
     <h2 class="section-title reveal" style="color:#0a0a0a;max-width:720px;">B2B markkinoinnin menestys ei näy<br/>yksittäisissä mainosmittareissa.</h2>
+    <p class="reveal" style="font-size:17px;font-weight:300;color:#555;line-height:1.75;max-width:680px;margin-top:24px;margin-bottom:20px;">Markkinointi vaikuttaa brändiin, liideihin ja kauppoihin eri aikaviiveillä eri kanavissa. Yksittäinen mainosmittari ei näytä kokonaisuutta. Marketing Mix Modeling on menetelmä, joka yhdistää kaiken datan ja kertoo mikä oikeasti toimii.</p>
     <div class="manifesto-grid reveal">
       <div>
-        <p>B2B-markkinoinnin onnistumista ei mitata yksittäisillä klikkauksilla tai mainosmittareilla. Todellinen menestys näkyy siinä, vahvistuuko brändi, paraneeko liidien laatu, nopeutuuko myyntisykli ja ennen kaikkea syntyykö kauppaa. Tämän todentaminen vaatii hajanaisen datan yhdistämistä, jotta markkinoinnin toimenpiteiden ja toteutuneiden kauppojen välinen yhteys saadaan vihdoin näkyväksi.</p>
+        <p>Perinteinen Marketing Mix Modeling on suuryritysten työkalu. Konsulttiprojektina hinta on tyypillisesti kymmeniä tuhansia euroja, eikä pk-yrityksellä ole siihen resursseja. Markkinoinnin ROI jää siksi usein arvaukseksi ja johto tekee budjettipäätökset tunteen eikä datan perusteella.</p>
       </div>
       <div>
-        <p>Tiesitkö, että nykypäivän ostaja on tehnyt valintansa usein jo ennen kuin hän puhuu yhdenkään myyjän kanssa? Koska ostopäätös syntyy monessa eri kanavassa, myynnin ja markkinoinnin on pelattava saumattomasti yhteen. Markkinointidata Studio on kehitetty parantamaan myynnin ja markkinoinnin yhteispeliä ja antamaan oikeaa tietoa siitä, minkälainen markkinointi auttaa B2B-yritystä menestymään.</p>
+        <p>Markkinointidata Studio tuo saman analytiikan pk-yritysten ulottuville kevyenä, automaattisena palveluna. Tulokset kerrotaan aina johdon kielellä: euroissa, ei klikkauksissa. Näet mitä markkinointi oikeasti tuottaa, mikä kanava kannattaa ja mitä tapahtuu jos budjetista nipistetään.</p>
       </div>
     </div>
   </div>
@@ -218,6 +232,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </section>
 <div class="zz zz-l2d" aria-hidden="true"></div>
+<section id="boardview">
+  <div class="boardview-inner">
+    <div class="section-label">Board View</div>
+    <h2 class="section-title reveal">Markkinointi euroina,<br/><span class="accent">johdon kielellä.</span></h2>
+    <p class="boardview-intro reveal">Kaikki data kulminoituu yhteen näkymään, jonka toimitusjohtaja tai CFO avaa kuukausittain. Ei markkinointijargonia, ei klikkejä. Pelkästään se, mitä oikeasti halutaan tietää.</p>
+    <div class="boardview-grid">
+      <div class="bv-card reveal">
+        <span class="bv-icon" aria-hidden="true">€</span>
+        <h4>Liikevaihdon kasvu markkinoinnista</h4>
+        <p>Paljonko markkinointi loi uutta liikevaihtoa tällä kaudella? Erotetaan automaattisesti se, mitä olisi tapahtunut joka tapauksessa (Base Sales) siitä, minkä markkinointi lisäsi päälle (Incremental Sales).</p>
+      </div>
+      <div class="bv-card reveal">
+        <span class="bv-icon" aria-hidden="true">↗</span>
+        <h4>ROMI kanavittain</h4>
+        <p>Jokainen markkinointieuro on jossakin kanavassa. Board View näyttää, mikä kanava palautti eniten euroina sijoitetun pääoman ja missä on vielä kasvupotentiaalia.</p>
+      </div>
+      <div class="bv-card reveal">
+        <span class="bv-icon" aria-hidden="true">⏱</span>
+        <h4>B2B-myyntisykli näkyväksi</h4>
+        <p>B2B:ssä tänään sijoitettu euro näkyy liikevaihdossa kuukausien päästä. Studio näyttää tämän viiveen kanavittain, jotta budjettipäätökset eivät perustu väärään aikajänteeseen.</p>
+      </div>
+      <div class="bv-card bv-card-highlight reveal">
+        <span class="bv-icon" aria-hidden="true" style="color:var(--cyan);">✂</span>
+        <h4>Mitä käy jos budjettia leikataan?</h4>
+        <p>Budjettiskenaariotyökalu vastaa CFO:n yleisimpään kysymykseen. Syötä leikkaus tai lisäys euroissa, niin Studio ennustaa vaikutuksen liikevaihtoon MMM-mallin pohjalta.</p>
+      </div>
+    </div>
+    <div class="price-callout reveal">
+      <strong>375 €/kk</strong>
+      <span>Perinteinen MMM-konsulttiprojekti maksaa kymmeniä tuhansia euroja.<br/>Studio tekee saman automaattisesti, kuukausittain.</span>
+    </div>
+  </div>
+</section>
 <section id="tulossa">
   <div class="tulossa-inner">
     <div class="tulossa-badge">Tulossa pian</div>
@@ -248,7 +295,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </main>
 <footer>
   <a href="/" class="footer-logo">
-    <img src="heta-photo.jpeg" alt="Heta Kudanowski"/>
+    <img src="logo-md-cyan.png" alt="Markkinointidata Studio"/>
     <span class="footer-brand">Markkinointidata</span>
   </a>
   <span class="footer-copy">&#169; 2026 Markkinointidata. Kaikki oikeudet pidätetään.</span>
